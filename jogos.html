@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Jogos Lucas e Bruna · Raphaela Spellmeier</title>
+<meta name="description" content="Brincar pode tornar conversas importantes mais leves. Jogos em PDF para imprimir, para crianças de 5 a 10 anos.">
+<style>
+:root {
+  --creme: #F7EEE3;
+  --argila: #EBD6C4;
+  --tijolo: #9C4A2E;
+  --tijolo-escuro: #7E3A23;
+  --cacau: #3B2521;
+  --mel: #E2B071;
+  --texto: #3B2521;
+  --texto-suave: #6B4F47;
+  --linha-clara: rgba(247, 238, 227, .22);
+  --vidro-cacau: rgba(59, 37, 33, .95);
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --arco: 999px 999px 0 0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--creme); color: var(--texto); font: 1.0625rem/1.65 var(--sans); padding-bottom: 88px; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
+h2 { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.6rem); }
+p + p { margin-top: 1em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--tijolo); outline-offset: 3px; border-radius: 4px; }
+.escuro a:focus-visible, .escuro summary:focus-visible { outline-color: var(--mel); }
+section { padding-block: 96px; }
+.escuro { background: var(--cacau); color: var(--creme); }
+.argila { background: var(--argila); }
+.topo { max-width: 46ch; margin-inline: auto; text-align: center; }
+.topo p { margin-top: 14px; color: var(--texto-suave); }
+.escuro .topo p { color: var(--argila); }
+.aviso { background: var(--cacau); color: var(--creme); font-size: .85rem; text-align: center; padding: 8px 16px; border-bottom: 1px solid var(--linha-clara); }
+
+/* Botões */
+.btn { display: inline-block; background: var(--tijolo); color: var(--creme); text-decoration: none; font-weight: 600; padding: 16px 30px; border-radius: 999px; text-align: center; }
+.btn:hover { background: var(--tijolo-escuro); }
+.escuro .btn { background: var(--mel); color: var(--cacau); }
+.escuro .btn:hover { background: var(--creme); }
+.btn-grande { padding: 18px 36px; font-size: 1.1rem; }
+.link { color: var(--tijolo); font-weight: 600; text-underline-offset: 4px; }
+.escuro .link { color: var(--mel); }
+.acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: center; }
+.nota { margin-top: 14px; font-size: .92rem; color: var(--texto-suave); }
+.escuro .nota { color: var(--argila); }
+
+/* Menu */
+.menu { background: var(--cacau); color: var(--creme); border-bottom: 1px solid var(--linha-clara); }
+.menu .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 12px; }
+.menu-logo img { width: 40px; filter: brightness(0) invert(.93) sepia(.25); }
+.menu ul { list-style: none; display: flex; gap: 6px 22px; flex-wrap: wrap; justify-content: flex-end; font-size: .95rem; }
+.menu a { color: var(--creme); text-decoration: none; }
+.menu a:hover, .menu a[aria-current] { color: var(--mel); }
+
+/* Barra fixa */
+.barra { position: fixed; inset: auto 0 0; z-index: 10; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: center; align-items: center;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px)); background: var(--vidro-cacau); color: var(--creme); border-top: 2px solid var(--tijolo); font-size: .95rem; }
+.barra .btn { padding: 11px 24px; font-size: .95rem; background: var(--mel); color: var(--cacau); }
+.barra .btn:hover { background: var(--creme); }
+
+/* Arco */
+.arco { position: relative; width: min(100%, 340px); margin-inline: auto; isolation: isolate; }
+.arco::before { content: ""; position: absolute; inset: -18px 18px 18px -18px; border: 2px solid var(--tijolo); border-radius: var(--arco); }
+.arco img { position: relative; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; border-radius: var(--arco); }
+.escuro .arco::before { border-color: var(--mel); }
+.marca-arco { display: inline-block; flex: none; width: 12px; height: 14px; border: 2px solid var(--tijolo); border-bottom: 0; border-radius: var(--arco); margin-top: .35em; }
+.escuro .marca-arco { border-color: var(--mel); }
+
+/* Hero */
+.hero { padding-block: 40px 72px; min-height: calc(100vh - 150px); display: flex; align-items: center; overflow: hidden; }
+.hero-grade { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; width: 100%; }
+.selo { display: inline-block; font-size: .85rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 4px 14px; border-radius: 999px; }
+.hero .selo { margin-bottom: 22px; }
+.hero h1 { font-size: clamp(2.2rem, 1.3rem + 2.7vw, 3.8rem); line-height: 1.06; letter-spacing: -.015em; max-width: 19ch; color: var(--creme); }
+.hero .sub { margin-top: 22px; max-width: 48ch; font-size: clamp(1.05rem, 1rem + .3vw, 1.22rem); color: var(--argila); }
+.hero .acoes { justify-content: flex-start; margin-top: 30px; }
+.hero .inclui-curto { margin-top: 18px; color: var(--mel); font-weight: 600; }
+.preco-hero { margin-top: 24px; font-family: var(--serif); font-size: 2.6rem; line-height: 1; color: var(--creme); }
+.preco-hero small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.preco-hero span { display: block; margin-top: 8px; font-family: var(--sans); font-size: .95rem; color: var(--argila); }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.chips li { border: 1px solid var(--mel); color: var(--mel); border-radius: 999px; padding: 6px 15px; font-size: .92rem; }
+.hero-foto { width: min(100%, 390px); }
+.hero-foto::before { inset: -22px 22px 22px -22px; border-width: 3px; }
+.hero-foto::after { content: ""; position: absolute; inset: auto -40px -40px auto; width: 160px; height: 160px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.hero-foto > img { box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.bolha { position: absolute; z-index: 2; width: 84px; height: 84px; border-radius: 50%; background: var(--creme); display: grid; place-items: center; box-shadow: 0 10px 24px rgba(0, 0, 0, .25); }
+.bolha img { width: 56px; height: 56px; }
+.bolha.b1 { top: 12%; left: -42px; }
+.bolha.b2 { top: 46%; right: -38px; }
+.bolha.b3 { bottom: 8%; left: -30px; }
+
+/* Faixa rolando */
+.faixa { background: var(--tijolo); color: var(--creme); overflow: hidden; padding-block: 16px; }
+.faixa-trilho { display: flex; width: max-content; animation: rolar 40s linear infinite; }
+.faixa-trilho span { font-family: var(--serif); font-size: 1.15rem; white-space: nowrap; padding-right: 2.5rem; }
+@keyframes rolar { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .faixa-trilho { animation: none; } }
+
+/* Grade de ícones */
+.icones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.icone { background: var(--creme); border: 1px solid var(--argila); border-radius: 24px; padding: 26px 18px; text-align: center; }
+.argila .icone { border-color: transparent; }
+.icone img { width: 76px; height: 76px; margin: 0 auto 14px; }
+.icone h3 { font-size: 1.2rem; }
+.icone p { margin-top: 6px; font-size: .95rem; color: var(--texto-suave); }
+
+/* Vídeo */
+.video { max-width: 900px; margin: 48px auto 0; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: var(--cacau); box-shadow: 0 24px 50px rgba(59, 37, 33, .25); }
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-apoio { max-width: 60ch; margin: 36px auto 0; text-align: center; }
+.video-apoio .destaque { font-family: var(--serif); font-size: 1.35rem; line-height: 1.35; color: var(--tijolo-escuro); }
+.video-apoio .link { display: inline-block; margin-top: 14px; font-size: .95rem; }
+
+/* Duas colunas */
+.duas { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center; }
+.retrato img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 24px; }
+.fecho { margin-top: 1.4em; font-family: var(--serif); font-size: 1.35rem; line-height: 1.35; color: var(--tijolo-escuro); }
+.escuro .fecho { color: var(--mel); }
+
+/* Para você que */
+.para-voce { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.para-voce li { display: flex; gap: 14px; align-items: flex-start; background: var(--creme); border-radius: 20px; padding: 22px 20px; }
+.para-voce img { width: 44px; height: 44px; flex: none; }
+
+/* O que muda */
+.muda { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.muda article { border-top: 3px solid var(--tijolo); padding-top: 18px; }
+.escuro .muda article { border-top-color: var(--mel); }
+.muda .num { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--tijolo); }
+.escuro .muda .num { color: var(--mel); }
+.muda h3 { font-size: 1.3rem; margin-top: 10px; }
+.muda p { margin-top: 8px; font-size: .97rem; color: var(--texto-suave); }
+.escuro .muda p { color: var(--argila); }
+
+/* Aulas */
+.aulas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 48px; }
+.aulas li { display: grid; grid-template-columns: 4.2rem 1fr; gap: 16px; align-items: start; background: var(--creme); border-radius: 20px; padding: 22px 22px; }
+.escuro .aulas li { background: rgba(247, 238, 227, .06); border: 1px solid var(--linha-clara); }
+.aulas .n { font-family: var(--serif); font-size: 1.9rem; line-height: 1; color: var(--tijolo); text-align: center; }
+.aulas .n small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .06em; margin-bottom: 4px; color: var(--texto-suave); }
+.escuro .aulas .n { color: var(--mel); }
+.escuro .aulas .n small { color: var(--argila); }
+.aulas h3 { font-size: 1.2rem; }
+.aulas p { margin-top: 6px; font-size: .97rem; color: var(--texto-suave); }
+.escuro .aulas p { color: var(--argila); }
+
+/* O que está incluído */
+.inclui { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; margin-top: 48px; }
+.inclui ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.inclui li { display: flex; gap: 12px; font-size: 1.05rem; }
+.caixa-preco { background: var(--cacau); color: var(--creme); border-radius: 28px; padding: 40px 36px; text-align: center; }
+.caixa-preco .rotulo { color: var(--mel); font-weight: 600; }
+.caixa-preco .itens { margin-top: 10px; color: var(--argila); }
+.caixa-preco .valor { margin-top: 18px; font-family: var(--serif); font-size: 3rem; line-height: 1; }
+.caixa-preco .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.caixa-preco .btn { margin-top: 24px; display: block; }
+.importante { margin: 40px auto 0; max-width: 70ch; border-left: 3px solid var(--tijolo); padding: 14px 20px; background: var(--creme); border-radius: 0 16px 16px 0; font-size: .97rem; }
+.argila .importante { background: var(--creme); }
+
+/* Fases (módulos por idade) */
+.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+.fase { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: var(--creme); border-radius: 24px; padding: 28px 22px; transition: transform .2s, box-shadow .2s; }
+.fase:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0, 0, 0, .18); }
+.escuro .fase { color: var(--texto); }
+.fase img { width: 70px; height: 70px; }
+.fase .idade { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--tijolo); margin-top: 14px; }
+.fase p { margin-top: 10px; font-size: .95rem; color: var(--texto-suave); flex: 1; }
+.fase .ver { margin-top: 16px; font-weight: 600; color: var(--tijolo); text-decoration: underline; text-underline-offset: 4px; }
+.fase.atual { outline: 3px solid var(--mel); }
+.base-bonus { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.base-bonus > * { display: flex; gap: 18px; align-items: center; border: 1px solid var(--linha-clara); border-radius: 24px; padding: 20px 22px; color: inherit; text-decoration: none; }
+.base-bonus img { width: 56px; height: 56px; flex: none; background: var(--creme); border-radius: 50%; padding: 8px; }
+.base-bonus strong { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; display: block; }
+.base-bonus span { color: var(--argila); font-size: .95rem; }
+a.base-bonus-item:hover { border-color: var(--mel); }
+
+/* Bio */
+.bio .abre { font-family: var(--serif); font-size: 1.35rem; line-height: 1.4; }
+.formacao { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
+.formacao li { display: flex; gap: 12px; padding: 14px 16px; border: 1px solid var(--linha-clara); border-radius: 16px; color: var(--argila); font-size: .97rem; }
+.formacao-clara li { color: var(--texto); border-color: var(--argila); background: rgba(235, 214, 196, .35); }
+.bio .texto-bio p { color: var(--argila); }
+.bio .texto-bio { margin-top: 22px; }
+
+/* Comparar */
+.comparar { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.lado { border-radius: 24px; padding: 36px 32px; }
+.lado.nao { background: var(--argila); }
+.lado.sim { background: var(--cacau); color: var(--creme); }
+.lado h3 { font-size: 1.6rem; margin-bottom: 24px; }
+.lado ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.lado li { display: flex; gap: 14px; }
+.traco { flex: none; width: 14px; height: 2px; background: var(--texto-suave); margin-top: .8em; }
+
+/* Planos */
+.planos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 48px; align-items: stretch; }
+.plano { background: var(--argila); border-radius: 24px; padding: 32px 28px; display: flex; flex-direction: column; }
+.plano.destaque { background: var(--cacau); color: var(--creme); }
+.plano h3 { font-size: 1.6rem; }
+.plano .desc { margin-top: 8px; color: var(--texto-suave); }
+.plano.destaque .desc { color: var(--argila); }
+.plano ul { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.plano li { display: flex; gap: 12px; }
+.preco { margin-block: 28px 6px; font-family: var(--serif); font-size: clamp(2.2rem, 2rem + 1vw, 2.8rem); line-height: 1; }
+.preco small { font-size: 1rem; font-family: var(--sans); margin-right: 4px; }
+.parcela { margin-bottom: 24px; font-size: .92rem; color: var(--texto-suave); }
+.plano.destaque .parcela { color: var(--argila); }
+.plano .btn { margin-top: auto; }
+.escolha { margin-top: auto; font-weight: 600; font-size: .95rem; }
+.idades { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.idades a { display: block; text-align: center; padding: 11px 8px; border-radius: 999px; background: var(--tijolo); color: var(--creme); font-weight: 600; text-decoration: none; }
+.idades a:hover { background: var(--tijolo-escuro); }
+
+/* Produtos */
+.produtos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 48px; }
+.produto { background: var(--creme); border-radius: 24px; padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 12px; }
+.produto > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; margin-bottom: 8px; }
+.produto > img.topo-img { object-position: center top; }
+.produto h3, .produto p, .produto .btn, .produto .selo { margin-inline: 12px; }
+.produto h3 { font-size: 1.45rem; }
+.produto p { color: var(--texto-suave); }
+.produto .preco { margin-block: 8px 12px; font-size: 2.2rem; }
+.produto .btn { align-self: flex-start; margin-top: auto; }
+.produto .selo { align-self: flex-start; }
+
+/* FAQ */
+.faq { max-width: 780px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq details { background: var(--argila); border-radius: 18px; }
+.argila .faq details { background: var(--creme); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; padding: 20px 24px; font-family: var(--serif); font-size: 1.2rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--tijolo); font-family: var(--sans); font-size: 1.4rem; line-height: 1; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .resposta { padding: 0 24px 22px; color: var(--texto-suave); }
+
+/* Chamada final */
+.final { text-align: center; }
+.final h2 { max-width: 22ch; margin-inline: auto; }
+.final p { max-width: 54ch; margin: 18px auto 0; color: var(--argila); }
+.final .chips { justify-content: center; }
+
+footer { background: var(--cacau); color: var(--argila); padding-block: 40px; font-size: .92rem; border-top: 1px solid var(--linha-clara); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer a { color: var(--creme); text-decoration: none; }
+footer a:hover { color: var(--mel); }
+
+@media (max-width: 960px) {
+  .icones, .fases, .muda { grid-template-columns: repeat(2, 1fr); }
+  .para-voce { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  section { padding-block: 72px; }
+  body { padding-bottom: 128px; }
+  .menu .wrap { flex-direction: column; gap: 10px; }
+  .menu ul { justify-content: center; font-size: .9rem; }
+  .hero { min-height: 0; padding-block: 36px 64px; }
+  .hero-grade, .duas, .inclui, .comparar, .planos, .produtos, .aulas, .base-bonus { grid-template-columns: 1fr; }
+  .hero-grade, .duas { gap: 48px; }
+  .hero-foto { order: -1; width: min(70%, 290px); margin-inline: auto; }
+  .hero-foto::after { width: 110px; height: 110px; inset: auto -24px -24px auto; }
+  .bolha { width: 62px; height: 62px; }
+  .bolha img { width: 42px; height: 42px; }
+  .bolha.b1 { left: -28px; } .bolha.b2 { right: -26px; } .bolha.b3 { left: -20px; }
+  .duas .retrato, .duas .arco { max-width: 380px; margin-inline: auto; }
+  .formacao { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .icones, .fases, .muda, .para-voce { grid-template-columns: 1fr; }
+  .icone { display: grid; grid-template-columns: 60px 1fr; gap: 4px 16px; text-align: left; align-items: center; }
+  .icone img { width: 60px; height: 60px; margin: 0; grid-row: span 2; }
+  .icone p { margin-top: 0; }
+}
+.cena { position: relative; isolation: isolate; }
+.cena img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.cena::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.jogos-hero .hero-grade { grid-template-columns: 1fr 1fr; }
+.personagens { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 48px auto 0; }
+.personagem { background: var(--creme); border-radius: 28px; padding: 18px 18px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.personagem img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; margin-bottom: 8px; }
+.personagem h3 { font-size: 1.8rem; }
+.personagem .preco { margin-block: 4px 12px; }
+.presentes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.presente { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: start; background: var(--creme); border-radius: 24px; padding: 20px; }
+.presente img { width: 100%; border-radius: 14px; box-shadow: 0 10px 24px rgba(59, 37, 33, .18); }
+.presente h3 { font-size: 1.4rem; }
+.presente p { margin-top: 8px; color: var(--texto-suave); }
+.presente ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: .97rem; }
+.presente li { display: flex; gap: 10px; }
+.trilha { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.trilha img { border-radius: 24px; }
+@media (max-width: 860px) { .jogos-hero .hero-grade, .personagens, .presentes, .trilha { grid-template-columns: 1fr; } .cena { order: -1; } }
+@media (max-width: 560px) { .presente { grid-template-columns: 1fr; } .presente img { max-width: 200px; } }
+</style>
+</head>
+<body>
+<p class="aviso">Versão local para revisão.</p>
+
+<nav class="menu" aria-label="Menu principal">
+  <div class="wrap">
+    <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="gratuito.html">Módulo gratuito</a></li>
+      <li><a href="modulo-0-a-5.html">0 a 5</a></li>
+      <li><a href="modulo-6-a-10.html">6 a 10</a></li>
+      <li><a href="modulo-11-a-13.html">11 a 13</a></li>
+      <li><a href="modulo-14-a-18.html">14 a 18</a></li>
+      <li><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li><a href="jogos.html" aria-current="page">Jogos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<aside class="barra" aria-label="Escolher personagem">
+  <span>Jogo em PDF · R$ 19,90</span>
+  <a class="btn" href="#personagem">Escolher meu personagem</a>
+</aside>
+
+<main>
+
+  <section class="hero escuro jogos-hero">
+    <div class="wrap hero-grade">
+      <div>
+        <span class="selo">Jogos educativos · 5 a 10 anos</span>
+        <h1>Brincar pode tornar conversas importantes mais leves</h1>
+        <p class="sub">Com Lucas e Bruna, a criança brinca de vestir, cuidar e criar histórias enquanto a família conversa sobre corpo, higiene, privacidade, autocuidado e crescimento.</p>
+        <div class="acoes">
+          <a class="btn btn-grande" href="#personagem">Escolher meu personagem</a>
+          <a class="link" href="#trilha">Baixar a Trilha do Crescer grátis</a>
+        </div>
+        <ul class="chips"><li>PDF para imprimir</li><li>R$ 19,90</li><li>Com a mediação de um adulto</li></ul>
+      </div>
+      <figure class="cena">
+        <img src="img/lucas-bruna-cena.jpg" alt="Personagens Lucas e Bruna de papel, com roupinhas, cama, armário e banheira" width="1000" height="666" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="topo">
+        <h2>Como funciona o jogo?</h2>
+        <p>Imprima, recorte e escolha o personagem. Durante a brincadeira, situações simples do cotidiano se transformam em oportunidades de conversa e aprendizado.</p>
+      </div>
+      <div class="icones">
+        <article class="icone"><img src="img/icones/casa.png" alt="" width="160" height="160"><h3>Boneco de papel</h3><p>Para recortar e brincar.</p></article>
+        <article class="icone"><img src="img/icones/mochila.png" alt="" width="160" height="160"><h3>Roupas com abas</h3><p>Para vestir o personagem.</p></article>
+        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Cama, guarda-roupa e banheira</h3><p>Os cenários da rotina.</p></article>
+        <article class="icone"><img src="img/icones/livro.png" alt="" width="160" height="160"><h3>Guia para os adultos</h3><p>Para conduzir a conversa.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="argila">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Situações da brincadeira</h2>
+        <p>Cada situação cotidiana pode abrir espaço para conversas sobre cuidado, autonomia, privacidade e proteção.</p>
+      </div>
+      <div class="icones">
+        <article class="icone"><img src="img/icones/lua.png" alt="" width="160" height="160"><h3>Hora de dormir</h3></article>
+        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Hora do banho</h3></article>
+        <article class="icone"><img src="img/icones/livros.png" alt="" width="160" height="160"><h3>Hora de ir à escola</h3></article>
+        <article class="icone"><img src="img/icones/sol.png" alt="" width="160" height="160"><h3>Hora de passear</h3></article>
+      </div>
+      <p class="fecho" style="text-align:center">Conversas importantes não precisam começar de forma complicada. Elas podem começar com papel, uma brincadeira e a sua presença.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="topo">
+        <h2>Junto com o jogo, você recebe de presente</h2>
+      </div>
+      <div class="presentes">
+        <article class="presente" style="background:var(--argila)">
+          <img src="img/guia-para-os-pais.jpg" alt="Capa do Guia para os pais" width="666" height="1000" loading="lazy">
+          <div>
+            <h3>Guia para os pais</h3>
+            <p>Orientações simples e práticas para iniciar conversas, acolher perguntas e abordar corpo, privacidade e proteção com naturalidade.</p>
+            <ul>
+              <li><span class="marca-arco" aria-hidden="true"></span>Como iniciar a conversa</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Como acolher as perguntas</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Como responder sem assustar ou constranger</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Como aproveitar a brincadeira para fortalecer o vínculo</li>
+            </ul>
+          </div>
+        </article>
+        <article class="presente" style="background:var(--argila)">
+          <img src="img/situacoes-e-frases.jpg" alt="Capa do material Situações e Frases" width="704" height="1000" loading="lazy">
+          <div>
+            <h3>Frases e situações para brincar e conversar</h3>
+            <p>Perguntas, frases e pequenas situações para usar enquanto recorta, veste e brinca com o personagem.</p>
+            <ul>
+              <li><span class="marca-arco" aria-hidden="true"></span>Frases para começar a conversa naturalmente</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Perguntas sobre roupas, banho e intimidade</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Situações sobre limites, consentimento e proteção</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Ideias para ajudar a criança a expressar sentimentos e dúvidas</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="escuro" id="personagem">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Escolha o seu personagem</h2>
+        <p>Lucas e Bruna têm a mesma proposta educativa. Você escolhe o personagem com o qual a criança mais se identifica.</p>
+      </div>
+      <div class="personagens">
+        <article class="personagem">
+          <img src="img/personagem-lucas.jpg" alt="Ilustração do personagem Lucas, menino de blusa listrada e bermuda" width="800" height="1000" loading="lazy">
+          <h3>Lucas</h3>
+          <p class="preco"><small>R$</small>19,90</p>
+          <a class="btn btn-grande" href="https://chk.eduzz.com/Z0B1B7O79A">Quero o Lucas</a>
+        </article>
+        <article class="personagem">
+          <img src="img/personagem-bruna.jpg" alt="Ilustração da personagem Bruna, menina de óculos e jardineira" width="800" height="1000" loading="lazy">
+          <h3>Bruna</h3>
+          <p class="preco"><small>R$</small>19,90</p>
+          <a class="btn btn-grande" href="https://chk.eduzz.com/Z0B15YOJ9A">Quero a Bruna</a>
+        </article>
+      </div>
+      <p class="nota" style="text-align:center;margin-top:28px">Indicado para crianças de 5 a 10 anos, com a mediação de um adulto. Produto digital em PDF: nenhum material físico será enviado. Após a confirmação do pagamento, você recebe as instruções de acesso por e-mail.</p>
+    </div>
+  </section>
+
+  <section class="argila" id="trilha">
+    <div class="wrap trilha">
+      <img src="img/trilha-do-crescer.jpg" alt="Tabuleiro ilustrado da Trilha do Crescer" width="1000" height="666" loading="lazy">
+      <div>
+        <span class="selo">Gratuito</span>
+        <h2 style="margin-top:16px">Trilha do Crescer</h2>
+        <p style="margin-top:16px">Um jogo de trilha para imprimir e brincar em família, com perguntas e desafios que ajudam a conversar sobre corpo, crescimento, sentimentos e proteção.</p>
+        <p class="nota">Faça seu cadastro para acessar o jogo gratuitamente.</p>
+        <div class="acoes" style="justify-content:flex-start"><a class="btn btn-grande" href="https://sun.eduzz.com/8WPNDV2N0P">Baixar gratuitamente</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="topo">
+        <h2>Quer ir além da brincadeira?</h2>
+        <p>O Módulo 0 do Método Educar é Proteger é gratuito: 8 aulas para você se sentir mais segura nessas conversas.</p>
+      </div>
+      <div class="acoes"><a class="btn btn-grande" href="gratuito.html">Conhecer o módulo gratuito</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="gratuito.html">Módulo gratuito</a></li>
+      <li><a href="livro-lucas.html">Livro Lucas</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

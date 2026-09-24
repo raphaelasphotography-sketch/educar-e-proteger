@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Módulo 0 gratuito · Método Educar é Proteger</title>
+<meta name="description" content="Aprenda os fundamentos para falar com seus filhos sobre corpo, privacidade, consentimento, afeto e proteção. 8 aulas online gratuitas.">
+<style>
+:root {
+  --creme: #F7EEE3;
+  --argila: #EBD6C4;
+  --tijolo: #9C4A2E;
+  --tijolo-escuro: #7E3A23;
+  --cacau: #3B2521;
+  --mel: #E2B071;
+  --texto: #3B2521;
+  --texto-suave: #6B4F47;
+  --linha-clara: rgba(247, 238, 227, .22);
+  --vidro-cacau: rgba(59, 37, 33, .95);
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --arco: 999px 999px 0 0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--creme); color: var(--texto); font: 1.0625rem/1.65 var(--sans); padding-bottom: 88px; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
+h2 { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.6rem); }
+p + p { margin-top: 1em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--tijolo); outline-offset: 3px; border-radius: 4px; }
+.escuro a:focus-visible, .escuro summary:focus-visible { outline-color: var(--mel); }
+section { padding-block: 96px; }
+.escuro { background: var(--cacau); color: var(--creme); }
+.argila { background: var(--argila); }
+.topo { max-width: 46ch; margin-inline: auto; text-align: center; }
+.topo p { margin-top: 14px; color: var(--texto-suave); }
+.escuro .topo p { color: var(--argila); }
+.aviso { background: var(--cacau); color: var(--creme); font-size: .85rem; text-align: center; padding: 8px 16px; border-bottom: 1px solid var(--linha-clara); }
+
+/* Botões */
+.btn { display: inline-block; background: var(--tijolo); color: var(--creme); text-decoration: none; font-weight: 600; padding: 16px 30px; border-radius: 999px; text-align: center; }
+.btn:hover { background: var(--tijolo-escuro); }
+.escuro .btn { background: var(--mel); color: var(--cacau); }
+.escuro .btn:hover { background: var(--creme); }
+.btn-grande { padding: 18px 36px; font-size: 1.1rem; }
+.link { color: var(--tijolo); font-weight: 600; text-underline-offset: 4px; }
+.escuro .link { color: var(--mel); }
+.acoes { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center; justify-content: center; }
+.nota { margin-top: 14px; font-size: .92rem; color: var(--texto-suave); }
+.escuro .nota { color: var(--argila); }
+
+/* Menu */
+.menu { background: var(--cacau); color: var(--creme); border-bottom: 1px solid var(--linha-clara); }
+.menu .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 12px; }
+.menu-logo img { width: 40px; filter: brightness(0) invert(.93) sepia(.25); }
+.menu ul { list-style: none; display: flex; gap: 6px 22px; flex-wrap: wrap; justify-content: flex-end; font-size: .95rem; }
+.menu a { color: var(--creme); text-decoration: none; }
+.menu a:hover, .menu a[aria-current] { color: var(--mel); }
+
+/* Barra fixa */
+.barra { position: fixed; inset: auto 0 0; z-index: 10; display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: center; align-items: center;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom, 0px)); background: var(--vidro-cacau); color: var(--creme); border-top: 2px solid var(--tijolo); font-size: .95rem; }
+.barra .btn { padding: 11px 24px; font-size: .95rem; background: var(--mel); color: var(--cacau); }
+.barra .btn:hover { background: var(--creme); }
+
+/* Arco */
+.arco { position: relative; width: min(100%, 340px); margin-inline: auto; isolation: isolate; }
+.arco::before { content: ""; position: absolute; inset: -18px 18px 18px -18px; border: 2px solid var(--tijolo); border-radius: var(--arco); }
+.arco img { position: relative; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; border-radius: var(--arco); }
+.escuro .arco::before { border-color: var(--mel); }
+.marca-arco { display: inline-block; flex: none; width: 12px; height: 14px; border: 2px solid var(--tijolo); border-bottom: 0; border-radius: var(--arco); margin-top: .35em; }
+.escuro .marca-arco { border-color: var(--mel); }
+
+/* Hero */
+.hero { padding-block: 40px 72px; min-height: calc(100vh - 150px); display: flex; align-items: center; overflow: hidden; }
+.hero-grade { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; width: 100%; }
+.selo { display: inline-block; font-size: .85rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 4px 14px; border-radius: 999px; }
+.hero .selo { margin-bottom: 22px; }
+.hero h1 { font-size: clamp(2.2rem, 1.3rem + 2.7vw, 3.8rem); line-height: 1.06; letter-spacing: -.015em; max-width: 19ch; color: var(--creme); }
+.hero .sub { margin-top: 22px; max-width: 48ch; font-size: clamp(1.05rem, 1rem + .3vw, 1.22rem); color: var(--argila); }
+.hero .acoes { justify-content: flex-start; margin-top: 30px; }
+.hero .inclui-curto { margin-top: 18px; color: var(--mel); font-weight: 600; }
+.preco-hero { margin-top: 24px; font-family: var(--serif); font-size: 2.6rem; line-height: 1; color: var(--creme); }
+.preco-hero small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.preco-hero span { display: block; margin-top: 8px; font-family: var(--sans); font-size: .95rem; color: var(--argila); }
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.chips li { border: 1px solid var(--mel); color: var(--mel); border-radius: 999px; padding: 6px 15px; font-size: .92rem; }
+.hero-foto { width: min(100%, 390px); }
+.hero-foto::before { inset: -22px 22px 22px -22px; border-width: 3px; }
+.hero-foto::after { content: ""; position: absolute; inset: auto -40px -40px auto; width: 160px; height: 160px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.hero-foto > img { box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.bolha { position: absolute; z-index: 2; width: 84px; height: 84px; border-radius: 50%; background: var(--creme); display: grid; place-items: center; box-shadow: 0 10px 24px rgba(0, 0, 0, .25); }
+.bolha img { width: 56px; height: 56px; }
+.bolha.b1 { top: 12%; left: -42px; }
+.bolha.b2 { top: 46%; right: -38px; }
+.bolha.b3 { bottom: 8%; left: -30px; }
+
+/* Faixa rolando */
+.faixa { background: var(--tijolo); color: var(--creme); overflow: hidden; padding-block: 16px; }
+.faixa-trilho { display: flex; width: max-content; animation: rolar 40s linear infinite; }
+.faixa-trilho span { font-family: var(--serif); font-size: 1.15rem; white-space: nowrap; padding-right: 2.5rem; }
+@keyframes rolar { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .faixa-trilho { animation: none; } }
+
+/* Grade de ícones */
+.icones { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.icone { background: var(--creme); border: 1px solid var(--argila); border-radius: 24px; padding: 26px 18px; text-align: center; }
+.argila .icone { border-color: transparent; }
+.icone img { width: 76px; height: 76px; margin: 0 auto 14px; }
+.icone h3 { font-size: 1.2rem; }
+.icone p { margin-top: 6px; font-size: .95rem; color: var(--texto-suave); }
+
+/* Vídeo */
+.video { max-width: 900px; margin: 48px auto 0; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: var(--cacau); box-shadow: 0 24px 50px rgba(59, 37, 33, .25); }
+.video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video-apoio { max-width: 60ch; margin: 36px auto 0; text-align: center; }
+.video-apoio .destaque { font-family: var(--serif); font-size: 1.35rem; line-height: 1.35; color: var(--tijolo-escuro); }
+.video-apoio .link { display: inline-block; margin-top: 14px; font-size: .95rem; }
+
+/* Duas colunas */
+.duas { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center; }
+.retrato img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 24px; }
+.fecho { margin-top: 1.4em; font-family: var(--serif); font-size: 1.35rem; line-height: 1.35; color: var(--tijolo-escuro); }
+.escuro .fecho { color: var(--mel); }
+
+/* Para você que */
+.para-voce { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.para-voce li { display: flex; gap: 14px; align-items: flex-start; background: var(--creme); border-radius: 20px; padding: 22px 20px; }
+.para-voce img { width: 44px; height: 44px; flex: none; }
+
+/* O que muda */
+.muda { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.muda article { border-top: 3px solid var(--tijolo); padding-top: 18px; }
+.escuro .muda article { border-top-color: var(--mel); }
+.muda .num { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--tijolo); }
+.escuro .muda .num { color: var(--mel); }
+.muda h3 { font-size: 1.3rem; margin-top: 10px; }
+.muda p { margin-top: 8px; font-size: .97rem; color: var(--texto-suave); }
+.escuro .muda p { color: var(--argila); }
+
+/* Aulas */
+.aulas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 48px; }
+.aulas li { display: grid; grid-template-columns: 4.2rem 1fr; gap: 16px; align-items: start; background: var(--creme); border-radius: 20px; padding: 22px 22px; }
+.escuro .aulas li { background: rgba(247, 238, 227, .06); border: 1px solid var(--linha-clara); }
+.aulas .n { font-family: var(--serif); font-size: 1.9rem; line-height: 1; color: var(--tijolo); text-align: center; }
+.aulas .n small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .06em; margin-bottom: 4px; color: var(--texto-suave); }
+.escuro .aulas .n { color: var(--mel); }
+.escuro .aulas .n small { color: var(--argila); }
+.aulas h3 { font-size: 1.2rem; }
+.aulas p { margin-top: 6px; font-size: .97rem; color: var(--texto-suave); }
+.escuro .aulas p { color: var(--argila); }
+
+/* O que está incluído */
+.inclui { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; margin-top: 48px; }
+.inclui ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.inclui li { display: flex; gap: 12px; font-size: 1.05rem; }
+.caixa-preco { background: var(--cacau); color: var(--creme); border-radius: 28px; padding: 40px 36px; text-align: center; }
+.caixa-preco .rotulo { color: var(--mel); font-weight: 600; }
+.caixa-preco .itens { margin-top: 10px; color: var(--argila); }
+.caixa-preco .valor { margin-top: 18px; font-family: var(--serif); font-size: 3rem; line-height: 1; }
+.caixa-preco .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.caixa-preco .btn { margin-top: 24px; display: block; }
+.importante { margin: 40px auto 0; max-width: 70ch; border-left: 3px solid var(--tijolo); padding: 14px 20px; background: var(--creme); border-radius: 0 16px 16px 0; font-size: .97rem; }
+.argila .importante { background: var(--creme); }
+
+/* Fases (módulos por idade) */
+.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+.fase { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: var(--creme); border-radius: 24px; padding: 28px 22px; transition: transform .2s, box-shadow .2s; }
+.fase:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0, 0, 0, .18); }
+.escuro .fase { color: var(--texto); }
+.fase img { width: 70px; height: 70px; }
+.fase .idade { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--tijolo); margin-top: 14px; }
+.fase p { margin-top: 10px; font-size: .95rem; color: var(--texto-suave); flex: 1; }
+.fase .ver { margin-top: 16px; font-weight: 600; color: var(--tijolo); text-decoration: underline; text-underline-offset: 4px; }
+.fase.atual { outline: 3px solid var(--mel); }
+.base-bonus { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.base-bonus > * { display: flex; gap: 18px; align-items: center; border: 1px solid var(--linha-clara); border-radius: 24px; padding: 20px 22px; color: inherit; text-decoration: none; }
+.base-bonus img { width: 56px; height: 56px; flex: none; background: var(--creme); border-radius: 50%; padding: 8px; }
+.base-bonus strong { font-family: var(--serif); font-weight: 400; font-size: 1.25rem; display: block; }
+.base-bonus span { color: var(--argila); font-size: .95rem; }
+a.base-bonus-item:hover { border-color: var(--mel); }
+
+/* Bio */
+.bio .abre { font-family: var(--serif); font-size: 1.35rem; line-height: 1.4; }
+.formacao { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 26px; }
+.formacao li { display: flex; gap: 12px; padding: 14px 16px; border: 1px solid var(--linha-clara); border-radius: 16px; color: var(--argila); font-size: .97rem; }
+.formacao-clara li { color: var(--texto); border-color: var(--argila); background: rgba(235, 214, 196, .35); }
+.bio .texto-bio p { color: var(--argila); }
+.bio .texto-bio { margin-top: 22px; }
+
+/* Comparar */
+.comparar { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.lado { border-radius: 24px; padding: 36px 32px; }
+.lado.nao { background: var(--argila); }
+.lado.sim { background: var(--cacau); color: var(--creme); }
+.lado h3 { font-size: 1.6rem; margin-bottom: 24px; }
+.lado ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.lado li { display: flex; gap: 14px; }
+.traco { flex: none; width: 14px; height: 2px; background: var(--texto-suave); margin-top: .8em; }
+
+/* Planos */
+.planos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 48px; align-items: stretch; }
+.plano { background: var(--argila); border-radius: 24px; padding: 32px 28px; display: flex; flex-direction: column; }
+.plano.destaque { background: var(--cacau); color: var(--creme); }
+.plano h3 { font-size: 1.6rem; }
+.plano .desc { margin-top: 8px; color: var(--texto-suave); }
+.plano.destaque .desc { color: var(--argila); }
+.plano ul { list-style: none; margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.plano li { display: flex; gap: 12px; }
+.preco { margin-block: 28px 6px; font-family: var(--serif); font-size: clamp(2.2rem, 2rem + 1vw, 2.8rem); line-height: 1; }
+.preco small { font-size: 1rem; font-family: var(--sans); margin-right: 4px; }
+.parcela { margin-bottom: 24px; font-size: .92rem; color: var(--texto-suave); }
+.plano.destaque .parcela { color: var(--argila); }
+.plano .btn { margin-top: auto; }
+.escolha { margin-top: auto; font-weight: 600; font-size: .95rem; }
+.idades { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+.idades a { display: block; text-align: center; padding: 11px 8px; border-radius: 999px; background: var(--tijolo); color: var(--creme); font-weight: 600; text-decoration: none; }
+.idades a:hover { background: var(--tijolo-escuro); }
+
+/* Produtos */
+.produtos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 48px; }
+.produto { background: var(--creme); border-radius: 24px; padding: 16px 16px 28px; display: flex; flex-direction: column; gap: 12px; }
+.produto > img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; margin-bottom: 8px; }
+.produto > img.topo-img { object-position: center top; }
+.produto h3, .produto p, .produto .btn, .produto .selo { margin-inline: 12px; }
+.produto h3 { font-size: 1.45rem; }
+.produto p { color: var(--texto-suave); }
+.produto .preco { margin-block: 8px 12px; font-size: 2.2rem; }
+.produto .btn { align-self: flex-start; margin-top: auto; }
+.produto .selo { align-self: flex-start; }
+
+/* FAQ */
+.faq { max-width: 780px; margin: 48px auto 0; display: flex; flex-direction: column; gap: 12px; }
+.faq details { background: var(--argila); border-radius: 18px; }
+.argila .faq details { background: var(--creme); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 16px; padding: 20px 24px; font-family: var(--serif); font-size: 1.2rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--tijolo); font-family: var(--sans); font-size: 1.4rem; line-height: 1; transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq .resposta { padding: 0 24px 22px; color: var(--texto-suave); }
+
+/* Chamada final */
+.final { text-align: center; }
+.final h2 { max-width: 22ch; margin-inline: auto; }
+.final p { max-width: 54ch; margin: 18px auto 0; color: var(--argila); }
+.final .chips { justify-content: center; }
+
+footer { background: var(--cacau); color: var(--argila); padding-block: 40px; font-size: .92rem; border-top: 1px solid var(--linha-clara); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer a { color: var(--creme); text-decoration: none; }
+footer a:hover { color: var(--mel); }
+
+@media (max-width: 960px) {
+  .icones, .fases, .muda { grid-template-columns: repeat(2, 1fr); }
+  .para-voce { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  section { padding-block: 72px; }
+  body { padding-bottom: 128px; }
+  .menu .wrap { flex-direction: column; gap: 10px; }
+  .menu ul { justify-content: center; font-size: .9rem; }
+  .hero { min-height: 0; padding-block: 36px 64px; }
+  .hero-grade, .duas, .inclui, .comparar, .planos, .produtos, .aulas, .base-bonus { grid-template-columns: 1fr; }
+  .hero-grade, .duas { gap: 48px; }
+  .hero-foto { order: -1; width: min(70%, 290px); margin-inline: auto; }
+  .hero-foto::after { width: 110px; height: 110px; inset: auto -24px -24px auto; }
+  .bolha { width: 62px; height: 62px; }
+  .bolha img { width: 42px; height: 42px; }
+  .bolha.b1 { left: -28px; } .bolha.b2 { right: -26px; } .bolha.b3 { left: -20px; }
+  .duas .retrato, .duas .arco { max-width: 380px; margin-inline: auto; }
+  .formacao { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .icones, .fases, .muda, .para-voce { grid-template-columns: 1fr; }
+  .icone { display: grid; grid-template-columns: 60px 1fr; gap: 4px 16px; text-align: left; align-items: center; }
+  .icone img { width: 60px; height: 60px; margin: 0; grid-row: span 2; }
+  .icone p { margin-top: 0; }
+}
+</style>
+</head>
+<body>
+<p class="aviso">Versão local para revisão.</p>
+
+<nav class="menu" aria-label="Menu principal">
+  <div class="wrap">
+    <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="gratuito.html" aria-current="page">Módulo gratuito</a></li>
+      <li><a href="modulo-0-a-5.html">0 a 5</a></li>
+      <li><a href="modulo-6-a-10.html">6 a 10</a></li>
+      <li><a href="modulo-11-a-13.html">11 a 13</a></li>
+      <li><a href="modulo-14-a-18.html">14 a 18</a></li>
+      <li><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li><a href="jogos.html">Jogos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<aside class="barra" aria-label="Acesso gratuito">
+  <span>Módulo 0 · 8 aulas online · gratuito</span>
+  <a class="btn" href="https://sun.eduzz.com/Q9N2D4GB01">Liberar meu acesso gratuito</a>
+</aside>
+
+<main>
+
+  <!-- 1. Hero -->
+  <section class="hero escuro">
+    <div class="wrap hero-grade">
+      <div>
+        <span class="selo">Módulo Introdutório Gratuito</span>
+        <h1>Comece a conversar sobre educação sexual em família com mais segurança e naturalidade</h1>
+        <p class="sub">Aprenda os fundamentos para falar com seus filhos sobre corpo, privacidade, consentimento, afeto e proteção, mesmo que você nunca tenha recebido essa orientação na sua própria infância.</p>
+        <p class="inclui-curto">8 aulas online + materiais complementares · acesso mediante cadastro</p>
+        <div class="acoes">
+          <a class="btn btn-grande" href="https://sun.eduzz.com/Q9N2D4GB01">Quero acessar o Módulo 0 gratuitamente</a>
+        </div>
+        <p class="nota">Cadastro rápido. O acesso gratuito não obriga a compra de nenhum outro módulo.</p>
+      </div>
+      <figure class="arco hero-foto">
+        <img src="img/raphaela-blazer.jpg" alt="Raphaela Spellmeier de blazer branco e blusa laranja, sorrindo" width="666" height="1000" fetchpriority="high">
+        <span class="bolha b1"><img src="img/icones/livro.png" alt="" width="160" height="160"></span>
+        <span class="bolha b2"><img src="img/icones/conversa.png" alt="" width="160" height="160"></span>
+        <span class="bolha b3"><img src="img/icones/casa.png" alt="" width="160" height="160"></span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. Sobre o Módulo 0 -->
+  <section>
+    <div class="wrap duas">
+      <figure class="retrato">
+        <img src="img/raphaela-gravacao.jpg" alt="Raphaela Spellmeier gravando aulas em um jardim" width="480" height="631" loading="lazy">
+      </figure>
+      <div>
+        <h2>O Módulo 0 — Fundamentos é a formação introdutória do método</h2>
+        <p style="margin-top:24px">Antes de aprender o que conversar em cada idade, você precisa compreender os fundamentos da educação em sexualidade e o papel da família nesse processo.</p>
+        <p>Neste módulo, você aprenderá que educação sexual não significa simplesmente "falar sobre sexo". Ela também envolve corpo, saúde, emoções, autonomia, limites, consentimento, cuidado, proteção e relacionamento familiar.</p>
+        <p>Este não é um conteúdo superficial. É a base necessária para compreender o método e começar a construir conversas mais seguras dentro da sua família.</p>
+        <p class="fecho">Educar não é antecipar. É preparar, orientar e proteger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Vídeo -->
+  <section class="argila">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Antes de falar com nossos filhos, precisamos compreender o que realmente estamos ensinando</h2>
+        <p>Neste vídeo, eu explico por que educação sexual não se resume a falar sobre sexo e como informação, diálogo e acolhimento podem ajudar a construir uma relação de confiança dentro da família.</p>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/X_5uAUGi4Vc" title="Apresentação do Método Educar é Proteger" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-apoio">
+        <p class="destaque">Você não precisa ter todas as respostas. Precisa aprender a escutar, responder com clareza e manter aberta a porta para a próxima conversa.</p>
+        <a class="link" href="https://www.youtube.com/watch?v=X_5uAUGi4Vc">Assistir no YouTube</a>
+      </div>
+      <div class="acoes"><a class="btn" href="https://sun.eduzz.com/Q9N2D4GB01">Quero começar pelos fundamentos</a></div>
+    </div>
+  </section>
+
+  <!-- 4. Dor + para você que -->
+  <section class="argila" style="padding-top:0">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Talvez você queira conversar, mas não saiba por onde começar</h2>
+        <p>Muitos adultos cresceram em famílias nas quais o corpo e a sexualidade eram tratados com silêncio, vergonha ou medo. Por isso, é natural sentir insegurança quando uma criança faz uma pergunta inesperada.</p>
+      </div>
+      <h3 class="centro" style="text-align:center;margin-top:56px;font-size:1.6rem">Este módulo é para você que</h3>
+      <ul class="para-voce">
+        <li><img src="img/icones/conversa.png" alt="" width="160" height="160">Tem receio de falar demais ou usar palavras inadequadas para a idade</li>
+        <li><img src="img/icones/pergunta.png" alt="" width="160" height="160">Já travou diante de uma pergunta sobre o corpo ou sobre a origem dos bebês</li>
+        <li><img src="img/icones/cadeado.png" alt="" width="160" height="160">Quer ensinar privacidade e consentimento sem assustar a criança</li>
+        <li><img src="img/icones/livro.png" alt="" width="160" height="160">Deseja compreender o que educação sexual realmente significa</li>
+        <li><img src="img/icones/raizes.png" alt="" width="160" height="160">Quer educar de maneira diferente da forma como foi educada</li>
+        <li><img src="img/icones/casa.png" alt="" width="160" height="160">Busca criar um relacionamento em que seu filho se sinta seguro para contar e perguntar</li>
+      </ul>
+      <p class="fecho" style="text-align:center">Não é preciso começar com uma grande conversa. A educação acontece em pequenas oportunidades do cotidiano.</p>
+    </div>
+  </section>
+
+  <!-- 5. O que muda -->
+  <section class="escuro">
+    <div class="wrap">
+      <div class="topo">
+        <h2>O que muda quando você compreende os fundamentos</h2>
+        <p>Informação também transforma a maneira como você escuta, compreende e orienta.</p>
+      </div>
+      <div class="muda">
+        <article><span class="num">01</span><h3>Mais clareza</h3><p>Você compreende o que faz parte da educação sexual e deixa de associar o tema somente ao ato sexual.</p></article>
+        <article><span class="num">02</span><h3>Menos constrangimento</h3><p>Você aprende a falar sobre o corpo e suas funções com uma linguagem natural e respeitosa.</p></article>
+        <article><span class="num">03</span><h3>Mais confiança</h3><p>Você entende como suas reações influenciam a disposição da criança para voltar a conversar.</p></article>
+        <article><span class="num">04</span><h3>Uma base de proteção</h3><p>Você começa a ensinar nomes corretos, privacidade, consentimento, autocuidado e limites corporais.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Aulas -->
+  <section id="aulas">
+    <div class="wrap">
+      <div class="topo">
+        <h2>O que você vai aprender no Módulo 0</h2>
+        <p>Uma base para compreender o tema antes de entrar nas orientações específicas de cada faixa etária.</p>
+      </div>
+      <ol class="aulas">
+        <li><span class="n"><small>AULA</small>0</span><div><h3>Quem sou eu e por que estou aqui</h3><p>Conheça a trajetória pessoal e profissional de Raphaela Spellmeier e o propósito que deu origem ao Método Educar é Proteger.</p></div></li>
+        <li><span class="n"><small>AULA</small>1</span><div><h3>Comece aqui</h3><p>Entenda como o método está organizado e como transformar as aulas e os materiais em conversas aplicáveis à rotina da família.</p></div></li>
+        <li><span class="n"><small>AULA</small>2</span><div><h3>Anatomia, nomes apropriados e higiene íntima</h3><p>Aprenda a nomear o corpo com clareza, ensinar os cuidados básicos e evitar que vergonha e apelidos atrapalhem a comunicação.</p></div></li>
+        <li><span class="n"><small>AULA</small>3</span><div><h3>Comunicação, consentimento e privacidade</h3><p>Compreenda como escutar, responder e ensinar que o "sim" e o "não" precisam ser respeitados.</p></div></li>
+        <li><span class="n"><small>AULA</small>4</span><div><h3>Afinal, o que é sexualidade?</h3><p>Descubra por que sexualidade também envolve corpo, identidade, afeto, autoestima, cuidado, limites e relacionamentos.</p></div></li>
+        <li><span class="n"><small>AULA</small>5</span><div><h3>Entendendo a reprodução humana</h3><p>Organize seus próprios conhecimentos para explicar nascimento e reprodução com verdade e linguagem adequada.</p></div></li>
+        <li><span class="n"><small>AULA</small>6</span><div><h3>Saúde mental, corpo e prazer</h3><p>Reflita sobre autoestima, emoções, autocuidado e sobre as mensagens que transmitimos às crianças a respeito do próprio corpo.</p></div></li>
+        <li><span class="n"><small>AULA</small>7</span><div><h3>Encerramento e reconexão</h3><p>Revise a educação que você recebeu, reconheça os ciclos que não deseja repetir e estabeleça uma nova intenção para sua família.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. Incluído -->
+  <section class="argila">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Seu acesso gratuito inclui</h2>
+        <p>Tudo o que você precisa para começar com mais clareza e segurança.</p>
+      </div>
+      <div class="inclui">
+        <ul>
+          <li><span class="marca-arco" aria-hidden="true"></span>8 aulas online do Módulo 0</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Materiais complementares relacionados às aulas</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Exercícios de reflexão para mães, pais e responsáveis</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Orientações introdutórias sobre comunicação, anatomia, consentimento e privacidade</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Acesso pela plataforma após um cadastro breve</li>
+        </ul>
+        <div class="caixa-preco escuro">
+          <p class="rotulo">Acesso gratuito</p>
+          <p class="valor">Comece pelos fundamentos</p>
+          <p class="itens">Assista online e avance no seu ritmo</p>
+          <a class="btn btn-grande" href="https://sun.eduzz.com/Q9N2D4GB01">Liberar meu acesso gratuito</a>
+        </div>
+      </div>
+      <p class="importante"><strong>Importante:</strong> o cadastro é necessário para criarmos seu acesso individual à plataforma e enviarmos as orientações de entrada para o seu e-mail. Não haverá cobrança, assinatura ou obrigação de adquirir os módulos pagos. O acesso gratuito libera somente o Módulo 0; os módulos por idade e o Módulo Bônus fazem parte das formações pagas.</p>
+    </div>
+  </section>
+
+  <!-- 8. Quem acompanha -->
+  <section class="bio escuro">
+    <div class="wrap duas">
+      <figure class="arco">
+        <img src="img/raphaela-bio.jpg" alt="Raphaela Spellmeier sentada, de blusa azul, sorrindo" width="959" height="1342" loading="lazy">
+      </figure>
+      <div>
+        <h2>Quem vai acompanhar você</h2>
+        <p class="abre" style="margin-top:18px">Eu sou Raphaela Spellmeier. Eu quebrei o ciclo, e hoje ensino mães a darem aos filhos a conversa que elas mesmas não tiveram.</p>
+        <ul class="formacao">
+          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em sexualidade humana</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em saúde da mulher</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Mestre em Psicologia Educacional</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Professora e coordenadora em faculdade</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Graduação com prêmio de melhor aluna</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Mãe</li>
+        </ul>
+        <div class="texto-bio">
+          <p>Minha experiência profissional sempre esteve ligada às histórias, à saúde íntima e à parte mais sensível da vida das pessoas. Ao longo dessa trajetória, percebi que muitos sofrimentos, medos e dificuldades começam no silêncio e na falta de orientação durante a infância.</p>
+          <p>Criei o Método Educar é Proteger para ajudar famílias a conduzirem essas conversas com informação, respeito, acolhimento e uma linguagem adequada a cada etapa do desenvolvimento.</p>
+        </div>
+        <p class="fecho">Falar sobre sexualidade não tira a inocência. Informação adequada ajuda a construir cuidado, diálogo e proteção.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Continuidade por idade -->
+  <section class="argila">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Cada fase pede uma conversa diferente</h2>
+        <p>O módulo introdutório prepara a base. Depois, você pode continuar com orientações específicas para a idade do seu filho. Em todos os módulos pagos, você também recebe o Módulo Bônus.</p>
+      </div>
+      <div class="fases">
+        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>Primeiras descobertas do corpo, nomes corretos, privacidade, consentimento, curiosidades e proteção.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Puberdade, perguntas difíceis, autonomia, higiene, situações reais, segurança digital e prevenção.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Mudanças corporais, emoções, relacionamentos, internet, autoestima, diálogo e limites.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Autonomia, escolhas, relacionamentos, saúde, prevenção e segurança no ambiente digital.</p><span class="ver">Conhecer módulo</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Perguntas -->
+  <section>
+    <div class="wrap">
+      <div class="topo"><h2>Ainda ficou com alguma dúvida?</h2><p>Reunimos aqui as respostas para ajudar você a começar com mais tranquilidade.</p></div>
+      <div class="faq">
+        <details><summary>O Módulo 0 é realmente gratuito?</summary><div class="resposta"><p>Sim. Você realiza um cadastro breve e recebe acesso ao conteúdo introdutório sem precisar adquirir outro módulo.</p></div></details>
+        <details><summary>Preciso comprar algo depois?</summary><div class="resposta"><p>Não. O cadastro gratuito não obriga a compra de nenhum conteúdo. Se desejar continuar, você poderá escolher depois o módulo correspondente à idade do seu filho.</p></div></details>
+        <details><summary>O Módulo 0 serve para qual idade?</summary><div class="resposta"><p>Ele apresenta fundamentos úteis para mães, pais e responsáveis com filhos em diferentes idades. As orientações específicas ficam nos módulos de 0 a 5, 6 a 10, 11 a 13 e 14 a 18 anos.</p></div></details>
+        <details><summary>Posso assistir pelo celular?</summary><div class="resposta"><p>Sim. O conteúdo é online, na Eduzz, e pode ser acessado pelos dispositivos compatíveis com a plataforma.</p></div></details>
+        <details><summary>Já sei qual é o módulo adequado. Preciso concluir o gratuito primeiro?</summary><div class="resposta"><p>Não. Você pode adquirir diretamente o módulo correspondente à idade do seu filho. O Módulo 0 estará incluído na compra.</p></div></details>
+        <details><summary>O acesso gratuito inclui o Módulo Bônus?</summary><div class="resposta"><p>Não. O Módulo Bônus está incluído na compra dos módulos por idade.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Chamada final -->
+  <section class="final escuro">
+    <div class="wrap">
+      <h2>Você não precisa ter todas as respostas. O primeiro passo é aprender como começar.</h2>
+      <p>Com orientação e uma linguagem adequada, você pode transformar conversas difíceis em momentos de vínculo, cuidado e proteção.</p>
+      <div class="acoes"><a class="btn btn-grande" href="https://sun.eduzz.com/Q9N2D4GB01">Quero começar gratuitamente</a></div>
+      <ul class="chips"><li>Gratuito</li><li>Cadastro rápido</li><li>Acesso online</li></ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html#modulos">Módulos</a></li>
+      <li><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li><a href="jogos.html">Jogos</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
