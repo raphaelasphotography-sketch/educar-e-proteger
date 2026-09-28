@@ -416,6 +416,22 @@ footer a:hover { color: var(--mel); }
 .menu .mob-painel a[aria-current] { color: var(--tijolo-escuro); }
 @media (max-width: 860px) { .menu .menu-desk { display: none; } .menu .wrap { flex-direction: row; } }
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1002049802374349');
+fbq('track','PageView');
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a[href*="eduzz.com/"]'); if(!a) return;
+  var id=(a.href.match(/eduzz\.com\/([A-Z0-9]+)/)||[])[1];
+  var p={'8017VRXN07':['Método completo',297],'Q9N2D4AB01':['Módulo 0 a 5 anos',149.9],'89AXO4P50D':['Módulo 6 a 10 anos',149.9],'39VKJ2ZKWR':['Módulo 11 a 13 anos',149.9],'69K1D43VWO':['Módulo 14 a 18 anos',149.9],'KW8Z3EG201':['Livro Lucas',77],'Z0B1B7O79A':['Jogo Lucas',19.9],'Z0B15YOJ9A':['Jogo Bruna',19.9]};
+  var g={'Q9N2D4GB01':'Módulo 0 gratuito','8WPNDV2N0P':'Trilha do Crescer'};
+  if(g[id]) fbq('track','Lead',{content_name:g[id]});
+  else if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1002049802374349&ev=PageView&noscript=1"></noscript>
+<!-- Fim do Meta Pixel -->
 </head>
 <body>
 <nav class="menu" aria-label="Menu principal">
