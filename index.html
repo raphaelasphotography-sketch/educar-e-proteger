@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Método Educar é Proteger · Raphaela Spellmeier</title>
-<meta name="description" content="Saiba o que dizer ao seu filho sobre corpo, sexualidade e proteção em cada idade, dos 0 aos 18 anos.">
-<!-- Estrutura de seções inspirada em inspiracoes/negocios/g4valley (só a ordem e a mecânica dos blocos).
-     Cores, fontes, fotos, ícones e texto são da Raphaela. -->
+<meta name="description" content="Aprenda o que dizer ao seu filho sobre corpo, sexualidade e proteção em cada idade, dos 0 aos 18 anos, mesmo que ninguém tenha feito isso por você.">
 <style>
 :root {
   --creme: #F7EEE3;
@@ -77,7 +75,7 @@ section { padding-block: 96px; }
 .escuro .marca-arco { border-color: var(--mel); }
 
 /* Hero */
-.hero { padding-block: 40px 72px; min-height: calc(100vh - 150px); display: flex; align-items: center; overflow: hidden; }
+.hero { padding-block: 40px 72px; min-height: min(calc(100vh - 150px), 820px); display: flex; align-items: center; overflow: hidden; }
 .hero-grade { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; width: 100%; }
 .selo { display: inline-block; font-size: .85rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 4px 14px; border-radius: 999px; }
 .hero .selo { margin-bottom: 22px; }
@@ -282,53 +280,210 @@ footer a:hover { color: var(--mel); }
   .icone img { width: 60px; height: 60px; margin: 0; grid-row: span 2; }
   .icone p { margin-top: 0; }
 }
+.livro-capa { position: relative; width: min(100%, 420px); margin-inline: auto; isolation: isolate; }
+.livro-capa img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.livro-capa::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.perguntas-maes { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 44px; }
+.perguntas-maes li { background: var(--creme); border-radius: 20px; padding: 22px 24px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.35; display: flex; gap: 14px; align-items: flex-start; }
+.perguntas-maes img { width: 40px; height: 40px; flex: none; }
+.por-dentro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.por-dentro img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 20px; }
+.temas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.temas li { display: flex; gap: 12px; padding: 14px 16px; border: 1px solid var(--linha-clara); border-radius: 16px; color: var(--argila); }
+@media (max-width: 860px) { .perguntas-maes, .temas { grid-template-columns: 1fr; } .por-dentro { grid-template-columns: 1fr; } .livro-capa { order: -1; width: min(80%, 320px); } }
+.cena { position: relative; isolation: isolate; }
+.cena img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.cena::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.jogos-hero .hero-grade { grid-template-columns: 1fr 1fr; }
+.personagens { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 48px auto 0; }
+.personagem { background: var(--creme); border-radius: 28px; padding: 18px 18px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.personagem img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; margin-bottom: 8px; }
+.personagem h3 { font-size: 1.8rem; }
+.personagem .preco { margin-block: 4px 12px; }
+.presentes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.presente { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: start; background: var(--creme); border-radius: 24px; padding: 20px; }
+.presente img { width: 100%; border-radius: 14px; box-shadow: 0 10px 24px rgba(59, 37, 33, .18); }
+.presente h3 { font-size: 1.4rem; }
+.presente p { margin-top: 8px; color: var(--texto-suave); }
+.presente ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: .97rem; }
+.presente li { display: flex; gap: 10px; }
+.trilha { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.trilha img { border-radius: 24px; }
+@media (max-width: 860px) { .jogos-hero .hero-grade, .personagens, .presentes, .trilha { grid-template-columns: 1fr; } .cena { order: -1; } }
+@media (max-width: 560px) { .presente { grid-template-columns: 1fr; } .presente img { max-width: 200px; } }
+
+/* ===== Acréscimos de 28/09/2026: fotos reais, capas das aulas, garantia ===== */
+.capas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 40px; }
+.capas img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 18px rgba(59, 37, 33, .15); }
+.capas-legenda { margin-top: 16px; text-align: center; font-size: .95rem; color: var(--texto-suave); }
+.escuro .capas-legenda { color: var(--argila); }
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.galeria img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; }
+.galeria.quatro { grid-template-columns: repeat(4, 1fr); }
+.galeria.alta img { aspect-ratio: 9 / 16; }
+.foto-larga { margin-top: 40px; }
+.foto-larga img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 24px; }
+.hero-foto.paisagem img { aspect-ratio: 3 / 4; object-position: 70% center; }
+.garantia { display: flex; gap: 20px; align-items: center; max-width: 720px; margin: 40px auto 0; background: var(--creme); border-radius: 22px; padding: 22px 26px; }
+.escuro .garantia { background: rgba(247, 238, 227, .08); border: 1px solid var(--linha-clara); }
+.garantia .dias { flex: none; width: 78px; height: 78px; border-radius: 50%; border: 3px solid var(--tijolo); display: grid; place-content: center; text-align: center; font-family: var(--serif); font-size: 1.9rem; line-height: .9; color: var(--tijolo); }
+.garantia .dias small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .04em; }
+.escuro .garantia .dias { border-color: var(--mel); color: var(--mel); }
+.garantia p { font-size: .98rem; }
+.escuro .garantia p { color: var(--argila); }
+.dor-unica { max-width: 760px; margin: 36px auto 0; background: var(--creme); border-radius: 24px; padding: 30px 32px; font-family: var(--serif); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem); line-height: 1.35; text-align: center; color: var(--tijolo-escuro); }
+.argila .dor-unica { background: var(--creme); }
+.cenas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.cenas li { background: var(--argila); border-radius: 18px; padding: 18px 20px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
+.argila .cenas li { background: var(--creme); }
+.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; text-align: center; }
+.numeros strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 1.8rem + 1.4vw, 3.2rem); line-height: 1; color: var(--tijolo); }
+.escuro .numeros strong { color: var(--mel); }
+.numeros span { display: block; margin-top: 8px; font-size: .95rem; color: var(--texto-suave); }
+.escuro .numeros span { color: var(--argila); }
+.caminho { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; counter-reset: passo; }
+.caminho li { background: var(--creme); border-radius: 24px; padding: 28px 24px; }
+.caminho .passo { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: var(--tijolo); }
+.caminho h3 { font-size: 1.35rem; margin-top: 10px; }
+.caminho p { margin-top: 8px; color: var(--texto-suave); font-size: .98rem; }
+.produto .dor { font-family: var(--serif); font-size: 1.1rem; line-height: 1.35; color: var(--tijolo-escuro); margin-inline: 12px; }
+.assinatura { margin-top: 18px; font-family: var(--serif); font-size: 1.3rem; color: var(--tijolo-escuro); }
+.escuro .assinatura { color: var(--mel); }
+@media (max-width: 960px) { .capas, .galeria.quatro, .numeros { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) { .caminho, .cenas { grid-template-columns: 1fr; } .galeria { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .garantia { flex-direction: column; text-align: center; } }
+.bio .duas { align-items: start; }
+/* Ícones das bolinhas com respiro (o desenho do cavalinho encosta na borda do arquivo) */
+.bolha { width: 92px; height: 92px; }
+.bolha img { width: 50px; height: 50px; object-fit: contain; }
+.bolha.b1 { left: -36px; }
+@media (max-width: 860px) { .bolha { width: 68px; height: 68px; } .bolha img { width: 36px; height: 36px; } .bolha.b1 { left: -22px; } }
+/* Textos de abertura mais largos (menos quebras) */
+.topo { max-width: 760px; }
+.importante { max-width: 880px; }
+/* Marcador de lista: check no lugar do "U invertido" */
+.marca-arco { width: 20px; height: 20px; border: 0; border-radius: 50%; background: var(--tijolo); position: relative; margin-top: .22em; }
+.marca-arco::after { content: ""; position: absolute; left: 7px; top: 3.5px; width: 5px; height: 9px; border: solid var(--creme); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.escuro .marca-arco { background: var(--mel); }
+.escuro .marca-arco::after { border-color: var(--cacau); }
+/* Fotos dos produtos no fim da página: enquadramento vertical */
+.produto > img { aspect-ratio: 4 / 5; }
+/* Chamada final mais larga (menos quebras) */
+.final h2 { max-width: 34ch; text-wrap: pretty; }
+.final p { max-width: 80ch; }
+/* Livro: resposta em destaque no topo e bloco de preço do fecho */
+.resposta-destaque { margin-top: 18px; font-family: var(--serif); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); line-height: 1.1; color: var(--mel); }
+.preco-final { display: inline-block; margin-top: 28px; padding: 22px 40px; border: 1px solid var(--linha-clara); border-radius: 24px; background: rgba(247, 238, 227, .06); }
+.preco-final .valor { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--creme); margin: 0; max-width: none; }
+.preco-final .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.final .preco-final p + p { margin-top: 8px; font-size: .95rem; color: var(--argila); }
+.temas-claro li { color: var(--texto); border-color: var(--texto-suave); background: rgba(247, 238, 227, .5); }
+/* Vídeos curtos sem som no lugar da foto */
+.retrato video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; background: var(--argila); }
+/* Topo dos jogos com foto vertical */
+.cena-retrato { width: min(100%, 420px); margin-inline: auto; }
+.cena-retrato img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
+/* ===== Menu com submenus (28/09) ===== */
+.menu .wrap { position: relative; }
+.menu-desk { list-style: none; display: flex; gap: 6px 30px; align-items: center; }
+.menu-desk > li { position: relative; }
+.menu-desk > li > a { display: inline-block; padding-block: 10px; }
+.menu-desk > li.ativo > a { color: var(--mel); }
+.menu .seta { font-size: .75em; margin-left: 2px; }
+.menu .sub { list-style: none; position: absolute; top: 100%; left: -18px; z-index: 30; min-width: 250px; display: flex; flex-direction: column; gap: 2px; padding: 10px; background: var(--creme); border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.28); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s, transform .15s, visibility .15s; }
+.menu .tem-sub:hover .sub, .menu .tem-sub:focus-within .sub { opacity: 1; visibility: visible; transform: none; }
+.menu .sub a, .mob-painel a { display: block; color: var(--texto); padding: 9px 14px; border-radius: 10px; font-size: .95rem; }
+.menu .sub a:hover, .menu .sub a[aria-current] { background: var(--argila); color: var(--tijolo-escuro); }
+.menu .tag { display: inline-block; margin-left: 6px; font-size: .72rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 1px 8px; border-radius: 999px; vertical-align: 1px; }
+.menu-mob { display: none; }
+@media (max-width: 860px) {
+  .menu .wrap { flex-direction: row; justify-content: space-between; }
+  .menu-desk { display: none; }
+  .menu-mob { display: block; }
+  .menu-mob summary { list-style: none; cursor: pointer; color: var(--creme); border: 1px solid var(--linha-clara); border-radius: 999px; padding: 8px 18px; font-size: .95rem; }
+  .menu-mob summary::-webkit-details-marker { display: none; }
+  .menu-mob summary::after { content: " ▾"; font-size: .8em; }
+  .menu-mob[open] summary::after { content: " ▴"; }
+  .mob-painel { position: absolute; right: 16px; left: 16px; top: calc(100% + 6px); z-index: 30; background: var(--creme); border-radius: 18px; padding: 14px; box-shadow: 0 18px 40px rgba(0,0,0,.3); max-height: 75vh; overflow-y: auto; }
+  .mob-painel ul { list-style: none; }
+  .mob-titulo { font-family: var(--serif); color: var(--tijolo); font-size: 1.05rem; padding: 10px 14px 4px; }
+  .mob-painel a[aria-current] { background: var(--argila); }
+}
+.menu .menu-desk > li:last-child .sub { left: auto; right: -18px; }
+.menu .sub a { white-space: nowrap; }
+.menu .mob-painel ul { display: block; }
+.menu .mob-painel a, .menu .mob-painel a[aria-current] { color: var(--texto); text-align: left; }
+.menu .mob-painel a[aria-current] { color: var(--tijolo-escuro); }
+@media (max-width: 860px) { .menu .menu-desk { display: none; } .menu .wrap { flex-direction: row; } }
 </style>
 </head>
 <body>
-<p class="aviso">Versão local para revisão.</p>
-
 <nav class="menu" aria-label="Menu principal">
   <div class="wrap">
     <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
-    <ul>
-      <li><a href="index.html" aria-current="page">Início</a></li>
-      <li><a href="gratuito.html">Módulo gratuito</a></li>
-      <li><a href="modulo-0-a-5.html">0 a 5</a></li>
-      <li><a href="modulo-6-a-10.html">6 a 10</a></li>
-      <li><a href="modulo-11-a-13.html">11 a 13</a></li>
-      <li><a href="modulo-14-a-18.html">14 a 18</a></li>
-      <li><a href="livro-lucas.html">Livro Lucas</a></li>
-      <li><a href="jogos.html">Jogos</a></li>
+    <ul class="menu-desk">
+      <li class="tem-sub ativo"><a href="index.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="index.html" aria-current="page">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul></li>
+      <li class=""><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li class="tem-sub"><a href="jogos.html">Jogos <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul></li>
     </ul>
+    <details class="menu-mob"><summary>Menu</summary>
+      <div class="mob-painel">
+        <p class="mob-titulo">Método Educar é Proteger</p><ul>
+          <li><a href="index.html" aria-current="page">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul>
+        <p class="mob-titulo">Livro</p><ul><li><a href="livro-lucas.html">Livro Lucas aprende sobre crescer</a></li></ul>
+        <p class="mob-titulo">Jogos</p><ul>
+          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul>
+      </div>
+    </details>
   </div>
 </nav>
 
-<aside class="barra" aria-label="Módulo gratuito">
-  <span>O Módulo 0 é gratuito: 8 aulas para começar.</span>
-  <a class="btn" href="gratuito.html">Conhecer o módulo gratuito</a>
+<aside class="barra" aria-label="Atalho">
+  <span>Método completo · 0 a 18 anos · R$ 297 em até 12x</span>
+  <a class="btn" href="#oferta">Quero o método completo</a>
 </aside>
 
 <main>
 
-  <!-- 1. Hero -->
+  <!-- 1. Topo -->
   <section class="hero escuro" id="inicio">
     <div class="wrap hero-grade">
       <div>
         <span class="selo">Método Educar é Proteger</span>
         <h1>Saiba o que dizer ao seu filho sobre corpo, sexualidade e proteção em cada idade</h1>
-        <p class="sub">Mesmo que ninguém tenha feito isso por você. Um curso online com um módulo para cada fase, dos 0 aos 18 anos, para transformar perguntas difíceis em conversas de vínculo e proteção.</p>
+        <p class="sub">Mesmo que ninguém tenha conversado com você sobre isso. Um curso online, dos 0 aos 18 anos, com palavras simples para cada fase, feito para a mãe que quer mudar essa história dentro de casa.</p>
         <div class="acoes">
-          <a class="btn btn-grande" href="#ofertas">Quero o método completo</a>
-          <a class="link" href="gratuito.html">Começar pelo módulo gratuito</a>
+          <a class="btn btn-grande" href="#oferta">Quero o método completo</a>
+          <a class="link" href="gratuito.html">Prefiro começar pelo Módulo 0 gratuito</a>
         </div>
         <ul class="chips">
-          <li>Curso online</li>
+          <li>Curso online na Eduzz</li>
           <li>Dos 0 aos 18 anos</li>
-          <li>Para todo o Brasil</li>
+          <li>7 dias de garantia</li>
         </ul>
       </div>
       <figure class="arco hero-foto">
-        <img src="img/raphaela-hero.jpg" alt="Raphaela Spellmeier sorrindo, de blusa laranja" width="942" height="1342" fetchpriority="high">
+        <img src="img/fotos/foto-hero-laranja.jpg" alt="Raphaela Spellmeier sorrindo, de blusa laranja" width="867" height="1300" fetchpriority="high">
         <span class="bolha b1"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"></span>
         <span class="bolha b2"><img src="img/icones/mochila.png" alt="" width="160" height="160"></span>
         <span class="bolha b3"><img src="img/icones/broto.png" alt="" width="160" height="160"></span>
@@ -336,160 +491,191 @@ footer a:hover { color: var(--mel); }
     </div>
   </section>
 
-  <!-- 2. Faixa rolando -->
+  <!-- 2. Faixa -->
   <div class="faixa" aria-hidden="true">
     <div class="faixa-trilho">
-      <span>Educar não é antecipar</span><span>É preparar, orientar e proteger</span><span>Um módulo para cada fase</span><span>O Módulo 0 é gratuito</span>
-      <span>Educar não é antecipar</span><span>É preparar, orientar e proteger</span><span>Um módulo para cada fase</span><span>O Módulo 0 é gratuito</span>
-      <span>Educar não é antecipar</span><span>É preparar, orientar e proteger</span><span>Um módulo para cada fase</span><span>O Módulo 0 é gratuito</span>
+      <span>Pequenas conversas, no tempo do seu filho</span><span>Falar sobre o corpo protege</span><span>Um módulo para cada fase</span><span>A sua história não precisa ser a dele</span>
+      <span>Pequenas conversas, no tempo do seu filho</span><span>Falar sobre o corpo protege</span><span>Um módulo para cada fase</span><span>A sua história não precisa ser a dele</span>
+      <span>Pequenas conversas, no tempo do seu filho</span><span>Falar sobre o corpo protege</span><span>Um módulo para cada fase</span><span>A sua história não precisa ser a dele</span>
     </div>
   </div>
 
-  <!-- 3. Temas (lúdico + informação logo no início) -->
-  <section id="temas">
-    <div class="wrap">
-      <div class="topo">
-        <h2>Educação sexual não é só falar sobre sexo</h2>
-        <p>É ensinar sobre corpo, emoções, limites e cuidado, com palavras certas para cada idade. É disso que o método trata:</p>
-      </div>
-      <div class="icones">
-        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Corpo e higiene</h3><p>Nomes corretos das partes do corpo e autocuidado.</p></article>
-        <article class="icone"><img src="img/icones/cadeado.png" alt="" width="160" height="160"><h3>Privacidade</h3><p>O que é íntimo, o que é público e como respeitar.</p></article>
-        <article class="icone"><img src="img/icones/casa.png" alt="" width="160" height="160"><h3>Consentimento</h3><p>O "sim" e o "não" precisam ser respeitados.</p></article>
-        <article class="icone"><img src="img/icones/conversa.png" alt="" width="160" height="160"><h3>Emoções</h3><p>Reconhecer, nomear e contar o que sente.</p></article>
-        <article class="icone"><img src="img/icones/pergunta.png" alt="" width="160" height="160"><h3>Perguntas difíceis</h3><p>De onde vêm os bebês e outras que chegam sem aviso.</p></article>
-        <article class="icone"><img src="img/icones/broto.png" alt="" width="160" height="160"><h3>Puberdade</h3><p>As mudanças do corpo, antes que elas cheguem.</p></article>
-        <article class="icone"><img src="img/icones/escudo.png" alt="" width="160" height="160"><h3>Prevenção do abuso</h3><p>Regras de proteção sem gerar medo ou culpa.</p></article>
-        <article class="icone"><img src="img/icones/raizes.png" alt="" width="160" height="160"><h3>Novos ciclos</h3><p>Educar de um jeito diferente de como você foi educada.</p></article>
+  <!-- 3. Identificação -->
+  <section id="voce">
+    <div class="wrap duas">
+      <figure class="retrato">
+        <img src="img/fotos/foto-silencio.jpg" alt="Raphaela Spellmeier em preto e branco, com a mão cobrindo a boca" width="800" height="1200" loading="lazy">
+      </figure>
+      <div>
+        <h2>Quando você era criança, alguém sentou com você para falar sobre o seu corpo?</h2>
+        <p style="margin-top:24px">Para a maioria de nós, não. A gente aprendeu no susto, com a amiga da escola, escondido, ou simplesmente não aprendeu. E aí, hoje, o seu filho pergunta e você sente aquele branco:</p>
+        <ul class="cenas">
+          <li>"Mãe, de onde vem o bebê?"</li>
+          <li>"Por que tá nascendo pelinho aqui?"</li>
+          <li>Você entra no quarto e ele está vendo algo no celular que não é para a idade dele</li>
+          <li>Sai um "depois a gente conversa", e o depois não chega</li>
+        </ul>
+        <p class="fecho">Se isso já aconteceu aí na sua casa, você não está fazendo nada de errado. Você só está tentando dar ao seu filho uma coisa que ninguém te deu.</p>
       </div>
     </div>
   </section>
 
-  <!-- 4. Vídeo -->
+  <!-- 4. Por que importa -->
+  <section class="argila" id="por-que">
+    <div class="wrap">
+      <div class="topo">
+        <h2>Quando a gente desconversa, a curiosidade dele não vai embora</h2>
+        <p>Ela só muda de endereço. A criança para de perguntar para você e vai procurar a resposta na internet, com os amigos ou com alguém que não quer o bem dela. Por isso, falar sobre o corpo não tira a inocência do seu filho. É o que protege.</p>
+      </div>
+      <p class="dor-unica">A boa notícia é que você não precisa de uma grande conversa séria e constrangedora. Criança aprende em pequenas conversas: no banho, no carro, quando aparece uma cena na TV.</p>
+      <div class="icones">
+        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Corpo e higiene</h3><p>Os nomes certos das partes do corpo e o cuidado com ele.</p></article>
+        <article class="icone"><img src="img/icones/cadeado.png" alt="" width="160" height="160"><h3>Privacidade</h3><p>O que é íntimo, o que é público e quem pode tocar.</p></article>
+        <article class="icone"><img src="img/icones/casa.png" alt="" width="160" height="160"><h3>Consentimento</h3><p>O "não" da criança também precisa ser respeitado.</p></article>
+        <article class="icone"><img src="img/icones/conversa.png" alt="" width="160" height="160"><h3>Emoções</h3><p>Reconhecer o que sente e ter coragem de contar.</p></article>
+        <article class="icone"><img src="img/icones/pergunta.png" alt="" width="160" height="160"><h3>Perguntas difíceis</h3><p>O que responder quando elas chegam sem aviso.</p></article>
+        <article class="icone"><img src="img/icones/broto.png" alt="" width="160" height="160"><h3>Puberdade</h3><p>Preparar seu filho antes que as mudanças cheguem.</p></article>
+        <article class="icone"><img src="img/icones/escudo.png" alt="" width="160" height="160"><h3>Prevenção do abuso</h3><p>Ensinar a se proteger sem encher a criança de medo.</p></article>
+        <article class="icone"><img src="img/icones/raizes.png" alt="" width="160" height="160"><h3>Novos ciclos</h3><p>Educar diferente de como você foi educada.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Minha história -->
+  <section class="bio escuro" id="quem">
+    <div class="wrap duas">
+      <figure class="arco">
+        <img src="img/fotos/foto-sorriso-azul.jpg" alt="Raphaela Spellmeier sentada, de blusa azul, rindo" width="800" height="1200" loading="lazy">
+      </figure>
+      <div>
+        <h2>Eu também cresci numa casa onde não se falava sobre isso</h2>
+        <div class="texto-bio">
+          <p>Eu sou a Raphaela, educadora em sexualidade, mestre em psicologia educacional e mãe. Entre os meus 11 e 14 anos, eu passei por uma situação de abuso, com uma pessoa muito próxima. Hoje eu entendo o quanto uma conversa poderia ter feito diferença na minha vida.</p>
+          <p>Quando o meu filho, com uns cinco aninhos, começou a fazer aquelas perguntas, eu percebi que, mesmo estudando tanto, eu também não sabia direito como responder para a idade dele. Foi aí que eu entendi: ninguém ensinou a gente a ensinar.</p>
+          <p>Depois disso eu atendi famílias, levei essa conversa para escolas e organizei tudo o que aprendi num caminho que qualquer mãe consegue seguir. Foi assim que nasceu o Método Educar é Proteger.</p>
+        </div>
+        <ul class="formacao">
+          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em sexualidade humana</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em saúde da mulher</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Mestre em Psicologia Educacional</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Professora e coordenadora em faculdade</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Palestras em escolas</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Mãe</li>
+        </ul>
+        <p class="assinatura">A minha história terminou em mim. A sua também pode terminar em você.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Vídeo -->
   <section class="argila" id="video">
     <div class="wrap">
       <div class="topo">
-        <h2>Antes de falar com nossos filhos, precisamos compreender o que realmente estamos ensinando</h2>
-        <p>Neste vídeo, eu explico por que educação sexual não se resume a falar sobre sexo e como informação, diálogo e acolhimento ajudam a construir uma relação de confiança dentro da família.</p>
+        <h2>Me conhece em poucos minutos</h2>
+        <p>Neste vídeo eu te explico como o método funciona e por que ele começa por você, antes de chegar no seu filho.</p>
       </div>
       <div class="video">
         <iframe src="https://www.youtube-nocookie.com/embed/X_5uAUGi4Vc" title="Apresentação do Método Educar é Proteger" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="video-apoio">
-        <p class="destaque">Você não precisa ter todas as respostas. Precisa aprender a escutar, responder com clareza e manter aberta a porta para a próxima conversa.</p>
         <a class="link" href="https://www.youtube.com/watch?v=X_5uAUGi4Vc">Assistir no YouTube</a>
       </div>
     </div>
   </section>
 
-  <!-- 5. Dor -->
-  <section id="historia">
-    <div class="wrap duas">
-      <figure class="retrato">
-        <img src="img/raphaela-olhar.jpg" alt="Raphaela Spellmeier olhando para o alto, sorrindo" width="881" height="1328" loading="lazy">
-      </figure>
-      <div>
-        <h2>Quando a sua história pesa, a conversa trava</h2>
-        <p style="margin-top:24px">Você quer proteger seu filho. Quer construir uma casa diferente da que teve. Mas, na hora de falar sobre corpo, toque e intimidade, vem o medo, o silêncio ou a sensação de não saber por onde começar.</p>
-        <p>Muitos adultos cresceram em famílias em que o corpo e a sexualidade eram tratados com silêncio, vergonha ou medo. Esse silêncio não é descuido. Muitas vezes é a sua própria história falando. E, sem essa conversa, a criança fica mais vulnerável.</p>
-        <p class="fecho">Você não precisa ter recebido essa educação para conseguir oferecê-la ao seu filho.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. É / não é -->
-  <section class="argila" id="o-que-e">
+  <!-- 7. Como funciona -->
+  <section id="como-funciona">
     <div class="wrap">
-      <div class="topo"><h2>O que este método é, e o que ele não é</h2></div>
-      <div class="comparar">
-        <article class="lado nao" style="background:var(--creme)">
-          <h3>Não é</h3>
-          <ul>
-            <li><span class="traco" aria-hidden="true"></span>Uma única conversa difícil, feita uma vez e nunca mais</li>
-            <li><span class="traco" aria-hidden="true"></span>Antecipar assuntos adultos ou tirar a inocência da criança</li>
-            <li><span class="traco" aria-hidden="true"></span>Um curso que exige que você tenha resolvido a sua história antes</li>
-          </ul>
-        </article>
-        <article class="lado sim escuro">
-          <h3>É</h3>
-          <ul>
-            <li><span class="marca-arco" aria-hidden="true"></span>Um curso online com um módulo para cada fase, dos 0 aos 18 anos</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Linguagem e caminho para falar de corpo, sexualidade e proteção</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Conversas que acontecem nas pequenas situações do dia a dia</li>
-          </ul>
-        </article>
+      <div class="topo">
+        <h2>Como o método funciona</h2>
+        <p>É um caminho em três passos. Você começa cuidando de você e depois vai para a fase que o seu filho está vivendo.</p>
       </div>
+      <ol class="caminho">
+        <li><span class="passo">1</span><h3>Primeiro, você</h3><p>O Módulo 0 olha para a sua história e para o que te trava. É difícil ensinar aquilo que ainda dói na gente.</p></li>
+        <li><span class="passo">2</span><h3>Depois, a idade do seu filho</h3><p>Em cada módulo eu te mostro o que falar, como falar e como responder as perguntas daquela fase, com calma.</p></li>
+        <li><span class="passo">3</span><h3>E aí, na prática</h3><p>Materiais para imprimir e fazer junto com a criança, para a conversa acontecer de verdade aí na sua casa.</p></li>
+      </ol>
+      <div class="capas">
+        <img src="img/capas/m0-00.jpg" alt="Capa da aula 0 do Módulo 0" width="520" height="293" loading="lazy">
+        <img src="img/capas/m610-3.jpg" alt="Capa da aula Preparação para a puberdade" width="520" height="293" loading="lazy">
+        <img src="img/capas/m610-4.jpg" alt="Capa da aula Prevenção ao abuso" width="520" height="293" loading="lazy">
+        <img src="img/capas/m0-7.jpg" alt="Capa da aula de encerramento do Módulo 0" width="520" height="293" loading="lazy">
+      </div>
+      <p class="capas-legenda">Algumas das aulas que você encontra lá dentro.</p>
     </div>
   </section>
 
-  <!-- 7. Fases -->
+  <!-- 8. Módulos: uma dor por fase -->
   <section class="escuro" id="modulos">
     <div class="wrap">
       <div class="topo">
-        <h2>Cada fase pede uma conversa diferente</h2>
-        <p>Comece pela base gratuita e depois escolha a idade do seu filho. Você pode adquirir só o módulo da fase que sua família vive hoje.</p>
+        <h2>Cada fase tem a sua conversa</h2>
+        <p>Veja o que mais preocupa as mães em cada idade. Cada módulo resolve essa preocupação específica.</p>
       </div>
       <div class="fases">
-        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>Primeiras descobertas do corpo, nomes corretos, privacidade, consentimento, curiosidades e proteção.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Puberdade, perguntas difíceis, autonomia, higiene, situações reais, segurança digital e prevenção.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Mudanças corporais, emoções, relacionamentos, internet, autoestima, diálogo e limites.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Autonomia, escolhas, relacionamentos, saúde, prevenção e segurança no ambiente digital.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>"Ele já pergunta de onde vêm os bebês. O que eu respondo sem assustar?"</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>"A puberdade está chegando e eu não quero que ele seja pego de surpresa."</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>"Ele está se fechando e passando horas no celular. Como não perder essa conexão?"</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>"Como falar de namoro, pornografia e sexo sem afastar meu adolescente?"</p><span class="ver">Conhecer módulo</span></a>
       </div>
       <div class="base-bonus">
-        <a class="base-bonus-item" href="gratuito.html"><img src="img/icones/livro.png" alt="" width="160" height="160"><div><strong>Módulo 0 · Fundamentos</strong><span>Gratuito · 8 aulas online para começar</span></div></a>
-        <div><img src="img/icones/presente.png" alt="" width="160" height="160"><div><strong>Módulo Bônus</strong><span>Aulas com especialistas e indicações de filmes e jogos, incluído em todos os módulos pagos</span></div></div>
+        <a class="base-bonus-item" href="gratuito.html"><img src="img/icones/livro.png" alt="" width="160" height="160"><div><strong>Módulo 0 · Primeiro você</strong><span>8 aulas sobre a sua história e as bases da conversa. Gratuito para começar.</span></div></a>
+        <div><img src="img/icones/presente.png" alt="" width="160" height="160"><div><strong>Módulo Bônus</strong><span>Aulas com especialista, 19 práticas de regulação emocional por idade e indicações de filmes e séries</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 8. Quem conduz -->
-  <section id="quem">
-    <div class="wrap duas">
-      <figure class="arco">
-        <img src="img/raphaela-bio.jpg" alt="Raphaela Spellmeier sentada, de blusa azul, sorrindo" width="959" height="1342" loading="lazy">
-      </figure>
-      <div>
-        <h2>Quem vai acompanhar você</h2>
-        <p class="fecho" style="margin-top:18px">Eu sou Raphaela Spellmeier. Eu quebrei o ciclo. Hoje ensino mães a darem aos filhos a conversa que elas mesmas não tiveram.</p>
-        <ul class="formacao formacao-clara">
-          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em sexualidade humana</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em saúde da mulher</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Mestre em Psicologia Educacional</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Professora e coordenadora em faculdade</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Graduação com prêmio de melhor aluna</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Mãe</li>
-        </ul>
-        <p style="margin-top:22px;color:var(--texto-suave)">Minha missão é mostrar às mães que tiveram infâncias difíceis que o passado pode explicar seus medos sem precisar determinar a infância dos seus filhos.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Ofertas em escada -->
-  <section class="argila" id="ofertas">
+  <!-- 9. Oferta -->
+  <section class="argila" id="oferta">
     <div class="wrap">
       <div class="topo">
-        <h2>Escolha como começar</h2>
-        <p>Curso online na Eduzz, para mães de todo o Brasil.</p>
+        <h2>Tudo o que você recebe no método completo</h2>
+        <p>Para estar pronta para cada fase do seu filho, e para os irmãos também, sem precisar correr atrás de um curso novo a cada idade.</p>
+      </div>
+      <div class="icones">
+        <article class="icone"><img src="img/icones/sol.png" alt="" width="160" height="160"><h3>Aulas curtas</h3><p>A maioria tem menos de 10 minutos. Cabe na sua rotina, até no celular.</p></article>
+        <article class="icone"><img src="img/icones/casa.png" alt="" width="160" height="160"><h3>Prática no mesmo dia</h3><p>Você assiste e já consegue usar na próxima conversa com o seu filho.</p></article>
+        <article class="icone"><img src="img/icones/livro.png" alt="" width="160" height="160"><h3>Checklists para o dia a dia</h3><p>Cartazes, checklists e acordos de família para imprimir e usar na rotina.</p></article>
+        <article class="icone"><img src="img/icones/bussola.png" alt="" width="160" height="160"><h3>Uma fase de cada vez</h3><p>Você começa pela idade do seu filho e volta quando a próxima fase chegar.</p></article>
+      </div>
+      <div class="inclui">
+        <ul>
+          <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0: a sua história e as bases da conversa</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Módulos 0 a 5, 6 a 10, 11 a 13 e 14 a 18 anos</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Módulo Bônus: ciclo menstrual e ISTs com a Dra. Carolina Finta, aulas sobre preservativos, absorventes e higiene, práticas de regulação emocional por idade e listas de filmes e séries</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Checklists, cartazes, acordos de família para internet e redes sociais, atividades e roteiros de conversa</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Dúvidas respondidas por mim, por e-mail ou nos comentários das aulas</li>
+        </ul>
+        <div class="caixa-preco escuro">
+          <p class="rotulo">Método completo</p>
+          <p class="itens">Módulo 0 · 4 fases · Módulo Bônus</p>
+          <p class="valor"><small>R$</small>297</p>
+          <p class="itens">em até 12x no cartão</p>
+          <a class="btn btn-grande" href="https://sun.eduzz.com/8017VRXN07">Quero o método completo</a>
+        </div>
+      </div>
+      <div class="garantia">
+        <span class="dias">7<small>DIAS</small></span>
+        <p><strong>Você tem 7 dias para entrar, assistir e sentir se é para você.</strong> Se não for, é só pedir o reembolso na Eduzz e você recebe todo o valor de volta.</p>
       </div>
       <div class="planos">
         <article class="plano" style="background:var(--creme)">
           <h3>Módulo 0</h3>
-          <p class="desc">Os fundamentos, para conhecer o método.</p>
+          <p class="desc">Para começar por você, sem pagar nada.</p>
           <ul>
             <li><span class="marca-arco" aria-hidden="true"></span>8 aulas online</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Materiais complementares</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>Exercícios de reflexão</li>
           </ul>
           <p class="preco">Gratuito</p>
-          <p class="parcela">Cadastro rápido, sem obrigação de compra</p>
-          <a class="btn" href="gratuito.html">Conhecer o módulo gratuito</a>
+          <p class="parcela">Cadastro rápido, sem compromisso</p>
+          <a class="btn" href="gratuito.html">Começar grátis</a>
         </article>
         <article class="plano" style="background:var(--creme)">
-          <h3>Módulo por idade</h3>
-          <p class="desc">Só a fase de que você precisa agora.</p>
+          <h3>Só uma fase</h3>
+          <p class="desc">Para focar na idade que o seu filho tem agora.</p>
           <ul>
-            <li><span class="marca-arco" aria-hidden="true"></span>11 ou 12 aulas da faixa etária</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0 incluído</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Módulo Bônus incluído</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>O módulo da idade escolhida</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0 e Módulo Bônus incluídos</li>
           </ul>
           <p class="preco"><small>R$</small>149,90</p>
           <p class="parcela">por módulo, em até 12x no cartão</p>
@@ -502,14 +688,14 @@ footer a:hover { color: var(--mel); }
           </div>
         </article>
         <article class="plano destaque escuro">
-          <h3>Curso completo</h3>
-          <p class="desc">Todos os módulos, dos 0 aos 18 anos.</p>
+          <h3>Método completo</h3>
+          <p class="desc">Todas as fases, dos 0 aos 18 anos. Sai por menos que dois módulos avulsos.</p>
           <ul>
-            <li><span class="marca-arco" aria-hidden="true"></span>Os 4 módulos por idade</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>As 4 fases</li>
             <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0 e Módulo Bônus</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Acompanha o seu filho em todas as fases</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>Para acompanhar seu filho até a vida adulta</li>
           </ul>
-          <p class="preco"><small>R$</small>299,90</p>
+          <p class="preco"><small>R$</small>297</p>
           <p class="parcela">em até 12x no cartão</p>
           <a class="btn" href="https://sun.eduzz.com/8017VRXN07">Quero o método completo</a>
         </article>
@@ -517,77 +703,109 @@ footer a:hover { color: var(--mel); }
     </div>
   </section>
 
-  <!-- 10. Para continuar em casa -->
-  <section id="em-casa">
+  <!-- 10. É / não é -->
+  <section id="o-que-e">
+    <div class="wrap">
+      <div class="topo"><h2>Para você saber exatamente o que vai encontrar</h2></div>
+      <div class="comparar">
+        <article class="lado nao">
+          <h3>O método não é</h3>
+          <ul>
+            <li><span class="traco" aria-hidden="true"></span>Terapia ou tratamento de trauma. Se a sua história ainda pesa muito, procurar apoio terapêutico é um cuidado com você.</li>
+            <li><span class="traco" aria-hidden="true"></span>Uma conversa única e definitiva, feita uma vez e nunca mais</li>
+            <li><span class="traco" aria-hidden="true"></span>Antecipar assuntos de adulto para a criança</li>
+          </ul>
+        </article>
+        <article class="lado sim escuro">
+          <h3>O método é</h3>
+          <ul>
+            <li><span class="marca-arco" aria-hidden="true"></span>Um caminho para você saber o que dizer em cada idade</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>Palavras simples para usar no dia a dia, sem vergonha</li>
+            <li><span class="marca-arco" aria-hidden="true"></span>Um jeito de o seu filho continuar vindo até você</li>
+          </ul>
+        </article>
+      </div>
+      <p class="importante"><strong>Suspeita de abuso?</strong> O curso não substitui atendimento. Procure o Conselho Tutelar da sua cidade ou ligue para o Disque 100, que funciona 24 horas e é gratuito.</p>
+    </div>
+  </section>
+
+  <!-- 11. Para brincar em casa: uma dor por produto -->
+  <section class="argila" id="em-casa">
     <div class="wrap">
       <div class="topo">
-        <h2>Brincar também é uma forma de conversar</h2>
-        <p>Materiais para abrir o assunto com o seu filho de forma leve, afetiva e adequada à infância.</p>
+        <h2>Para a conversa continuar em casa</h2>
+        <p>Cada material resolve uma situação específica. Escolha o que o seu filho precisa agora.</p>
       </div>
       <div class="produtos">
-        <article class="produto" style="background:var(--argila)">
-          <img src="img/trilha-do-crescer.jpg" alt="Tabuleiro da Trilha do Crescer, jogo de trilha ilustrado" width="1000" height="666" loading="lazy">
+        <article class="produto">
+          <img src="img/fotos/trilha-tabuleiro-completo.png" alt="Tabuleiro completo da Trilha do Crescer" width="1348" height="953" loading="lazy" style="object-fit:contain;background:var(--argila)">
           <span class="selo">Gratuito</span>
           <h3>Trilha do Crescer</h3>
-          <p>Jogo de trilha para imprimir e brincar em família, com perguntas e desafios sobre corpo, crescimento, sentimentos e proteção.</p>
-          <a class="btn" href="https://sun.eduzz.com/8WPNDV2N0P">Baixar gratuitamente</a>
+          <p class="dor">"Meu filho não se abre comigo."</p>
+          <p>Um jogo de tabuleiro para brincar em família, com cartas que fazem a conversa sobre sentimentos, corpo e confiança acontecer sozinha.</p>
+          <a class="btn" href="trilha.html">Conhecer a Trilha</a>
         </article>
-        <article class="produto" style="background:var(--argila)">
-          <img src="img/lucas-bruna-cena.jpg" alt="Personagens Lucas e Bruna de papel com roupinhas, cama, armário e banheira" width="1000" height="666" loading="lazy">
+        <article class="produto">
+          <img src="img/fotos/jogo-lucas-bruna.png" alt="Cartões ilustrados dos personagens Lucas e Bruna" width="800" height="1000" loading="lazy">
           <h3>Jogos Lucas e Bruna</h3>
-          <p>Recorte, vista e brinque enquanto conversa sobre corpo, higiene, privacidade e crescimento. Para crianças de 5 a 10 anos.</p>
+          <p class="dor">"Como ensino o que é íntimo e quem pode tocar?"</p>
+          <p>Bonecos de papel para vestir e brincar enquanto a criança aprende sobre privacidade e partes íntimas. De 5 a 10 anos.</p>
           <p class="preco"><small>R$</small>19,90</p>
           <a class="btn" href="jogos.html">Conhecer os jogos</a>
         </article>
-        <article class="produto" style="background:var(--argila)">
-          <img class="topo-img" src="img/livro-lucas.jpg" alt="Capa do livro Lucas aprende sobre crescer, com o livro aberto ao lado" width="800" height="1000" loading="lazy">
+        <article class="produto">
+          <img src="img/fotos/livro-rapha-segurando.jpg" alt="Raphaela Spellmeier segurando o livro Lucas aprende sobre crescer" width="675" height="1200" loading="lazy" style="object-position:center 30%">
           <h3>Livro Lucas aprende sobre crescer</h3>
-          <p>Indicado a partir de 7 anos, explica as mudanças da puberdade e o primeiro "sonho molhado". Também pode ser lido para meninas.</p>
-          <p class="preco"><small>R$</small>67,00</p>
+          <p class="dor">"Como explico a primeira polução noturna para o meu filho?"</p>
+          <p>Uma história ilustrada para ler junto e explicar a puberdade do menino com carinho. A partir de 7 anos.</p>
+          <p class="preco"><small>R$</small>67</p>
+          <p class="parcela" style="margin-inline:12px;margin-top:-6px">+ R$ 10 de frete fixo</p>
           <a class="btn" href="livro-lucas.html">Conhecer o livro</a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 11. Perguntas -->
-  <section class="argila" id="perguntas">
+  <!-- 12. Perguntas -->
+  <section id="perguntas">
     <div class="wrap">
-      <div class="topo"><h2>Perguntas frequentes</h2></div>
+      <div class="topo"><h2>Perguntas que as mães me fazem</h2></div>
       <div class="faq">
-        <details><summary>Para quem é o método?</summary><div class="resposta"><p>Para mães, pais e responsáveis que querem proteger os filhos e saber o que dizer sobre corpo, sexualidade e proteção em cada idade, especialmente quem não recebeu essa educação na própria infância.</p></div></details>
-        <details><summary>Falar sobre sexualidade não tira a inocência?</summary><div class="resposta"><p>Não. O método não antecipa conteúdos adultos. Ele ensina cuidados, palavras e limites adequados a cada fase do desenvolvimento. Informação adequada ajuda a construir cuidado, diálogo e proteção.</p></div></details>
-        <details><summary>Preciso ter resolvido a minha história para fazer o curso?</summary><div class="resposta"><p>Não. O passado pode explicar seus medos, mas ele não precisa decidir a infância do seu filho. O método dá linguagem e caminho para você começar de onde está.</p></div></details>
-        <details><summary>Como o curso é organizado?</summary><div class="resposta"><p>Há o Módulo 0, gratuito, com os fundamentos, e quatro módulos por faixa etária: 0 a 5, 6 a 10, 11 a 13 e 14 a 18 anos. Todo módulo pago inclui o Módulo 0 e o Módulo Bônus.</p></div></details>
-        <details><summary>Posso comprar só o módulo da idade do meu filho?</summary><div class="resposta"><p>Pode. Cada módulo por idade custa R$ 149,90 e o curso completo, R$ 299,90. Os dois podem ser parcelados em até 12x no cartão. O bônus não é vendido separadamente.</p></div></details>
-        <details><summary>Onde eu assisto às aulas?</summary><div class="resposta"><p>Na Eduzz. Depois da compra ou do cadastro, você recebe o acesso e assiste online, pelo computador ou pelo celular.</p></div></details>
-        <details><summary>Para quem é o livro?</summary><div class="resposta"><p>É indicado a partir de 7 anos, para explicar as mudanças da puberdade. Ele aborda o primeiro "sonho molhado" do menino, mas também pode ser lido para as meninas.</p></div></details>
+        <details><summary>Falar sobre isso não vai tirar a inocência do meu filho?</summary><div class="resposta"><p>Não. O método não antecipa assunto de adulto. Ele ensina o que é adequado para cada idade: os nomes certos do corpo, o que é íntimo, quem pode tocar. Criança que tem essas palavras está mais protegida, não menos.</p></div></details>
+        <details><summary>Eu não tive essa educação. Vou conseguir ensinar?</summary><div class="resposta"><p>Vai. Foi exatamente para você que eu fiz o Módulo 0. A gente começa pela sua história, com calma, e só depois vai para o que dizer ao seu filho. Você não precisa saber tudo, só estar disposta a abrir essa porta.</p></div></details>
+        <details><summary>Meu filho tem 8 anos. Qual módulo eu escolho?</summary><div class="resposta"><p>O de 6 a 10 anos, que prepara para a puberdade antes que ela chegue. Se você tem filhos de idades diferentes, ou quer estar pronta para as próximas fases, o método completo sai mais em conta.</p></div></details>
+        <details><summary>Qual a diferença entre um módulo e o método completo?</summary><div class="resposta"><p>O módulo avulso (R$ 149,90) traz uma fase, mais o Módulo 0 e o Bônus. O método completo (R$ 297) traz as quatro fases, mais o Módulo 0 e o Bônus. Os dois podem ser parcelados em até 12x.</p></div></details>
+        <details><summary>E se eu tiver dúvidas durante o curso?</summary><div class="resposta"><p>Você me escreve por e-mail ou deixa um comentário na aula, e eu mesma respondo.</p></div></details>
+        <details><summary>Como funciona a garantia?</summary><div class="resposta"><p>Você tem 7 dias depois da compra para assistir e decidir. Se não for para você, pede o reembolso pela Eduzz e recebe o valor de volta.</p></div></details>
+        <details><summary>Onde eu assisto às aulas?</summary><div class="resposta"><p>Na Eduzz, pelo celular ou pelo computador. Assim que o pagamento é confirmado, o acesso chega no seu e-mail.</p></div></details>
       </div>
     </div>
   </section>
 
-  <!-- 12. Chamada final -->
+  <!-- 13. Chamada final -->
   <section class="final escuro">
     <div class="wrap">
-      <h2>O seu passado pode explicar seus medos. Ele não precisa decidir a infância do seu filho.</h2>
-      <p>Comece pelos fundamentos, sem pagar nada, e escolha os próximos passos no seu tempo.</p>
+      <h2>A sua história não precisa ser a história do seu filho</h2>
+      <p>Você não precisa saber tudo. Só precisa estar disposta a abrir essa porta. Vem comigo?</p>
       <div class="acoes">
-        <a class="btn btn-grande" href="gratuito.html">Começar pelo módulo gratuito</a>
-        <a class="link" href="https://sun.eduzz.com/8017VRXN07">Quero o método completo</a>
+        <a class="btn btn-grande" href="https://sun.eduzz.com/8017VRXN07">Quero o método completo</a>
+        <a class="link" href="gratuito.html">Começar pelo Módulo 0 gratuito</a>
       </div>
+      <ul class="chips"><li>R$ 297 em até 12x</li><li>7 dias de garantia</li><li>Acesso imediato</li></ul>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
     <ul>
+      <li><a href="index.html">Método</a></li>
       <li><a href="gratuito.html">Módulo gratuito</a></li>
-      <li><a href="#modulos">Módulos</a></li>
+      <li><a href="index.html#modulos">Módulos</a></li>
       <li><a href="livro-lucas.html">Livro Lucas</a></li>
       <li><a href="jogos.html">Jogos</a></li>
+      <li><a href="trilha.html">Trilha grátis</a></li>
     </ul>
   </div>
 </footer>

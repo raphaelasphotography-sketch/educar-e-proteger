@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Jogos Lucas e Bruna · Raphaela Spellmeier</title>
-<meta name="description" content="Brincar pode tornar conversas importantes mais leves. Jogos em PDF para imprimir, para crianças de 5 a 10 anos.">
+<meta name="description" content="Um jogo de papel para ensinar a criança o que são as partes íntimas, o que é privado e quem pode tocar, brincando. De 5 a 10 anos.">
 <style>
 :root {
   --creme: #F7EEE3;
@@ -75,7 +75,7 @@ section { padding-block: 96px; }
 .escuro .marca-arco { border-color: var(--mel); }
 
 /* Hero */
-.hero { padding-block: 40px 72px; min-height: calc(100vh - 150px); display: flex; align-items: center; overflow: hidden; }
+.hero { padding-block: 40px 72px; min-height: min(calc(100vh - 150px), 820px); display: flex; align-items: center; overflow: hidden; }
 .hero-grade { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; width: 100%; }
 .selo { display: inline-block; font-size: .85rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 4px 14px; border-radius: 999px; }
 .hero .selo { margin-bottom: 22px; }
@@ -280,6 +280,17 @@ footer a:hover { color: var(--mel); }
   .icone img { width: 60px; height: 60px; margin: 0; grid-row: span 2; }
   .icone p { margin-top: 0; }
 }
+.livro-capa { position: relative; width: min(100%, 420px); margin-inline: auto; isolation: isolate; }
+.livro-capa img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.livro-capa::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.perguntas-maes { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 44px; }
+.perguntas-maes li { background: var(--creme); border-radius: 20px; padding: 22px 24px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.35; display: flex; gap: 14px; align-items: flex-start; }
+.perguntas-maes img { width: 40px; height: 40px; flex: none; }
+.por-dentro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.por-dentro img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 20px; }
+.temas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.temas li { display: flex; gap: 12px; padding: 14px 16px; border: 1px solid var(--linha-clara); border-radius: 16px; color: var(--argila); }
+@media (max-width: 860px) { .perguntas-maes, .temas { grid-template-columns: 1fr; } .por-dentro { grid-template-columns: 1fr; } .livro-capa { order: -1; width: min(80%, 320px); } }
 .cena { position: relative; isolation: isolate; }
 .cena img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
 .cena::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
@@ -300,124 +311,259 @@ footer a:hover { color: var(--mel); }
 .trilha img { border-radius: 24px; }
 @media (max-width: 860px) { .jogos-hero .hero-grade, .personagens, .presentes, .trilha { grid-template-columns: 1fr; } .cena { order: -1; } }
 @media (max-width: 560px) { .presente { grid-template-columns: 1fr; } .presente img { max-width: 200px; } }
+
+/* ===== Acréscimos de 28/09/2026: fotos reais, capas das aulas, garantia ===== */
+.capas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 40px; }
+.capas img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 18px rgba(59, 37, 33, .15); }
+.capas-legenda { margin-top: 16px; text-align: center; font-size: .95rem; color: var(--texto-suave); }
+.escuro .capas-legenda { color: var(--argila); }
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.galeria img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; }
+.galeria.quatro { grid-template-columns: repeat(4, 1fr); }
+.galeria.alta img { aspect-ratio: 9 / 16; }
+.foto-larga { margin-top: 40px; }
+.foto-larga img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 24px; }
+.hero-foto.paisagem img { aspect-ratio: 3 / 4; object-position: 70% center; }
+.garantia { display: flex; gap: 20px; align-items: center; max-width: 720px; margin: 40px auto 0; background: var(--creme); border-radius: 22px; padding: 22px 26px; }
+.escuro .garantia { background: rgba(247, 238, 227, .08); border: 1px solid var(--linha-clara); }
+.garantia .dias { flex: none; width: 78px; height: 78px; border-radius: 50%; border: 3px solid var(--tijolo); display: grid; place-content: center; text-align: center; font-family: var(--serif); font-size: 1.9rem; line-height: .9; color: var(--tijolo); }
+.garantia .dias small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .04em; }
+.escuro .garantia .dias { border-color: var(--mel); color: var(--mel); }
+.garantia p { font-size: .98rem; }
+.escuro .garantia p { color: var(--argila); }
+.dor-unica { max-width: 760px; margin: 36px auto 0; background: var(--creme); border-radius: 24px; padding: 30px 32px; font-family: var(--serif); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem); line-height: 1.35; text-align: center; color: var(--tijolo-escuro); }
+.argila .dor-unica { background: var(--creme); }
+.cenas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.cenas li { background: var(--argila); border-radius: 18px; padding: 18px 20px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
+.argila .cenas li { background: var(--creme); }
+.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; text-align: center; }
+.numeros strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 1.8rem + 1.4vw, 3.2rem); line-height: 1; color: var(--tijolo); }
+.escuro .numeros strong { color: var(--mel); }
+.numeros span { display: block; margin-top: 8px; font-size: .95rem; color: var(--texto-suave); }
+.escuro .numeros span { color: var(--argila); }
+.caminho { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; counter-reset: passo; }
+.caminho li { background: var(--creme); border-radius: 24px; padding: 28px 24px; }
+.caminho .passo { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: var(--tijolo); }
+.caminho h3 { font-size: 1.35rem; margin-top: 10px; }
+.caminho p { margin-top: 8px; color: var(--texto-suave); font-size: .98rem; }
+.produto .dor { font-family: var(--serif); font-size: 1.1rem; line-height: 1.35; color: var(--tijolo-escuro); margin-inline: 12px; }
+.assinatura { margin-top: 18px; font-family: var(--serif); font-size: 1.3rem; color: var(--tijolo-escuro); }
+.escuro .assinatura { color: var(--mel); }
+@media (max-width: 960px) { .capas, .galeria.quatro, .numeros { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) { .caminho, .cenas { grid-template-columns: 1fr; } .galeria { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .garantia { flex-direction: column; text-align: center; } }
+.bio .duas { align-items: start; }
+/* Ícones das bolinhas com respiro (o desenho do cavalinho encosta na borda do arquivo) */
+.bolha { width: 92px; height: 92px; }
+.bolha img { width: 50px; height: 50px; object-fit: contain; }
+.bolha.b1 { left: -36px; }
+@media (max-width: 860px) { .bolha { width: 68px; height: 68px; } .bolha img { width: 36px; height: 36px; } .bolha.b1 { left: -22px; } }
+/* Textos de abertura mais largos (menos quebras) */
+.topo { max-width: 760px; }
+.importante { max-width: 880px; }
+/* Marcador de lista: check no lugar do "U invertido" */
+.marca-arco { width: 20px; height: 20px; border: 0; border-radius: 50%; background: var(--tijolo); position: relative; margin-top: .22em; }
+.marca-arco::after { content: ""; position: absolute; left: 7px; top: 3.5px; width: 5px; height: 9px; border: solid var(--creme); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.escuro .marca-arco { background: var(--mel); }
+.escuro .marca-arco::after { border-color: var(--cacau); }
+/* Fotos dos produtos no fim da página: enquadramento vertical */
+.produto > img { aspect-ratio: 4 / 5; }
+/* Chamada final mais larga (menos quebras) */
+.final h2 { max-width: 34ch; text-wrap: pretty; }
+.final p { max-width: 80ch; }
+/* Livro: resposta em destaque no topo e bloco de preço do fecho */
+.resposta-destaque { margin-top: 18px; font-family: var(--serif); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); line-height: 1.1; color: var(--mel); }
+.preco-final { display: inline-block; margin-top: 28px; padding: 22px 40px; border: 1px solid var(--linha-clara); border-radius: 24px; background: rgba(247, 238, 227, .06); }
+.preco-final .valor { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--creme); margin: 0; max-width: none; }
+.preco-final .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.final .preco-final p + p { margin-top: 8px; font-size: .95rem; color: var(--argila); }
+.temas-claro li { color: var(--texto); border-color: var(--texto-suave); background: rgba(247, 238, 227, .5); }
+/* Vídeos curtos sem som no lugar da foto */
+.retrato video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; background: var(--argila); }
+/* Topo dos jogos com foto vertical */
+.cena-retrato { width: min(100%, 420px); margin-inline: auto; }
+.cena-retrato img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
+/* ===== Menu com submenus (28/09) ===== */
+.menu .wrap { position: relative; }
+.menu-desk { list-style: none; display: flex; gap: 6px 30px; align-items: center; }
+.menu-desk > li { position: relative; }
+.menu-desk > li > a { display: inline-block; padding-block: 10px; }
+.menu-desk > li.ativo > a { color: var(--mel); }
+.menu .seta { font-size: .75em; margin-left: 2px; }
+.menu .sub { list-style: none; position: absolute; top: 100%; left: -18px; z-index: 30; min-width: 250px; display: flex; flex-direction: column; gap: 2px; padding: 10px; background: var(--creme); border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.28); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s, transform .15s, visibility .15s; }
+.menu .tem-sub:hover .sub, .menu .tem-sub:focus-within .sub { opacity: 1; visibility: visible; transform: none; }
+.menu .sub a, .mob-painel a { display: block; color: var(--texto); padding: 9px 14px; border-radius: 10px; font-size: .95rem; }
+.menu .sub a:hover, .menu .sub a[aria-current] { background: var(--argila); color: var(--tijolo-escuro); }
+.menu .tag { display: inline-block; margin-left: 6px; font-size: .72rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 1px 8px; border-radius: 999px; vertical-align: 1px; }
+.menu-mob { display: none; }
+@media (max-width: 860px) {
+  .menu .wrap { flex-direction: row; justify-content: space-between; }
+  .menu-desk { display: none; }
+  .menu-mob { display: block; }
+  .menu-mob summary { list-style: none; cursor: pointer; color: var(--creme); border: 1px solid var(--linha-clara); border-radius: 999px; padding: 8px 18px; font-size: .95rem; }
+  .menu-mob summary::-webkit-details-marker { display: none; }
+  .menu-mob summary::after { content: " ▾"; font-size: .8em; }
+  .menu-mob[open] summary::after { content: " ▴"; }
+  .mob-painel { position: absolute; right: 16px; left: 16px; top: calc(100% + 6px); z-index: 30; background: var(--creme); border-radius: 18px; padding: 14px; box-shadow: 0 18px 40px rgba(0,0,0,.3); max-height: 75vh; overflow-y: auto; }
+  .mob-painel ul { list-style: none; }
+  .mob-titulo { font-family: var(--serif); color: var(--tijolo); font-size: 1.05rem; padding: 10px 14px 4px; }
+  .mob-painel a[aria-current] { background: var(--argila); }
+}
+.menu .menu-desk > li:last-child .sub { left: auto; right: -18px; }
+.menu .sub a { white-space: nowrap; }
+.menu .mob-painel ul { display: block; }
+.menu .mob-painel a, .menu .mob-painel a[aria-current] { color: var(--texto); text-align: left; }
+.menu .mob-painel a[aria-current] { color: var(--tijolo-escuro); }
+@media (max-width: 860px) { .menu .menu-desk { display: none; } .menu .wrap { flex-direction: row; } }
 </style>
 </head>
 <body>
-<p class="aviso">Versão local para revisão.</p>
-
 <nav class="menu" aria-label="Menu principal">
   <div class="wrap">
     <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="gratuito.html">Módulo gratuito</a></li>
-      <li><a href="modulo-0-a-5.html">0 a 5</a></li>
-      <li><a href="modulo-6-a-10.html">6 a 10</a></li>
-      <li><a href="modulo-11-a-13.html">11 a 13</a></li>
-      <li><a href="modulo-14-a-18.html">14 a 18</a></li>
-      <li><a href="livro-lucas.html">Livro Lucas</a></li>
-      <li><a href="jogos.html" aria-current="page">Jogos</a></li>
+    <ul class="menu-desk">
+      <li class="tem-sub"><a href="index.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul></li>
+      <li class=""><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li class="tem-sub ativo"><a href="jogos.html">Jogos <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="jogos.html" aria-current="page">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul></li>
     </ul>
+    <details class="menu-mob"><summary>Menu</summary>
+      <div class="mob-painel">
+        <p class="mob-titulo">Método Educar é Proteger</p><ul>
+          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul>
+        <p class="mob-titulo">Livro</p><ul><li><a href="livro-lucas.html">Livro Lucas aprende sobre crescer</a></li></ul>
+        <p class="mob-titulo">Jogos</p><ul>
+          <li><a href="jogos.html" aria-current="page">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul>
+      </div>
+    </details>
   </div>
 </nav>
 
-<aside class="barra" aria-label="Escolher personagem">
+<aside class="barra" aria-label="Atalho">
   <span>Jogo em PDF · R$ 19,90</span>
-  <a class="btn" href="#personagem">Escolher meu personagem</a>
+  <a class="btn" href="#personagem">Escolher o personagem</a>
 </aside>
 
 <main>
 
+  <!-- 1. Topo -->
   <section class="hero escuro jogos-hero">
     <div class="wrap hero-grade">
       <div>
-        <span class="selo">Jogos educativos · 5 a 10 anos</span>
-        <h1>Brincar pode tornar conversas importantes mais leves</h1>
-        <p class="sub">Com Lucas e Bruna, a criança brinca de vestir, cuidar e criar histórias enquanto a família conversa sobre corpo, higiene, privacidade, autocuidado e crescimento.</p>
+        <span class="selo">Jogo para imprimir · 5 a 10 anos</span>
+        <h1>Como ensinar ao seu filho o que são as partes íntimas, e quem pode tocar?</h1>
+        <p class="resposta-destaque">Brincando.</p>
+        <p class="sub">Com o Lucas ou a Bruna, a criança veste o boneco para dormir, para o banho, para a escola. E, enquanto brinca, aprende quais são as partes íntimas, o que é privado e o que fazer se alguém passar do limite. Sem sermão e sem medo.</p>
         <div class="acoes">
-          <a class="btn btn-grande" href="#personagem">Escolher meu personagem</a>
-          <a class="link" href="#trilha">Baixar a Trilha do Crescer grátis</a>
+          <a class="btn btn-grande" href="#personagem">Escolher o personagem</a>
         </div>
-        <ul class="chips"><li>PDF para imprimir</li><li>R$ 19,90</li><li>Com a mediação de um adulto</li></ul>
+        <ul class="chips"><li>PDF para imprimir</li><li>R$ 19,90</li><li>Guia para os pais de presente</li></ul>
       </div>
-      <figure class="cena">
-        <img src="img/lucas-bruna-cena.jpg" alt="Personagens Lucas e Bruna de papel, com roupinhas, cama, armário e banheira" width="1000" height="666" fetchpriority="high">
+      <figure class="cena cena-retrato">
+        <img src="img/fotos/jogo-lucas-roupas.jpg" alt="Boneco Lucas recortado na mesa, com as roupinhas do jogo em volta" width="731" height="1300" fetchpriority="high">
       </figure>
     </div>
   </section>
 
+  <!-- 2. A dor -->
   <section>
-    <div class="wrap">
-      <div class="topo">
-        <h2>Como funciona o jogo?</h2>
-        <p>Imprima, recorte e escolha o personagem. Durante a brincadeira, situações simples do cotidiano se transformam em oportunidades de conversa e aprendizado.</p>
-      </div>
-      <div class="icones">
-        <article class="icone"><img src="img/icones/casa.png" alt="" width="160" height="160"><h3>Boneco de papel</h3><p>Para recortar e brincar.</p></article>
-        <article class="icone"><img src="img/icones/mochila.png" alt="" width="160" height="160"><h3>Roupas com abas</h3><p>Para vestir o personagem.</p></article>
-        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Cama, guarda-roupa e banheira</h3><p>Os cenários da rotina.</p></article>
-        <article class="icone"><img src="img/icones/livro.png" alt="" width="160" height="160"><h3>Guia para os adultos</h3><p>Para conduzir a conversa.</p></article>
+    <div class="wrap duas">
+      <figure class="retrato">
+        <video src="img/fotos/jogo-bruna-video.mp4" poster="img/fotos/jogo-bruna-video-capa.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Mãos de uma criança vestindo a boneca Bruna do jogo"></video>
+      </figure>
+      <div>
+        <h2>Falar de partes íntimas com uma criança tão pequena parece difícil, né?</h2>
+        <p style="margin-top:24px">A gente fica com medo de falar demais, de dar ideia, de deixar ele desconfiado de todo mundo. E aí vai adiando.</p>
+        <p>Com o jogo, você não precisa sentar e "ter a conversa". Ela vai acontecendo enquanto vocês recortam, vestem e brincam.</p>
+        <p class="fecho">A criança fala mais facilmente sobre o boneco do que sobre ela mesma. E, enquanto fala do boneco, também está te contando o que sente, o que entende e o que já viveu.</p>
       </div>
     </div>
   </section>
 
+  <!-- 3. Como funciona -->
   <section class="argila">
     <div class="wrap">
       <div class="topo">
-        <h2>Situações da brincadeira</h2>
-        <p>Cada situação cotidiana pode abrir espaço para conversas sobre cuidado, autonomia, privacidade e proteção.</p>
+        <h2>Como funciona</h2>
+        <p>Você imprime, recorta junto com a criança e monta os cenários. As situações do dia a dia viram conversa.</p>
+      </div>
+      <div class="galeria quatro alta">
+        <img src="img/fotos/jogo-boneco.jpg" alt="Folha impressa com o boneco Lucas e as roupinhas para recortar" width="508" height="1100" loading="lazy">
+        <img src="img/fotos/jogo-camas.jpg" alt="Folha impressa com as camas do jogo" width="508" height="1100" loading="lazy">
+        <img src="img/fotos/jogo-bruna-vestida.jpg" alt="Boneca Bruna recortada, sendo vestida com um roupão" width="731" height="1300" loading="lazy">
+        <img src="img/fotos/jogo-mesa-roupas.jpg" alt="Mesa cheia de roupinhas recortadas do jogo" width="731" height="1300" loading="lazy">
       </div>
       <div class="icones">
-        <article class="icone"><img src="img/icones/lua.png" alt="" width="160" height="160"><h3>Hora de dormir</h3></article>
-        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Hora do banho</h3></article>
-        <article class="icone"><img src="img/icones/livros.png" alt="" width="160" height="160"><h3>Hora de ir à escola</h3></article>
-        <article class="icone"><img src="img/icones/sol.png" alt="" width="160" height="160"><h3>Hora de passear</h3></article>
+        <article class="icone"><img src="img/icones/lua.png" alt="" width="160" height="160"><h3>Hora de dormir</h3><p>"Que roupa o Lucas usa para dormir? Podemos sair de pijama na rua?"</p></article>
+        <article class="icone"><img src="img/icones/banho.png" alt="" width="160" height="160"><h3>Hora do banho</h3><p>"Quem pode ajudar o Lucas a tomar banho? A porta fica aberta ou fechada?"</p></article>
+        <article class="icone"><img src="img/icones/livros.png" alt="" width="160" height="160"><h3>Hora da escola</h3><p>"Que partes do corpo ficam cobertas? Por quê?"</p></article>
+        <article class="icone"><img src="img/icones/escudo.png" alt="" width="160" height="160"><h3>Hora de se proteger</h3><p>"Alguém pediu para ver a parte íntima do Lucas. O que ele deve fazer?"</p></article>
       </div>
-      <p class="fecho" style="text-align:center">Conversas importantes não precisam começar de forma complicada. Elas podem começar com papel, uma brincadeira e a sua presença.</p>
     </div>
   </section>
 
+  <!-- 4. Presentes -->
   <section>
     <div class="wrap">
       <div class="topo">
         <h2>Junto com o jogo, você recebe de presente</h2>
+        <p>Para você não precisar inventar o que dizer na hora.</p>
       </div>
       <div class="presentes">
         <article class="presente" style="background:var(--argila)">
-          <img src="img/guia-para-os-pais.jpg" alt="Capa do Guia para os pais" width="666" height="1000" loading="lazy">
+          <img src="img/fotos/guia-pagina.png" alt="Página do Guia para os pais: Como usar o jogo com seu filho" width="640" height="909" loading="lazy">
           <div>
             <h3>Guia para os pais</h3>
-            <p>Orientações simples e práticas para iniciar conversas, acolher perguntas e abordar corpo, privacidade e proteção com naturalidade.</p>
+            <p>Como conduzir a brincadeira para ensinar privacidade e partes íntimas sem assustar.</p>
             <ul>
-              <li><span class="marca-arco" aria-hidden="true"></span>Como iniciar a conversa</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Como acolher as perguntas</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Como responder sem assustar ou constranger</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Como aproveitar a brincadeira para fortalecer o vínculo</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Por que ensinar o nome correto do corpo protege</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>Como reagir se a criança contar algo inesperado</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>O que fazer se ela não quiser conversar</li>
             </ul>
           </div>
         </article>
         <article class="presente" style="background:var(--argila)">
-          <img src="img/situacoes-e-frases.jpg" alt="Capa do material Situações e Frases" width="704" height="1000" loading="lazy">
+          <img src="img/fotos/frases-pagina.png" alt="Página do material Situações e frases para usar durante o jogo" width="744" height="1052" loading="lazy">
           <div>
-            <h3>Frases e situações para brincar e conversar</h3>
-            <p>Perguntas, frases e pequenas situações para usar enquanto recorta, veste e brinca com o personagem.</p>
+            <h3>Frases e situações para brincar</h3>
+            <p>Mais de 40 frases, perguntas e situações prontas para usar enquanto vocês brincam.</p>
             <ul>
-              <li><span class="marca-arco" aria-hidden="true"></span>Frases para começar a conversa naturalmente</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Perguntas sobre roupas, banho e intimidade</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Situações sobre limites, consentimento e proteção</li>
-              <li><span class="marca-arco" aria-hidden="true"></span>Ideias para ajudar a criança a expressar sentimentos e dúvidas</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>"Tem partes do corpo que são íntimas. Você sabe quais são?"</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>"Se alguém pedir para guardar um segredo que te deixou triste, o que você faz?"</li>
+              <li><span class="marca-arco" aria-hidden="true"></span>"Aqui em casa, você pode contar tudo para quem?"</li>
             </ul>
           </div>
         </article>
       </div>
+      <p class="importante"><strong>Importante:</strong> não é para usar todas as frases de uma vez. A brincadeira não pode virar um interrogatório. Use algumas, no ritmo da criança.</p>
     </div>
   </section>
 
+  <!-- 5. Personagem -->
   <section class="escuro" id="personagem">
     <div class="wrap">
       <div class="topo">
-        <h2>Escolha o seu personagem</h2>
-        <p>Lucas e Bruna têm a mesma proposta educativa. Você escolhe o personagem com o qual a criança mais se identifica.</p>
+        <h2>Escolha o personagem</h2>
+        <p>Lucas e Bruna ensinam a mesma coisa. Escolha o que tem mais a cara do seu filho, ou os dois, se você tem um menino e uma menina.</p>
       </div>
       <div class="personagens">
         <article class="personagem">
@@ -433,42 +579,32 @@ footer a:hover { color: var(--mel); }
           <a class="btn btn-grande" href="https://chk.eduzz.com/Z0B15YOJ9A">Quero a Bruna</a>
         </article>
       </div>
-      <p class="nota" style="text-align:center;margin-top:28px">Indicado para crianças de 5 a 10 anos, com a mediação de um adulto. Produto digital em PDF: nenhum material físico será enviado. Após a confirmação do pagamento, você recebe as instruções de acesso por e-mail.</p>
+      <p class="nota" style="text-align:center;margin-top:28px">Para crianças de 5 a 10 anos, sempre com um adulto junto. É um arquivo em PDF para imprimir em casa: nada é enviado pelo correio. Depois do pagamento, o acesso chega no seu e-mail.</p>
     </div>
   </section>
 
-  <section class="argila" id="trilha">
-    <div class="wrap trilha">
-      <img src="img/trilha-do-crescer.jpg" alt="Tabuleiro ilustrado da Trilha do Crescer" width="1000" height="666" loading="lazy">
-      <div>
-        <span class="selo">Gratuito</span>
-        <h2 style="margin-top:16px">Trilha do Crescer</h2>
-        <p style="margin-top:16px">Um jogo de trilha para imprimir e brincar em família, com perguntas e desafios que ajudam a conversar sobre corpo, crescimento, sentimentos e proteção.</p>
-        <p class="nota">Faça seu cadastro para acessar o jogo gratuitamente.</p>
-        <div class="acoes" style="justify-content:flex-start"><a class="btn btn-grande" href="https://sun.eduzz.com/8WPNDV2N0P">Baixar gratuitamente</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <!-- 6. Próximo passo -->
+  <section class="argila">
     <div class="wrap">
       <div class="topo">
-        <h2>Quer ir além da brincadeira?</h2>
-        <p>O Módulo 0 do Método Educar é Proteger é gratuito: 8 aulas para você se sentir mais segura nessas conversas.</p>
+        <h2>Quer saber o que dizer em cada idade, além da brincadeira?</h2>
+        <p>O Módulo 0 do Método Educar é Proteger é gratuito: 8 aulas para você se sentir segura nessas conversas.</p>
       </div>
-      <div class="acoes"><a class="btn btn-grande" href="gratuito.html">Conhecer o módulo gratuito</a></div>
+      <div class="acoes"><a class="btn btn-grande" href="gratuito.html">Conhecer o Módulo 0 gratuito</a></div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
     <ul>
-      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html">Método</a></li>
       <li><a href="gratuito.html">Módulo gratuito</a></li>
+      <li><a href="index.html#modulos">Módulos</a></li>
       <li><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li><a href="jogos.html">Jogos</a></li>
+      <li><a href="trilha.html">Trilha grátis</a></li>
     </ul>
   </div>
 </footer>

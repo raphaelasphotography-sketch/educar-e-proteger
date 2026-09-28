@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Módulo 11 a 13 anos · Método Educar é Proteger</title>
-<meta name="description" content="Prepare-se para orientar as mudanças da pré-adolescência com mais segurança, diálogo e conexão.">
+<meta name="description" content="Seu filho está se fechando e passando horas no celular? Saiba como manter a conversa aberta na puberdade.">
 <style>
 :root {
   --creme: #F7EEE3;
@@ -75,7 +75,7 @@ section { padding-block: 96px; }
 .escuro .marca-arco { border-color: var(--mel); }
 
 /* Hero */
-.hero { padding-block: 40px 72px; min-height: calc(100vh - 150px); display: flex; align-items: center; overflow: hidden; }
+.hero { padding-block: 40px 72px; min-height: min(calc(100vh - 150px), 820px); display: flex; align-items: center; overflow: hidden; }
 .hero-grade { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: center; width: 100%; }
 .selo { display: inline-block; font-size: .85rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 4px 14px; border-radius: 999px; }
 .hero .selo { margin-bottom: 22px; }
@@ -280,223 +280,371 @@ footer a:hover { color: var(--mel); }
   .icone img { width: 60px; height: 60px; margin: 0; grid-row: span 2; }
   .icone p { margin-top: 0; }
 }
+.livro-capa { position: relative; width: min(100%, 420px); margin-inline: auto; isolation: isolate; }
+.livro-capa img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.livro-capa::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.perguntas-maes { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 44px; }
+.perguntas-maes li { background: var(--creme); border-radius: 20px; padding: 22px 24px; font-family: var(--serif); font-size: 1.25rem; line-height: 1.35; display: flex; gap: 14px; align-items: flex-start; }
+.perguntas-maes img { width: 40px; height: 40px; flex: none; }
+.por-dentro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.por-dentro img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 20px; }
+.temas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.temas li { display: flex; gap: 12px; padding: 14px 16px; border: 1px solid var(--linha-clara); border-radius: 16px; color: var(--argila); }
+@media (max-width: 860px) { .perguntas-maes, .temas { grid-template-columns: 1fr; } .por-dentro { grid-template-columns: 1fr; } .livro-capa { order: -1; width: min(80%, 320px); } }
+.cena { position: relative; isolation: isolate; }
+.cena img { border-radius: 24px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.cena::after { content: ""; position: absolute; inset: auto -36px -36px auto; width: 150px; height: 150px; border-radius: 50%; background: var(--tijolo); opacity: .55; z-index: -1; }
+.jogos-hero .hero-grade { grid-template-columns: 1fr 1fr; }
+.personagens { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 880px; margin: 48px auto 0; }
+.personagem { background: var(--creme); border-radius: 28px; padding: 18px 18px 30px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.personagem img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 20px; margin-bottom: 8px; }
+.personagem h3 { font-size: 1.8rem; }
+.personagem .preco { margin-block: 4px 12px; }
+.presentes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+.presente { display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: start; background: var(--creme); border-radius: 24px; padding: 20px; }
+.presente img { width: 100%; border-radius: 14px; box-shadow: 0 10px 24px rgba(59, 37, 33, .18); }
+.presente h3 { font-size: 1.4rem; }
+.presente p { margin-top: 8px; color: var(--texto-suave); }
+.presente ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 8px; font-size: .97rem; }
+.presente li { display: flex; gap: 10px; }
+.trilha { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.trilha img { border-radius: 24px; }
+@media (max-width: 860px) { .jogos-hero .hero-grade, .personagens, .presentes, .trilha { grid-template-columns: 1fr; } .cena { order: -1; } }
+@media (max-width: 560px) { .presente { grid-template-columns: 1fr; } .presente img { max-width: 200px; } }
+
+/* ===== Acréscimos de 28/09/2026: fotos reais, capas das aulas, garantia ===== */
+.capas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 40px; }
+.capas img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 18px rgba(59, 37, 33, .15); }
+.capas-legenda { margin-top: 16px; text-align: center; font-size: .95rem; color: var(--texto-suave); }
+.escuro .capas-legenda { color: var(--argila); }
+.galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.galeria img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; }
+.galeria.quatro { grid-template-columns: repeat(4, 1fr); }
+.galeria.alta img { aspect-ratio: 9 / 16; }
+.foto-larga { margin-top: 40px; }
+.foto-larga img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 24px; }
+.hero-foto.paisagem img { aspect-ratio: 3 / 4; object-position: 70% center; }
+.garantia { display: flex; gap: 20px; align-items: center; max-width: 720px; margin: 40px auto 0; background: var(--creme); border-radius: 22px; padding: 22px 26px; }
+.escuro .garantia { background: rgba(247, 238, 227, .08); border: 1px solid var(--linha-clara); }
+.garantia .dias { flex: none; width: 78px; height: 78px; border-radius: 50%; border: 3px solid var(--tijolo); display: grid; place-content: center; text-align: center; font-family: var(--serif); font-size: 1.9rem; line-height: .9; color: var(--tijolo); }
+.garantia .dias small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .04em; }
+.escuro .garantia .dias { border-color: var(--mel); color: var(--mel); }
+.garantia p { font-size: .98rem; }
+.escuro .garantia p { color: var(--argila); }
+.dor-unica { max-width: 760px; margin: 36px auto 0; background: var(--creme); border-radius: 24px; padding: 30px 32px; font-family: var(--serif); font-size: clamp(1.3rem, 1.1rem + .8vw, 1.75rem); line-height: 1.35; text-align: center; color: var(--tijolo-escuro); }
+.argila .dor-unica { background: var(--creme); }
+.cenas { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+.cenas li { background: var(--argila); border-radius: 18px; padding: 18px 20px; font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; }
+.argila .cenas li { background: var(--creme); }
+.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; text-align: center; }
+.numeros strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2.2rem, 1.8rem + 1.4vw, 3.2rem); line-height: 1; color: var(--tijolo); }
+.escuro .numeros strong { color: var(--mel); }
+.numeros span { display: block; margin-top: 8px; font-size: .95rem; color: var(--texto-suave); }
+.escuro .numeros span { color: var(--argila); }
+.caminho { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; counter-reset: passo; }
+.caminho li { background: var(--creme); border-radius: 24px; padding: 28px 24px; }
+.caminho .passo { font-family: var(--serif); font-size: 2.4rem; line-height: 1; color: var(--tijolo); }
+.caminho h3 { font-size: 1.35rem; margin-top: 10px; }
+.caminho p { margin-top: 8px; color: var(--texto-suave); font-size: .98rem; }
+.produto .dor { font-family: var(--serif); font-size: 1.1rem; line-height: 1.35; color: var(--tijolo-escuro); margin-inline: 12px; }
+.assinatura { margin-top: 18px; font-family: var(--serif); font-size: 1.3rem; color: var(--tijolo-escuro); }
+.escuro .assinatura { color: var(--mel); }
+@media (max-width: 960px) { .capas, .galeria.quatro, .numeros { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 860px) { .caminho, .cenas { grid-template-columns: 1fr; } .galeria { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .garantia { flex-direction: column; text-align: center; } }
+.bio .duas { align-items: start; }
+/* Ícones das bolinhas com respiro (o desenho do cavalinho encosta na borda do arquivo) */
+.bolha { width: 92px; height: 92px; }
+.bolha img { width: 50px; height: 50px; object-fit: contain; }
+.bolha.b1 { left: -36px; }
+@media (max-width: 860px) { .bolha { width: 68px; height: 68px; } .bolha img { width: 36px; height: 36px; } .bolha.b1 { left: -22px; } }
+/* Textos de abertura mais largos (menos quebras) */
+.topo { max-width: 760px; }
+.importante { max-width: 880px; }
+/* Marcador de lista: check no lugar do "U invertido" */
+.marca-arco { width: 20px; height: 20px; border: 0; border-radius: 50%; background: var(--tijolo); position: relative; margin-top: .22em; }
+.marca-arco::after { content: ""; position: absolute; left: 7px; top: 3.5px; width: 5px; height: 9px; border: solid var(--creme); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.escuro .marca-arco { background: var(--mel); }
+.escuro .marca-arco::after { border-color: var(--cacau); }
+/* Fotos dos produtos no fim da página: enquadramento vertical */
+.produto > img { aspect-ratio: 4 / 5; }
+/* Chamada final mais larga (menos quebras) */
+.final h2 { max-width: 34ch; text-wrap: pretty; }
+.final p { max-width: 80ch; }
+/* Livro: resposta em destaque no topo e bloco de preço do fecho */
+.resposta-destaque { margin-top: 18px; font-family: var(--serif); font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); line-height: 1.1; color: var(--mel); }
+.preco-final { display: inline-block; margin-top: 28px; padding: 22px 40px; border: 1px solid var(--linha-clara); border-radius: 24px; background: rgba(247, 238, 227, .06); }
+.preco-final .valor { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--creme); margin: 0; max-width: none; }
+.preco-final .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.final .preco-final p + p { margin-top: 8px; font-size: .95rem; color: var(--argila); }
+.temas-claro li { color: var(--texto); border-color: var(--texto-suave); background: rgba(247, 238, 227, .5); }
+/* Vídeos curtos sem som no lugar da foto */
+.retrato video { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 24px; background: var(--argila); }
+/* Topo dos jogos com foto vertical */
+.cena-retrato { width: min(100%, 420px); margin-inline: auto; }
+.cena-retrato img { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
+/* ===== Menu com submenus (28/09) ===== */
+.menu .wrap { position: relative; }
+.menu-desk { list-style: none; display: flex; gap: 6px 30px; align-items: center; }
+.menu-desk > li { position: relative; }
+.menu-desk > li > a { display: inline-block; padding-block: 10px; }
+.menu-desk > li.ativo > a { color: var(--mel); }
+.menu .seta { font-size: .75em; margin-left: 2px; }
+.menu .sub { list-style: none; position: absolute; top: 100%; left: -18px; z-index: 30; min-width: 250px; display: flex; flex-direction: column; gap: 2px; padding: 10px; background: var(--creme); border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,.28); opacity: 0; visibility: hidden; transform: translateY(6px); transition: opacity .15s, transform .15s, visibility .15s; }
+.menu .tem-sub:hover .sub, .menu .tem-sub:focus-within .sub { opacity: 1; visibility: visible; transform: none; }
+.menu .sub a, .mob-painel a { display: block; color: var(--texto); padding: 9px 14px; border-radius: 10px; font-size: .95rem; }
+.menu .sub a:hover, .menu .sub a[aria-current] { background: var(--argila); color: var(--tijolo-escuro); }
+.menu .tag { display: inline-block; margin-left: 6px; font-size: .72rem; font-weight: 600; background: var(--mel); color: var(--cacau); padding: 1px 8px; border-radius: 999px; vertical-align: 1px; }
+.menu-mob { display: none; }
+@media (max-width: 860px) {
+  .menu .wrap { flex-direction: row; justify-content: space-between; }
+  .menu-desk { display: none; }
+  .menu-mob { display: block; }
+  .menu-mob summary { list-style: none; cursor: pointer; color: var(--creme); border: 1px solid var(--linha-clara); border-radius: 999px; padding: 8px 18px; font-size: .95rem; }
+  .menu-mob summary::-webkit-details-marker { display: none; }
+  .menu-mob summary::after { content: " ▾"; font-size: .8em; }
+  .menu-mob[open] summary::after { content: " ▴"; }
+  .mob-painel { position: absolute; right: 16px; left: 16px; top: calc(100% + 6px); z-index: 30; background: var(--creme); border-radius: 18px; padding: 14px; box-shadow: 0 18px 40px rgba(0,0,0,.3); max-height: 75vh; overflow-y: auto; }
+  .mob-painel ul { list-style: none; }
+  .mob-titulo { font-family: var(--serif); color: var(--tijolo); font-size: 1.05rem; padding: 10px 14px 4px; }
+  .mob-painel a[aria-current] { background: var(--argila); }
+}
+.menu .menu-desk > li:last-child .sub { left: auto; right: -18px; }
+.menu .sub a { white-space: nowrap; }
+.menu .mob-painel ul { display: block; }
+.menu .mob-painel a, .menu .mob-painel a[aria-current] { color: var(--texto); text-align: left; }
+.menu .mob-painel a[aria-current] { color: var(--tijolo-escuro); }
+@media (max-width: 860px) { .menu .menu-desk { display: none; } .menu .wrap { flex-direction: row; } }
 </style>
 </head>
 <body>
-<p class="aviso">Versão local para revisão.</p>
-
 <nav class="menu" aria-label="Menu principal">
   <div class="wrap">
     <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
-    <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="gratuito.html">Módulo gratuito</a></li>
-      <li><a href="modulo-0-a-5.html">0 a 5</a></li>
-      <li><a href="modulo-6-a-10.html">6 a 10</a></li>
-      <li><a href="modulo-11-a-13.html" aria-current="page">11 a 13</a></li>
-      <li><a href="modulo-14-a-18.html">14 a 18</a></li>
-      <li><a href="livro-lucas.html">Livro Lucas</a></li>
-      <li><a href="jogos.html">Jogos</a></li>
+    <ul class="menu-desk">
+      <li class="tem-sub ativo"><a href="index.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html" aria-current="page">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul></li>
+      <li class=""><a href="livro-lucas.html">Livro Lucas</a></li>
+      <li class="tem-sub"><a href="jogos.html">Jogos <span class="seta" aria-hidden="true">▾</span></a>
+        <ul class="sub">
+          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul></li>
     </ul>
+    <details class="menu-mob"><summary>Menu</summary>
+      <div class="mob-painel">
+        <p class="mob-titulo">Método Educar é Proteger</p><ul>
+          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
+          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
+          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
+          <li><a href="modulo-11-a-13.html" aria-current="page">Módulo 11 a 13 anos</a></li>
+          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
+        </ul>
+        <p class="mob-titulo">Livro</p><ul><li><a href="livro-lucas.html">Livro Lucas aprende sobre crescer</a></li></ul>
+        <p class="mob-titulo">Jogos</p><ul>
+          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
+          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
+        </ul>
+      </div>
+    </details>
   </div>
 </nav>
 
-<aside class="barra" aria-label="Comprar módulo">
+<aside class="barra" aria-label="Atalho">
   <span>Módulo 11 a 13 anos · R$ 149,90 em até 12x</span>
   <a class="btn" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero este módulo</a>
 </aside>
 
 <main>
 
+  <!-- 1. Topo -->
   <section class="hero escuro">
     <div class="wrap hero-grade">
       <div>
         <span class="selo">Módulo 11 a 13 anos</span>
-        <h1>Prepare-se para orientar as mudanças da pré-adolescência com mais segurança, diálogo e conexão</h1>
-        <p class="sub">Orientações práticas para mães, pais e responsáveis que desejam conversar sobre mudanças corporais, emoções, autoestima, relacionamentos, internet, limites e proteção de maneira clara e adequada à idade.</p>
-        <p class="inclui-curto">12 aulas online + materiais práticos + Módulo 0 e Módulo Bônus</p>
-        <p class="preco-hero"><small>R$</small>149,90<span>em até 12x no cartão</span></p>
-        <div class="acoes"><a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero acessar o módulo 11 a 13 anos</a></div>
-        <ul class="chips"><li>Compra segura</li><li>Acesso online</li><li>Estude no seu ritmo</li></ul>
+        <h1>Ele está se fechando e passando horas no celular. Como não perder essa conexão?</h1>
+        <p class="sub">A puberdade chegou, a porta do quarto começou a ficar fechada e as respostas viraram "nada" e "tanto faz". Neste módulo eu te mostro como conversar sobre corpo, relacionamentos, internet e proteção com quem já não é mais criança, sem afastar e sem virar interrogatório.</p>
+        <p class="preco-hero"><small>R$</small>149,90<span>em até 12x no cartão · Módulo 0 e Bônus incluídos</span></p>
+        <div class="acoes"><a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero o módulo 11 a 13 anos</a></div>
+        <ul class="chips"><li>12 aulas</li><li>Materiais práticos</li><li>7 dias de garantia</li></ul>
       </div>
       <figure class="arco hero-foto">
-        <img src="img/raphaela-olhar.jpg" alt="Raphaela Spellmeier olhando para o alto, sorrindo" width="881" height="1328" fetchpriority="high">
+        <img src="img/fotos/foto-modulo-11-13.jpg" alt="Raphaela Spellmeier de braços cruzados, de camisa marrom" width="800" height="1200" fetchpriority="high">
         <span class="bolha b1"><img src="img/icones/broto.png" alt="" width="160" height="160"></span>
         <span class="bolha b2"><img src="img/icones/conversa.png" alt="" width="160" height="160"></span>
-        <span class="bolha b3"><img src="img/icones/escudo.png" alt="" width="160" height="160"></span>
+        <span class="bolha b3"><img src="img/icones/cadeado.png" alt="" width="160" height="160"></span>
       </figure>
     </div>
   </section>
 
-  <section class="argila">
+  <!-- 2. A dor -->
+  <section>
     <div class="wrap">
       <div class="topo">
-        <h2>Antes de falar com nossos filhos, precisamos compreender o que realmente estamos ensinando</h2>
-        <p>Neste vídeo, eu explico por que educação sexual não se resume a falar sobre sexo e como informação, diálogo e acolhimento podem ajudar a construir uma relação de confiança dentro da família.</p>
+        <h2>De repente, ele não te conta mais nada</h2>
+        <p>Isso é esperado nessa fase, mas não quer dizer que ele não precise de você. Ele só precisa de um jeito diferente de conversar. Talvez você esteja vivendo alguma dessas:</p>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube-nocookie.com/embed/X_5uAUGi4Vc" title="Apresentação do Método Educar é Proteger" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <div class="video-apoio">
-        <p class="destaque">Você não precisa ter todas as respostas. Precisa aprender a escutar, responder com clareza e manter aberta a porta para a próxima conversa.</p>
-        <a class="link" href="https://www.youtube.com/watch?v=X_5uAUGi4Vc">Assistir no YouTube</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="argila" style="padding-top:0">
-    <div class="wrap">
-      <div class="topo">
-        <h2>As mudanças chegam e as perguntas nem sempre são feitas em voz alta</h2>
-        <p>Entre os 11 e os 13 anos, o corpo muda, as emoções se intensificam e surgem novas curiosidades sobre identidade, relacionamentos e sexualidade. Mesmo quando seu filho não pergunta, ele já pode estar buscando respostas com amigos ou na internet.</p>
-      </div>
-      <h3 style="text-align:center;margin-top:56px;font-size:1.6rem">Este módulo é para você que</h3>
-      <ul class="para-voce">
-        <li><img src="img/icones/broto.png" alt="" width="160" height="160">Quer conversar sobre puberdade e mudanças corporais com naturalidade</li>
-        <li><img src="img/icones/cadeado.png" alt="" width="160" height="160">Tem dúvidas sobre como orientar o uso da internet e os riscos do ambiente digital</li>
-        <li><img src="img/icones/casa.png" alt="" width="160" height="160">Percebe que seu filho está mais reservado e não sabe como se aproximar</li>
-        <li><img src="img/icones/conversa.png" alt="" width="160" height="160">Precisa abordar relacionamentos, atração e sexualidade de maneira adequada à idade</li>
-        <li><img src="img/icones/escudo.png" alt="" width="160" height="160">Quer ensinar sobre consentimento, limites e prevenção do abuso</li>
-        <li><img src="img/icones/pergunta.png" alt="" width="160" height="160">Deseja acolher perguntas sobre identidade sem julgamento ou afastamento</li>
+      <ul class="cenas" style="max-width:880px;margin-inline:auto">
+        <li>Ele fica no quarto com o celular e você não faz ideia com quem ele fala</li>
+        <li>Você tenta puxar assunto e recebe um "mãe, para"</li>
+        <li>O corpo mudou rápido e você não sabe se ele entende o que está acontecendo</li>
+        <li>Apareceu o primeiro "crush" e você não sabe se pergunta ou se finge que não viu</li>
       </ul>
-      <p class="fecho" style="text-align:center">Seu filho pode não contar tudo espontaneamente. Mas pode aprender que encontrará em você escuta, orientação e segurança.</p>
+      <p class="dor-unica">Nessa idade, quem não encontra resposta em casa procura no celular. O que você constrói agora é o que faz ele ainda te procurar lá na frente.</p>
     </div>
   </section>
 
+  <!-- 3. O que muda -->
   <section class="escuro">
     <div class="wrap">
-      <div class="topo">
-        <h2>O que muda quando você entende essa fase</h2>
-        <p>Com informação adequada, você consegue interpretar melhor as mudanças da pré-adolescência e transformar dúvidas e situações delicadas em oportunidades de diálogo e proteção.</p>
-      </div>
+      <div class="topo"><h2>Depois deste módulo, você vai</h2></div>
       <div class="muda">
-        <article><span class="num">01</span><h3>Mais preparo</h3><p>Você compreende as mudanças corporais, emocionais e comportamentais esperadas entre os 11 e os 13 anos.</p></article>
-        <article><span class="num">02</span><h3>Mais diálogo</h3><p>Você aprende a abordar assuntos delicados sem interrogatórios, julgamentos ou discursos que afastem seu filho.</p></article>
-        <article><span class="num">03</span><h3>Mais proteção</h3><p>Você consegue orientar sobre consentimento, prevenção do abuso, internet e situações de risco com clareza.</p></article>
-        <article><span class="num">04</span><h3>Mais confiança entre vocês</h3><p>Seu filho percebe que pode procurar você diante de dúvidas, desconfortos e experiências difíceis.</p></article>
+        <article><span class="num">01</span><h3>Voltar a conversar</h3><p>Com roteiros de conversa para começar sem parecer sermão.</p></article>
+        <article><span class="num">02</span><h3>Explicar a puberdade</h3><p>Corpo, emoções e mudanças, com clareza e sem constrangimento.</p></article>
+        <article><span class="num">03</span><h3>Proteger na internet</h3><p>Aliciamento, exposição e conteúdo impróprio, com um acordo de segurança digital da família.</p></article>
+        <article><span class="num">04</span><h3>Falar de relacionamentos</h3><p>Ajudar ele a reconhecer o que é uma relação saudável e o que não é.</p></article>
       </div>
     </div>
   </section>
 
+  <!-- 4. Aulas -->
   <section id="aulas">
     <div class="wrap">
       <div class="topo">
-        <h2>Conteúdo do módulo 11 a 13 anos</h2>
-        <p>Orientações práticas para acompanhar as mudanças da pré-adolescência, responder às dúvidas e conversar sobre corpo, relacionamentos, internet, sexualidade e proteção.</p>
+        <h2>As 12 aulas do módulo 11 a 13 anos</h2>
+        <p>Com roteiros e materiais para usar em casa.</p>
       </div>
       <ol class="aulas">
-        <li><span class="n"><small>AULA</small>1</span><div><h3>Começando agora</h3><p>Entenda como iniciar esse diálogo, mesmo que esses assuntos nunca tenham sido conversados em sua família.</p></div></li>
-        <li><span class="n"><small>AULA</small>2</span><div><h3>Anatomia e reprodução</h3><p>Organize seus conhecimentos para explicar o corpo, seus órgãos e a reprodução humana com clareza e naturalidade.</p></div></li>
-        <li><span class="n"><small>AULA</small>3</span><div><h3>Desenvolvimento sexual</h3><p>Compreenda as curiosidades, os comportamentos e as descobertas que podem surgir nessa etapa do desenvolvimento.</p></div></li>
-        <li><span class="n"><small>AULA</small>4</span><div><h3>O que esperar na puberdade</h3><p>Conheça as principais mudanças corporais, hormonais e emocionais da puberdade para orientar com mais segurança.</p></div></li>
-        <li><span class="n"><small>AULA</small>5</span><div><h3>Prevenção do abuso</h3><p>Aprenda a conversar sobre consentimento, limites, situações de risco e caminhos para pedir ajuda sem gerar medo.</p></div></li>
-        <li><span class="n"><small>AULA</small>6</span><div><h3>Perigos do mundo virtual</h3><p>Oriente sobre exposição, conteúdos inadequados, aliciamento e outros riscos presentes no ambiente digital.</p></div></li>
-        <li><span class="n"><small>AULA</small>7</span><div><h3>Respondendo às dúvidas dos adolescentes</h3><p>Prepare-se para acolher perguntas inesperadas e responder com sinceridade, respeito e informações adequadas à idade.</p></div></li>
-        <li><span class="n"><small>AULA</small>8</span><div><h3>Relacionamentos saudáveis</h3><p>Ensine a reconhecer respeito, reciprocidade, limites e sinais de comportamentos prejudiciais nos relacionamentos.</p></div></li>
-        <li><span class="n"><small>AULA</small>9</span><div><h3>Sexualidade saudável</h3><p>Compreenda como conversar sobre sexualidade, sentimentos, escolhas, responsabilidade e cuidado consigo e com o outro.</p></div></li>
-        <li><span class="n"><small>AULA</small>10</span><div><h3>ISTs e preservativo</h3><p>Saiba como abordar prevenção, infecções sexualmente transmissíveis e uso do preservativo com clareza e responsabilidade.</p></div></li>
-        <li><span class="n"><small>AULA</small>11</span><div><h3>Identidade de gênero</h3><p>Aprenda a acolher dúvidas e conversas sobre identidade, expressão e diferenças sem julgamento ou afastamento.</p></div></li>
-        <li><span class="n"><small>AULA</small>12</span><div><h3>Criando pontes</h3><p>Fortaleça a confiança e mantenha aberto um canal de diálogo para acompanhar as próximas fases do desenvolvimento.</p></div></li>
+        <li><span class="n"><small>AULA</small>1</span><div><h3>Começando agora</h3><p>Como iniciar o diálogo sobre sexualidade, mesmo que nunca tenha existido na sua casa.</p></div></li>
+        <li><span class="n"><small>AULA</small>2</span><div><h3>Anatomia e reprodução</h3><p>Como explicar o corpo e as mudanças da adolescência, com um roteiro de conversa para pais.</p></div></li>
+        <li><span class="n"><small>AULA</small>3</span><div><h3>Desenvolvimento sexual</h3><p>As mudanças do corpo e como orientar seu filho nessa etapa.</p></div></li>
+        <li><span class="n"><small>AULA</small>4</span><div><h3>Mudanças da puberdade</h3><p>Corpo, emoções e conexão familiar.</p></div></li>
+        <li><span class="n"><small>AULA</small>5</span><div><h3>Prevenção de abuso</h3><p>Como proteger e fortalecer seu filho, treinando respostas de proteção.</p></div></li>
+        <li><span class="n"><small>AULA</small>6</span><div><h3>Perigos do mundo virtual</h3><p>Exposição, aliciamento e conteúdos impróprios, e o acordo familiar de segurança digital.</p></div></li>
+        <li><span class="n"><small>AULA</small>7</span><div><h3>Perguntas difíceis dos adolescentes</h3><p>Como responder com sinceridade e segurança.</p></div></li>
+        <li><span class="n"><small>AULA</small>8</span><div><h3>Relações saudáveis</h3><p>Como ajudar seu filho a identificar o que é respeito e o que não é, com o jogo "Saudável ou Não".</p></div></li>
+        <li><span class="n"><small>AULA</small>9</span><div><h3>Sexualidade, corpo e emoções</h3><p>Como guiar seu filho nessa fase.</p></div></li>
+        <li><span class="n"><small>AULA</small>10</span><div><h3>Proteção e cuidado</h3><p>ISTs e preservativo: o que ele precisa saber desde já.</p></div></li>
+        <li><span class="n"><small>AULA</small>11</span><div><h3>Diversidade e respeito</h3><p>Como orientar seu filho sem perder os seus valores.</p></div></li>
+        <li><span class="n"><small>AULA</small>12</span><div><h3>Criando pontes</h3><p>Como fortalecer o vínculo para acompanhar as próximas fases.</p></div></li>
       </ol>
+      <div class="capas">
+        <img src="img/capas/m1113-Aula-01.jpg" alt="Capa da aula 1 do módulo 11 a 13 anos" width="520" height="293" loading="lazy">
+        <img src="img/capas/m1113-Aula-4.jpg" alt="Capa da aula 4 do módulo 11 a 13 anos" width="520" height="293" loading="lazy">
+        <img src="img/capas/m1113-Aula-6.jpg" alt="Capa da aula 6 do módulo 11 a 13 anos" width="520" height="293" loading="lazy">
+        <img src="img/capas/m1113-Aula-12.jpg" alt="Capa da aula 12 do módulo 11 a 13 anos" width="520" height="293" loading="lazy">
+      </div>
     </div>
   </section>
 
-  <section class="argila">
+  <!-- 5. Oferta -->
+  <section class="argila" id="oferta">
     <div class="wrap">
-      <div class="topo">
-        <h2>Tudo o que você recebe</h2>
-        <p>Conteúdo específico para a pré-adolescência, fundamentos importantes e materiais para ajudar você a transformar o aprendizado em conversas reais.</p>
-      </div>
+      <div class="topo"><h2>Tudo o que você recebe</h2></div>
       <div class="inclui">
         <ul>
-          <li><span class="marca-arco" aria-hidden="true"></span>Módulo completo de 11 a 13 anos: 12 aulas específicas para essa faixa etária</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Materiais complementares e atividades práticas</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0 — Fundamentos do Método</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Módulo Bônus com conteúdos e indicações por idade</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>As 12 aulas do módulo 11 a 13 anos</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Materiais práticos: roteiro de conversa para pais, guia visual do corpo, treino de respostas de proteção, acordo familiar de segurança digital, jogo "Saudável ou Não" e mais</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Módulo 0: a sua história e as bases da conversa</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Módulo Bônus: ciclo menstrual e ISTs com especialista, absorventes, preservativos e práticas de regulação emocional por idade</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Dúvidas respondidas por mim, por e-mail ou nos comentários</li>
         </ul>
         <div class="caixa-preco escuro">
-          <p class="rotulo">Acesso completo</p>
-          <p class="itens">Módulo 11 a 13 anos · Módulo 0 · Módulo Bônus</p>
+          <p class="rotulo">Módulo 11 a 13 anos</p>
+          <p class="itens">+ Módulo 0 + Módulo Bônus</p>
           <p class="valor"><small>R$</small>149,90</p>
           <p class="itens">em até 12x no cartão</p>
-          <a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero acessar este módulo</a>
+          <a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero este módulo</a>
         </div>
       </div>
-      <p class="importante"><strong>Importante:</strong> esta compra inclui o Módulo 11 a 13 anos, o Módulo 0 — Fundamentos e o Módulo Bônus. Os módulos das demais faixas etárias são adquiridos separadamente.</p>
+      <div class="garantia">
+        <span class="dias">7<small>DIAS</small></span>
+        <p><strong>Você tem 7 dias para assistir e sentir se é para você.</strong> Se não for, pede o reembolso na Eduzz e recebe o valor de volta.</p>
+      </div>
+      <p class="importante"><strong>A adolescência está logo ali.</strong> Para chegar preparada nos 14 a 18, ou se você tem outro filho, o <a class="link" href="index.html#oferta">método completo</a> sai por R$ 297, menos que dois módulos avulsos.</p>
     </div>
   </section>
 
+  <!-- Quem conduz (bloco comum) -->
   <section class="bio escuro">
     <div class="wrap duas">
       <figure class="arco">
-        <img src="img/raphaela-bio.jpg" alt="Raphaela Spellmeier sentada, de blusa azul, sorrindo" width="959" height="1342" loading="lazy">
+        <img src="img/fotos/foto-azul-sentada.jpg" alt="Raphaela Spellmeier sentada, de blusa azul, sorrindo" width="800" height="1200" loading="lazy">
       </figure>
       <div>
-        <h2>Quem vai acompanhar você</h2>
-        <p class="abre" style="margin-top:18px">Eu sou Raphaela Spellmeier. Eu quebrei o ciclo, e hoje ensino mães a darem aos filhos a conversa que elas mesmas não tiveram.</p>
+        <h2>Quem vai caminhar com você</h2>
+        <div class="texto-bio">
+          <p>Eu sou a Raphaela, educadora em sexualidade, mestre em psicologia educacional e mãe. Eu também cresci numa casa onde não se falava sobre isso, e sei na pele o quanto o silêncio deixa uma criança sozinha.</p>
+          <p>Quando o meu filho começou a fazer perguntas, eu percebi que, mesmo estudando tanto, eu não sabia direito o que responder para a idade dele. Ninguém ensinou a gente a ensinar. Por isso eu organizei esse caminho, para você não precisar descobrir tudo sozinha.</p>
+        </div>
         <ul class="formacao">
           <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em sexualidade humana</li>
           <li><span class="marca-arco" aria-hidden="true"></span>Pós-graduação em saúde da mulher</li>
           <li><span class="marca-arco" aria-hidden="true"></span>Mestre em Psicologia Educacional</li>
           <li><span class="marca-arco" aria-hidden="true"></span>Professora e coordenadora em faculdade</li>
-          <li><span class="marca-arco" aria-hidden="true"></span>Graduação com prêmio de melhor aluna</li>
+          <li><span class="marca-arco" aria-hidden="true"></span>Palestras em escolas</li>
           <li><span class="marca-arco" aria-hidden="true"></span>Mãe</li>
         </ul>
-        <div class="texto-bio">
-          <p>Minha experiência profissional sempre esteve ligada às histórias, à saúde íntima e à parte mais sensível da vida das pessoas. Ao longo dessa trajetória, percebi que muitos sofrimentos, medos e dificuldades começam no silêncio e na falta de orientação durante a infância.</p>
-          <p>Criei o Método Educar é Proteger para ajudar famílias a conduzirem essas conversas com informação, respeito, acolhimento e uma linguagem adequada a cada etapa do desenvolvimento.</p>
-        </div>
-        <p class="fecho">Falar sobre sexualidade não tira a inocência. Informação adequada ajuda a construir cuidado, diálogo e proteção.</p>
+        <p class="assinatura">Se surgir uma dúvida no caminho, é só me escrever. Sou eu mesma que respondo.</p>
       </div>
     </div>
   </section>
 
+  <!-- 7. Perguntas -->
   <section>
     <div class="wrap">
-      <div class="topo"><h2>Ainda ficou com alguma dúvida?</h2><p>Reunimos as principais informações para ajudar você a escolher com segurança.</p></div>
+      <div class="topo"><h2>Perguntas rápidas</h2></div>
       <div class="faq">
-        <details><summary>Para quem é o Módulo 11 a 13 anos?</summary><div class="resposta"><p>Para mães, pais e responsáveis que desejam orientar pré-adolescentes sobre puberdade, corpo, emoções, relacionamentos, sexualidade, internet, limites e proteção.</p></div></details>
-        <details><summary>Preciso esperar meu filho perguntar?</summary><div class="resposta"><p>Não. Muitas dúvidas não são verbalizadas. O módulo ajuda você a iniciar conversas de maneira natural, respeitosa e adequada à idade.</p></div></details>
-        <details><summary>O Módulo 0 está incluído?</summary><div class="resposta"><p>Sim. Você também recebe o Módulo 0, com os fundamentos necessários para compreender e aplicar o método.</p></div></details>
-        <details><summary>Posso assistir pelo celular?</summary><div class="resposta"><p>Sim. O conteúdo é online, na Eduzz, e pode ser acessado pelos dispositivos compatíveis com a plataforma.</p></div></details>
-        <details><summary>Os outros módulos por idade estão incluídos?</summary><div class="resposta"><p>Não. Esta compra inclui somente o Módulo 11 a 13 anos, o Módulo 0 — Fundamentos e o Módulo Bônus. As demais faixas etárias são adquiridas separadamente. Se quiser todas, o <a class="link" href="https://sun.eduzz.com/8017VRXN07">curso completo</a> sai por R$ 299,90.</p></div></details>
-        <details><summary>O Módulo Bônus está incluído?</summary><div class="resposta"><p>Sim. A compra deste módulo também libera o Módulo Bônus, com conteúdos e indicações práticas organizados por idade.</p></div></details>
+        <details><summary>Ele não quer conversar comigo. Vai adiantar?</summary><div class="resposta"><p>Vai. O módulo não ensina a forçar a conversa, e sim a criar ocasiões em que ela acontece: no carro, numa série, numa notícia. Com adolescente, a conversa curta e sem sermão é a que funciona.</p></div></details>
+        <details><summary>Falar de ISTs e preservativo com 11 anos não é cedo?</summary><div class="resposta"><p>A aula mostra o que é adequado para essa idade. Informação não antecipa nada: ela protege. E é melhor que ele ouça de você do que de um vídeo qualquer.</p></div></details>
+        <details><summary>O Módulo 0 e o Bônus estão incluídos?</summary><div class="resposta"><p>Estão. Você recebe o módulo 11 a 13 anos, o Módulo 0 e o Módulo Bônus.</p></div></details>
+        <details><summary>E se eu não gostar?</summary><div class="resposta"><p>Você tem 7 dias para pedir o reembolso pela Eduzz.</p></div></details>
       </div>
     </div>
   </section>
 
+  <!-- 8. Final -->
   <section class="final escuro">
     <div class="wrap">
-      <h2>Esteja preparada para quando as perguntas e os desafios aparecerem</h2>
-      <p>Com orientação adequada, você pode acompanhar as mudanças da pré-adolescência, conversar sobre assuntos delicados e fortalecer um vínculo de confiança, cuidado e proteção.</p>
+      <h2>A porta do quarto pode estar fechada. A da conversa não precisa estar.</h2>
+      <p>O que você constrói agora é o que faz ele te procurar quando algo acontecer.</p>
       <p class="preco-hero"><small>R$</small>149,90<span>em até 12x no cartão</span></p>
-      <div class="acoes"><a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero acessar o módulo 11 a 13 anos</a></div>
-      <ul class="chips"><li>12 aulas específicas</li><li>Materiais complementares</li><li>Módulo 0 e bônus incluídos</li></ul>
+      <div class="acoes"><a class="btn btn-grande" href="https://sun.eduzz.com/39VKJ2ZKWR">Quero o módulo 11 a 13 anos</a></div>
     </div>
   </section>
 
+  <!-- Outras fases (bloco comum) -->
   <section class="argila">
     <div class="wrap">
-      <div class="topo"><h2>Outras fases</h2></div>
+      <div class="topo"><h2>Outras fases</h2><p>Tem filhos de idades diferentes? O <a class="link" href="index.html#oferta">método completo</a> traz todas as fases por R$ 297.</p></div>
       <div class="fases">
-        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>Primeiras descobertas do corpo, nomes corretos, privacidade, consentimento, curiosidades e proteção.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Puberdade, perguntas difíceis, autonomia, higiene, situações reais, segurança digital e prevenção.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>As primeiras perguntas e a proteção desde cedo.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p><span class="ver">Conhecer módulo</span></a>
         <a class="fase atual" href="modulo-11-a-13.html" aria-current="page"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Você está aqui.</p><span class="ver">Este módulo</span></a>
-        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Autonomia, escolhas, relacionamentos, saúde, prevenção e segurança no ambiente digital.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Namoro, pornografia e sexo sem afastar o adolescente.</p><span class="ver">Conhecer módulo</span></a>
       </div>
     </div>
   </section>
-
 </main>
 
 <footer>
   <div class="wrap">
     <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
     <ul>
-      <li><a href="index.html">Início</a></li>
+      <li><a href="index.html">Método</a></li>
       <li><a href="gratuito.html">Módulo gratuito</a></li>
+      <li><a href="index.html#modulos">Módulos</a></li>
       <li><a href="livro-lucas.html">Livro Lucas</a></li>
       <li><a href="jogos.html">Jogos</a></li>
+      <li><a href="trilha.html">Trilha grátis</a></li>
     </ul>
   </div>
 </footer>
