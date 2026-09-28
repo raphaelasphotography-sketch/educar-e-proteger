@@ -416,6 +416,8 @@ footer a:hover { color: var(--mel); }
 .menu .mob-painel a[aria-current] { color: var(--tijolo-escuro); }
 @media (max-width: 860px) { .menu .menu-desk { display: none; } .menu .wrap { flex-direction: row; } }
 .livro-capa img[src*="livro-n-"] { aspect-ratio: 4 / 5; object-fit: cover; object-position: center 55%; }
+.cena-retrato video { display: block; width: 100%; aspect-ratio: 9 / 12.2; object-fit: cover; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,.35); background: var(--cacau); }
+.jogo-fotos img { aspect-ratio: 3 / 5; object-position: center 45%; }
 </style>
 <!-- Meta Pixel -->
 <script>
@@ -496,7 +498,7 @@ document.addEventListener('click',function(ev){
         <ul class="chips"><li>PDF para imprimir</li><li>R$ 19,90</li><li>Guia para os pais de presente</li></ul>
       </div>
       <figure class="cena cena-retrato">
-        <img src="img/fotos/jogo-lucas-roupas.jpg" alt="Boneco Lucas recortado na mesa, com as roupinhas do jogo em volta" width="731" height="1300" fetchpriority="high">
+        <video src="img/fotos/jogo-anuncio.mp4" poster="img/fotos/jogo-anuncio-capa.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Mãos vestindo o boneco Lucas ao lado da cama do jogo"></video>
       </figure>
     </div>
   </section>
@@ -523,11 +525,11 @@ document.addEventListener('click',function(ev){
         <h2>Como funciona</h2>
         <p>Você imprime, recorta junto com a criança e monta os cenários. As situações do dia a dia viram conversa.</p>
       </div>
-      <div class="galeria quatro alta">
-        <img src="img/fotos/jogo-boneco.jpg" alt="Folha impressa com o boneco Lucas e as roupinhas para recortar" width="508" height="1100" loading="lazy">
-        <img src="img/fotos/jogo-camas.jpg" alt="Folha impressa com as camas do jogo" width="508" height="1100" loading="lazy">
-        <img src="img/fotos/jogo-bruna-vestida.jpg" alt="Boneca Bruna recortada, sendo vestida com um roupão" width="731" height="1300" loading="lazy">
-        <img src="img/fotos/jogo-mesa-roupas.jpg" alt="Mesa cheia de roupinhas recortadas do jogo" width="731" height="1300" loading="lazy">
+      <div class="galeria quatro jogo-fotos">
+        <img src="img/fotos/jogo-r-pijama.jpg" alt="Boneco Lucas vestido de pijama listrado" width="601" height="1300" loading="lazy">
+        <img src="img/fotos/jogo-r-toalha.jpg" alt="Boneca com toalha na cabeça e no corpo, com secador, patinho e condicionador" width="601" height="1300" loading="lazy">
+        <img src="img/fotos/jogo-r-banheira.jpg" alt="Boneco Lucas de toalha ao lado da banheira do jogo" width="601" height="1300" loading="lazy">
+        <img src="img/fotos/jogo-r-crianca.jpg" alt="Mão de uma criança brincando com o boneco Lucas na mesa" width="240" height="317" loading="lazy">
       </div>
       <div class="icones">
         <article class="icone"><img src="img/icones/lua.png" alt="" width="160" height="160"><h3>Hora de dormir</h3><p>"Que roupa o Lucas usa para dormir? Podemos sair de pijama na rua?"</p></article>
