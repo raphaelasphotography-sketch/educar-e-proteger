@@ -258,7 +258,9 @@ footer a:hover { color: var(--mel); }
   .icones, .fases, .muda { grid-template-columns: repeat(2, 1fr); }
   .para-voce { grid-template-columns: 1fr 1fr; }
 }
+.planos.dois { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 820px; margin-inline: auto; }
 @media (max-width: 860px) {
+  .planos.dois { grid-template-columns: 1fr; }
   section { padding-block: 72px; }
   body { padding-bottom: 128px; }
   .menu .wrap { flex-direction: column; gap: 10px; }
@@ -444,7 +446,6 @@ document.addEventListener('click',function(ev){
       <li class="tem-sub ativo"><a href="index.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
         <ul class="sub">
           <li><a href="index.html" aria-current="page">Conheça o Método</a></li>
-          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
           <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
           <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
           <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
@@ -461,7 +462,6 @@ document.addEventListener('click',function(ev){
       <div class="mob-painel">
         <p class="mob-titulo">Método Educar é Proteger</p><ul>
           <li><a href="index.html" aria-current="page">Conheça o Método</a></li>
-          <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
           <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
           <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
           <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
@@ -493,7 +493,6 @@ document.addEventListener('click',function(ev){
         <p class="sub">Mesmo que ninguém tenha conversado com você sobre isso. Um curso online, dos 0 aos 18 anos, com palavras simples para cada fase, feito para a mãe que quer mudar essa história dentro de casa.</p>
         <div class="acoes">
           <a class="btn btn-grande" href="#oferta">Quero o método completo</a>
-          <a class="link" href="gratuito.html">Prefiro começar pelo Módulo 0 gratuito</a>
         </div>
         <ul class="chips">
           <li>Curso online na Eduzz</li>
@@ -638,7 +637,7 @@ document.addEventListener('click',function(ev){
         <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>"Como falar de namoro, pornografia e sexo sem afastar meu adolescente?"</p><span class="ver">Conhecer módulo</span></a>
       </div>
       <div class="base-bonus">
-        <a class="base-bonus-item" href="gratuito.html"><img src="img/icones/livro.png" alt="" width="160" height="160"><div><strong>Módulo 0 · Primeiro você</strong><span>8 aulas sobre a sua história e as bases da conversa. Gratuito para começar.</span></div></a>
+        <div><img src="img/icones/livro.png" alt="" width="160" height="160"><div><strong>Módulo 0 · Primeiro você</strong><span>8 aulas sobre a sua história e as bases da conversa. Incluído em todos os módulos.</span></div></div>
         <div><img src="img/icones/presente.png" alt="" width="160" height="160"><div><strong>Módulo Bônus</strong><span>Aulas com especialista, 19 práticas de regulação emocional por idade e indicações de filmes e séries</span></div></div>
       </div>
     </div>
@@ -677,18 +676,7 @@ document.addEventListener('click',function(ev){
         <span class="dias">7<small>DIAS</small></span>
         <p><strong>Você tem 7 dias para entrar, assistir e sentir se é para você.</strong> Se não for, é só pedir o reembolso na Eduzz e você recebe todo o valor de volta.</p>
       </div>
-      <div class="planos">
-        <article class="plano" style="background:var(--creme)">
-          <h3>Módulo 0</h3>
-          <p class="desc">Para começar por você, sem pagar nada.</p>
-          <ul>
-            <li><span class="marca-arco" aria-hidden="true"></span>8 aulas online</li>
-            <li><span class="marca-arco" aria-hidden="true"></span>Exercícios de reflexão</li>
-          </ul>
-          <p class="preco">Gratuito</p>
-          <p class="parcela">Cadastro rápido, sem compromisso</p>
-          <a class="btn" href="gratuito.html">Começar grátis</a>
-        </article>
+      <div class="planos dois">
         <article class="plano" style="background:var(--creme)">
           <h3>Só uma fase</h3>
           <p class="desc">Para focar na idade que o seu filho tem agora.</p>
@@ -808,7 +796,6 @@ document.addEventListener('click',function(ev){
       <p>Você não precisa saber tudo. Só precisa estar disposta a abrir essa porta. Vem comigo?</p>
       <div class="acoes">
         <a class="btn btn-grande" href="https://sun.eduzz.com/8017VRXN07">Quero o método completo</a>
-        <a class="link" href="gratuito.html">Começar pelo Módulo 0 gratuito</a>
       </div>
       <ul class="chips"><li>R$ 297 em até 12x</li><li>7 dias de garantia</li><li>Acesso imediato</li></ul>
     </div>
@@ -820,7 +807,6 @@ document.addEventListener('click',function(ev){
     <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
     <ul>
       <li><a href="index.html">Método</a></li>
-      <li><a href="gratuito.html">Módulo gratuito</a></li>
       <li><a href="index.html#modulos">Módulos</a></li>
       <li><a href="livro-lucas.html">Livro Lucas</a></li>
       <li><a href="jogos.html">Jogos</a></li>
