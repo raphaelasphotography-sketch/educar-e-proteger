@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Módulo 0 liberado · Educar é Proteger</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Boas-vindas para quem se cadastrou no Módulo 0 gratuito.">
+<style>
+:root {
+  --creme: #F7EEE3; --argila: #EBD6C4; --tijolo: #9C4A2E; --tijolo-escuro: #7E3A23;
+  --cacau: #3B2521; --mel: #E2B071; --texto-suave: #6B4F47;
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--creme); color: var(--cacau); font: 1.0625rem/1.55 var(--sans); }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
+.topo { background: var(--cacau); color: var(--creme); text-align: center; padding: 48px 0 56px; }
+.check { width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; background: var(--mel); color: var(--cacau); display: grid; place-content: center; font-size: 2rem; font-weight: 800; }
+.topo h1 { font-size: clamp(2rem, 6vw, 2.9rem); margin-top: 18px; }
+.topo h1 em { font-style: normal; color: var(--mel); }
+.topo > .wrap > p { max-width: 56ch; margin: 14px auto 0; color: var(--argila); }
+.passos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 32px auto 0; text-align: left; }
+.passos li { background: rgba(247, 238, 227, .08); border: 1px solid rgba(247, 238, 227, .22); border-radius: 18px; padding: 18px; font-size: .97rem; color: var(--creme); }
+.passos b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.9rem; color: var(--mel); line-height: 1; margin-bottom: 8px; }
+.passos strong { color: var(--mel); }
+.zap { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; background: #25D366; color: #fff; text-decoration: none; font-weight: 800; font-size: 1.1rem; border-radius: 999px; padding: 16px 28px; }
+.zap:hover, .zap:focus-visible { background: #1EBE5A; }
+.zap svg { width: 26px; height: 26px; flex: none; }
+.casa { padding: 56px 0 64px; }
+.casa .intro { text-align: center; max-width: 60ch; margin: 0 auto; }
+.casa h2 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); }
+.casa .intro p { margin-top: 10px; color: var(--texto-suave); }
+.produtos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
+.produto { background: #fff; border-radius: 22px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); }
+.produto img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.produto .corpo { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.produto h3 { font-size: 1.35rem; }
+.produto .dor { margin-top: 8px; font-style: italic; color: var(--tijolo); font-size: .95rem; }
+.produto .txt { margin-top: 8px; font-size: .95rem; color: var(--texto-suave); flex: 1; }
+.produto .preco { margin-top: 14px; font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--tijolo); }
+.produto .preco small { font-family: var(--sans); font-size: .9rem; margin-right: 3px; }
+.produto .preco span { display: block; font-family: var(--sans); font-size: .85rem; color: var(--texto-suave); margin-top: 4px; }
+.btn { display: block; text-align: center; margin-top: 14px; background: var(--tijolo); color: var(--creme); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 13px 18px; }
+.btn:hover, .btn:focus-visible { background: var(--tijolo-escuro); }
+.assina { text-align: center; padding-bottom: 56px; color: var(--texto-suave); }
+.assina strong { color: var(--cacau); }
+.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
+.fase { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: #fff; border-radius: 22px; padding: 22px 18px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); transition: transform .2s; }
+.fase:hover { transform: translateY(-4px); }
+.fase img { width: 60px; height: 60px; }
+.fase .idade { font-family: var(--serif); font-size: 1.6rem; line-height: 1; color: var(--tijolo); margin-top: 12px; }
+.fase p { margin-top: 8px; font-size: .93rem; color: var(--texto-suave); flex: 1; }
+.fase .ver { margin-top: 12px; font-weight: 700; color: var(--tijolo); text-decoration: underline; text-underline-offset: 4px; }
+.preco-fase { text-align: center; margin-top: 16px; color: var(--texto-suave); }
+.metodo { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: center; justify-content: space-between; margin-top: 36px; background: var(--cacau); color: var(--creme); border-radius: 24px; padding: 28px 32px; }
+.metodo > div:first-child { flex: 1 1 340px; }
+.metodo h3 { font-size: 1.5rem; color: var(--mel); }
+.metodo p { margin-top: 8px; color: var(--argila); }
+.metodo-preco { text-align: center; flex: 0 1 240px; }
+.metodo-preco .valor { font-family: var(--serif); font-size: 2.6rem; line-height: 1; color: var(--creme); margin-top: 0; }
+.metodo-preco .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 3px; }
+.metodo-preco .parc { margin-top: 4px; }
+.metodo .btn { background: var(--mel); color: var(--cacau); }
+.metodo .btn:hover { background: var(--creme); }
+@media (max-width: 760px) { .passos, .produtos { grid-template-columns: 1fr; } .fases { grid-template-columns: repeat(2, 1fr); } }
+</style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1002049802374349');
+fbq('track','PageView');
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a[href*="eduzz.com/"]'); if(!a) return;
+  var id=(a.href.match(/eduzz\.com\/([A-Za-z0-9]+)/)||[])[1];
+  var p={'8017VRXN07':['Método completo',297],'Q9N2D4AB01':['Módulo 0 a 5 anos',149.9],'89AXO4P50D':['Módulo 6 a 10 anos',149.9],'39VKJ2ZKWR':['Módulo 11 a 13 anos',149.9],'69K1D43VWO':['Módulo 14 a 18 anos',149.9],'KW8Z3EG201':['Livro Lucas',77],'Z0B1B7O79A':['Jogo Lucas',19.9],'Z0B15YOJ9A':['Jogo Bruna',19.9],'obsdvgdu':['Upgrade Método completo',147]};
+  var g={'Q9N2D4GB01':'Módulo 0 gratuito','8WPNDV2N0P':'Trilha do Crescer'};
+  if(g[id]) fbq('track','Lead',{content_name:g[id]});
+  else if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
+});
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1002049802374349&ev=PageView&noscript=1"></noscript>
+<!-- Fim do Meta Pixel -->
+</head>
+<body>
+<!-- Página de obrigado do Módulo 0 gratuito. Fora do menu e sem indexação.
+     Grupo do WhatsApp "Dicas para Mães" (gratuito, só admins postam): chat.whatsapp.com/C6fIqKhTsuHHaUGixlG1u3 -->
+<header class="topo">
+  <div class="wrap">
+    <div class="check" aria-hidden="true">✓</div>
+    <h1>Seu <em>Módulo 0</em> está liberado</h1>
+    <p>Que bom que você deu esse primeiro passo. São 8 aulas curtas para entender por que essa conversa trava, e por onde começar com o seu filho.</p>
+
+    <ol class="passos">
+      <li><b>1</b><strong>Abra o seu e-mail.</strong> O acesso chega no endereço que você cadastrou na Eduzz. Não achou? Olhe o spam ou a aba promoções.</li>
+      <li><b>2</b><strong>Assista à primeira aula ainda hoje.</strong> Tem poucos minutos. Anote a pergunta do seu filho que mais te trava.</li>
+      <li><b>3</b><strong>Entre no grupo do WhatsApp.</strong> É lá que eu compartilho dicas para as conversas e aviso das novidades.</li>
+    </ol>
+
+    <a class="zap" href="https://chat.whatsapp.com/C6fIqKhTsuHHaUGixlG1u3" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>
+      Entrar no grupo do WhatsApp
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="casa">
+    <div class="wrap">
+      <div class="intro">
+        <h2>Depois do Módulo 0, a conversa da idade do seu filho</h2>
+        <p>O Módulo 0 é a base. Cada fase tem as perguntas e os cuidados daquela idade, com aulas curtas e materiais para usar em casa.</p>
+      </div>
+      <div class="fases">
+        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>As primeiras perguntas e a proteção desde cedo.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Não perder a conexão na puberdade e no celular.</p><span class="ver">Conhecer módulo</span></a>
+        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Namoro, pornografia e sexo sem afastar o adolescente.</p><span class="ver">Conhecer módulo</span></a>
+      </div>
+      <p class="preco-fase">Cada módulo: <strong>R$ 149,90</strong> em até 12x</p>
+
+      <div class="metodo">
+        <div>
+          <h3>Tem mais de um filho, ou quer estar pronta para todas as fases?</h3>
+          <p>O Método completo traz as quatro fases, de 0 a 18 anos, por menos que dois módulos.</p>
+        </div>
+        <div class="metodo-preco">
+          <p class="valor"><small>R$</small>297</p>
+          <p class="parc">em até 12x</p>
+          <a class="btn" href="index.html">Conhecer o Método</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="assina wrap">Qualquer dúvida no caminho, é só me escrever. <strong>Sou eu mesma que respondo.</strong><br>Um abraço, Raphaela</p>
+</main>
+</body>
+</html>
