@@ -41,6 +41,7 @@ h1 em { font-style: normal; color: var(--mel); }
 .aviso strong { color: var(--mel); }
 .garantia { margin-top: 18px; font-size: .9rem; color: var(--argila); }
 .nao { display: inline-block; margin-top: 26px; color: var(--argila); font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; opacity: .8; background: none; border: 0; cursor: pointer; font-family: inherit; }
+.zap { display: block; margin-top: 14px; background: #25D366; color: #fff; text-align: center; text-decoration: none; font-weight: 800; border-radius: 999px; padding: 14px 20px; }
 .obrigada { margin-top: 24px; background: rgba(247, 238, 227, .08); border-radius: 16px; padding: 18px; font-size: .95rem; text-align: left; }
 @keyframes pulsa { 0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(226, 176, 113, .7); } 50% { transform: scale(1.04); box-shadow: 0 0 0 14px rgba(226, 176, 113, 0); } }
 @keyframes alerta { 0%, 100% { background: var(--tijolo); } 50% { background: var(--tijolo-escuro); } }
@@ -97,6 +98,7 @@ document.addEventListener('click',function(ev){
   <button class="nao" type="button" onclick="document.getElementById('obrigada').hidden=false;this.hidden=true">Não, obrigada. Quero ficar só com o meu módulo.</button>
   <div class="obrigada" id="obrigada" hidden>
     <p><strong>Tudo certo, e obrigada pela confiança!</strong> O acesso ao seu módulo está no seu e-mail (olhe também o spam ou promoções). Comece pelo Módulo 0, Aula 1. Qualquer dúvida, é só me escrever. Sou eu mesma que respondo. Raphaela</p>
+    <a class="zap" href="https://chat.whatsapp.com/HVJH8qJEY4f0vxv8xZ0lFW" target="_blank" rel="noopener">Entrar no grupo das alunas no WhatsApp</a>
   </div>
 </main>
 </body>
