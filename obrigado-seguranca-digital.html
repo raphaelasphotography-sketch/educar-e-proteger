@@ -167,7 +167,7 @@ svg.ic { flex:none; display:block; }
           <div><span>Método completo, preço normal</span><s>R$ 297</s></div>
         </div>
         <div class="agora"><div><b>R$ 197</b><small>Pagamento único. Só para quem acabou de comprar o guia.</small></div><span class="economia">R$ 100 a menos</span></div>
-        <a class="btn" href="#checkout-pendente" data-cta="upsell" title="Link do upsell Eduzz: pendente">Sim, quero o Método completo por R$ 197</a>
+        <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método completo por R$ 197</a>
         <a class="recusa" href="#recusa-pendente" data-cta="recusa">Não, obrigada. Quero ficar só com o guia.</a>
         <p class="so-aqui">Esta condição aparece só agora, depois da compra do guia. Fora desta página, o Método custa R$ 297.</p>
       </div>
@@ -239,7 +239,7 @@ svg.ic { flex:none; display:block; }
       <span class="rotulo">Só nesta página</span>
       <h2>Método Educar é Proteger completo</h2>
       <div class="agora"><div><b>R$ 197</b><small>No lugar de R$ 297. Pagamento único.</small></div><span class="economia">R$ 100 a menos</span></div>
-      <a class="btn" href="#checkout-pendente" data-cta="upsell" title="Link do upsell Eduzz: pendente">Sim, quero o Método completo por R$ 197</a>
+      <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método completo por R$ 197</a>
       <a class="recusa" href="#recusa-pendente" data-cta="recusa">Não, obrigada. Quero ficar só com o guia.</a>
     </div>
   </div>
@@ -256,7 +256,7 @@ fbq('track','PageView');
 document.addEventListener('click',function(ev){
   var a=ev.target.closest&&ev.target.closest('a[href*="eduzz.com/"]'); if(!a) return;
   var id=(a.href.match(/eduzz\.com\/([A-Za-z0-9]+)/)||[])[1];
-  var p={'8017VRXN07':['Método completo',297]};
+  var p={'8017VRXN07':['Método completo',297],'yjs3osbb':['Upgrade Método completo (Segurança Digital)',197]};
   if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
 });
 </script>
