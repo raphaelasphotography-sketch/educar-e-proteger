@@ -329,6 +329,10 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
   .rodape { padding-bottom:calc(92px + env(safe-area-inset-bottom, 0px)); }
 }
 @media (min-width: 641px) { .barra-cel { justify-content:center; gap:24px; } .barra-cel .btn { margin-left:0; } }
+.depos { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 420px)); gap:20px; margin-top:28px; }
+.depo { margin:0; background:#fff; border:3px solid var(--ink); border-radius:16px; box-shadow:6px 6px 0 var(--ink); overflow:hidden; }
+.depo img { display:block; width:100%; height:auto; }
+.depo figcaption { padding:12px 16px; font-size:14px; color:var(--suave); border-top:2px solid var(--linha); }
 </style>
 </head>
 <body>
@@ -467,6 +471,18 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
       <p class="lead">Sou mãe do Bernardo e trabalho com proteção da infância. Criei este guia a partir da minha própria casa: configurei os aparelhos do Bernardo e transformei o caminho num passo a passo que qualquer mãe consegue seguir.</p>
       <div class="credenciais"><span>Mestre em Psicologia Educacional</span><span>Palestras em escolas</span><span>Criadora do Método Educar é Proteger</span></div>
       <p class="citacao">“Não precisamos criar filhos com medo da internet. Precisamos criar filhos que saibam pedir ajuda.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA · depoimentos (nome e criança preservados) -->
+<section class="faixa branca" id="depoimentos" aria-labelledby="titulo-depo">
+  <div class="dentro">
+    <span class="rotulo"><svg class="px" viewBox="0 0 12 12" width="18px" height="18px" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="1" y="1" width="3" height="1" fill="#141B2D"/><rect x="8" y="1" width="3" height="1" fill="#141B2D"/><rect x="0" y="2" width="1" height="1" fill="#141B2D"/><rect x="1" y="2" width="3" height="1" fill="#F43F5E"/><rect x="4" y="2" width="1" height="1" fill="#141B2D"/><rect x="7" y="2" width="1" height="1" fill="#141B2D"/><rect x="8" y="2" width="3" height="1" fill="#F43F5E"/><rect x="11" y="2" width="1" height="1" fill="#141B2D"/><rect x="0" y="3" width="1" height="1" fill="#141B2D"/><rect x="1" y="3" width="1" height="1" fill="#F43F5E"/><rect x="2" y="3" width="1" height="1" fill="#FFFFFF"/><rect x="3" y="3" width="2" height="1" fill="#F43F5E"/><rect x="5" y="3" width="2" height="1" fill="#141B2D"/><rect x="7" y="3" width="4" height="1" fill="#F43F5E"/><rect x="11" y="3" width="1" height="1" fill="#141B2D"/><rect x="0" y="4" width="1" height="1" fill="#141B2D"/><rect x="1" y="4" width="10" height="1" fill="#F43F5E"/><rect x="11" y="4" width="1" height="1" fill="#141B2D"/><rect x="0" y="5" width="1" height="1" fill="#141B2D"/><rect x="1" y="5" width="10" height="1" fill="#F43F5E"/><rect x="11" y="5" width="1" height="1" fill="#141B2D"/><rect x="1" y="6" width="1" height="1" fill="#141B2D"/><rect x="2" y="6" width="8" height="1" fill="#F43F5E"/><rect x="10" y="6" width="1" height="1" fill="#141B2D"/><rect x="2" y="7" width="1" height="1" fill="#141B2D"/><rect x="3" y="7" width="6" height="1" fill="#F43F5E"/><rect x="9" y="7" width="1" height="1" fill="#141B2D"/><rect x="3" y="8" width="1" height="1" fill="#141B2D"/><rect x="4" y="8" width="4" height="1" fill="#F43F5E"/><rect x="8" y="8" width="1" height="1" fill="#141B2D"/><rect x="4" y="9" width="1" height="1" fill="#141B2D"/><rect x="5" y="9" width="2" height="1" fill="#F43F5E"/><rect x="7" y="9" width="1" height="1" fill="#141B2D"/><rect x="5" y="10" width="2" height="1" fill="#141B2D"/></svg> Quem já fez</span>
+    <h2 class="h2" id="titulo-depo">“Foi super simples.”</h2>
+    <div class="depos">
+      <figure class="depo"><img src="img/seguranca-digital/depoimento-1.jpg" alt="Mensagem de uma mãe: Mas eu amei instalar e foi super simples. Muito obrigada mesmo viu. Foi de uma ajuda incrível." width="702" height="420" loading="lazy">
+        <figcaption>Mensagem de uma mãe depois de configurar o controle parental no celular da filha. Nome preservado.</figcaption></figure>
     </div>
   </div>
 </section>
