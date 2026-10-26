@@ -109,6 +109,7 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
 .hero h1 em { font-style:normal; color:var(--verde); }
 .hero .lead { font-size:19px; margin-top:20px; }
 .hero .acoes { display:flex; flex-wrap:wrap; gap:14px; margin-top:30px; }
+.hero .pagamento { flex-basis:100%; margin:0; font-size:14px; color:var(--claro); }
 .inventario { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; padding:0; list-style:none; }
 .inventario li { display:flex; align-items:center; gap:8px; font:600 14px/1.2 var(--f-corpo); background:var(--ink2); border:1px solid var(--ink3); padding:8px 12px 8px 9px; border-radius:6px; }
 .palco { position:relative; min-height:520px; }
@@ -366,7 +367,8 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
       <h1 id="titulo-hero">Proteja seu filho no celular, no videogame e nas redes, <em>mesmo sem entender de tecnologia.</em></h1>
       <p class="lead">O caminho exato de cada menu para configurar Android, iPhone, Roblox, Instagram, TikTok, WhatsApp e o Wi-Fi da sua casa. O essencial você faz em 30 minutos.</p>
       <div class="acoes">
-        <a class="btn grande" href="#oferta">Quero o guia por R$ 57 <span class="seta">▶</span></a>
+        <a class="btn grande" href="https://chk.eduzz.com/VWGNOJ5R07">Quero o guia por R$ 57 <span class="seta">▶</span></a>
+        <p class="pagamento">Pix ou cartão · acesso imediato no seu e-mail · 7 dias de garantia</p>
       </div>
       <ul class="inventario" aria-label="O que vem no kit">
         <li><svg class="px" viewBox="0 0 12 12" width="20px" height="20px" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><rect x="3" y="0" width="6" height="1" fill="#141B2D"/><rect x="3" y="1" width="1" height="1" fill="#141B2D"/><rect x="4" y="1" width="4" height="1" fill="#CBD5E1"/><rect x="8" y="1" width="1" height="1" fill="#141B2D"/><rect x="3" y="2" width="1" height="1" fill="#141B2D"/><rect x="4" y="2" width="4" height="1" fill="#38BDF8"/><rect x="8" y="2" width="1" height="1" fill="#141B2D"/><rect x="3" y="3" width="1" height="1" fill="#141B2D"/><rect x="4" y="3" width="1" height="1" fill="#38BDF8"/><rect x="5" y="3" width="1" height="1" fill="#FFFFFF"/><rect x="6" y="3" width="2" height="1" fill="#38BDF8"/><rect x="8" y="3" width="1" height="1" fill="#141B2D"/><rect x="3" y="4" width="1" height="1" fill="#141B2D"/><rect x="4" y="4" width="4" height="1" fill="#38BDF8"/><rect x="8" y="4" width="1" height="1" fill="#141B2D"/><rect x="3" y="5" width="1" height="1" fill="#141B2D"/><rect x="4" y="5" width="4" height="1" fill="#38BDF8"/><rect x="8" y="5" width="1" height="1" fill="#141B2D"/><rect x="3" y="6" width="1" height="1" fill="#141B2D"/><rect x="4" y="6" width="2" height="1" fill="#38BDF8"/><rect x="6" y="6" width="1" height="1" fill="#FFFFFF"/><rect x="7" y="6" width="1" height="1" fill="#38BDF8"/><rect x="8" y="6" width="1" height="1" fill="#141B2D"/><rect x="3" y="7" width="1" height="1" fill="#141B2D"/><rect x="4" y="7" width="4" height="1" fill="#38BDF8"/><rect x="8" y="7" width="1" height="1" fill="#141B2D"/><rect x="3" y="8" width="1" height="1" fill="#141B2D"/><rect x="4" y="8" width="4" height="1" fill="#CBD5E1"/><rect x="8" y="8" width="1" height="1" fill="#141B2D"/><rect x="3" y="9" width="1" height="1" fill="#141B2D"/><rect x="4" y="9" width="4" height="1" fill="#CBD5E1"/><rect x="8" y="9" width="1" height="1" fill="#141B2D"/><rect x="3" y="10" width="6" height="1" fill="#141B2D"/></svg> Guia de 62 páginas</li>
@@ -535,7 +537,7 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
 
 <footer class="rodape"><div class="dentro"><span>© 2026 Raphaela Spellmeier · Segurança Digital na Infância: Passo a Passo</span><span>Informações conferidas em outubro de 2026</span></div></footer>
 
-<div class="barra-cel" id="barra-cel"><span>Segurança Digital na Infância<small>Guia + 10 bônus · R$ 57</small></span><a class="btn" href="#oferta">Quero o guia</a></div>
+<div class="barra-cel" id="barra-cel"><span>Segurança Digital na Infância<small>Guia + 10 bônus · R$ 57</small></span><a class="btn" href="https://chk.eduzz.com/VWGNOJ5R07">Quero o guia</a></div>
 
 <script>
 (function () {
@@ -559,11 +561,12 @@ body::before { content:""; position:fixed; inset:0 0 auto; height:env(safe-area-
   });
   atualiza();
 
-  // Barra de compra: só aparece depois da 3ª dobra e somem na oferta e no final
+  // Barra de compra: aparece assim que o topo sai da tela e somem na oferta e no final
   var barra = document.getElementById('barra-cel');
   var naTela = new Set();
   function mostrarCompra() {
-    var mostrar = window.scrollY > window.innerHeight * 3 && naTela.size === 0;
+    var hero = document.querySelector('.hero');
+    var mostrar = hero && hero.getBoundingClientRect().bottom < 0 && naTela.size === 0;
     if (barra) barra.classList.toggle('visivel', mostrar);
   }
   if ('IntersectionObserver' in window) {
