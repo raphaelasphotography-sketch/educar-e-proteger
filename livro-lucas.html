@@ -24,7 +24,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body { background: var(--creme); color: var(--texto); font: 1.0625rem/1.65 var(--sans); padding-bottom: 88px; }
+body { background: var(--creme); color: var(--texto); font: 1.0625rem/1.65 var(--sans); }
 img { display: block; max-width: 100%; height: auto; }
 .wrap { max-width: 1160px; margin-inline: auto; padding-inline: 24px; }
 h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
@@ -169,7 +169,7 @@ section { padding-block: 96px; }
 /* Fases (módulos por idade) */
 .fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
 .fase { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: var(--creme); border-radius: 24px; padding: 28px 22px; transition: transform .2s, box-shadow .2s; }
-.fase:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0, 0, 0, .18); }
+.fase-sem-hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0, 0, 0, .18); }
 .escuro .fase { color: var(--texto); }
 .fase img { width: 70px; height: 70px; }
 .fase .idade { font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--tijolo); margin-top: 14px; }
@@ -441,48 +441,28 @@ document.addEventListener('click',function(ev){
   <div class="wrap">
     <a class="menu-logo" href="index.html"><img src="img/logo-rs.png" alt="Raphaela Spellmeier, página inicial" width="302" height="342"></a>
     <ul class="menu-desk">
-      <li class="tem-sub"><a href="index.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
+      <li class=""><a href="index.html">Início</a></li>
+      <li class="tem-sub"><a href="metodo.html">Método Educar é Proteger <span class="seta" aria-hidden="true">▾</span></a>
         <ul class="sub">
-          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="metodo.html">Conheça o Método</a></li>
           <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
-          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
-          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
-          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
-          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
         </ul></li>
-      <li class=" ativo"><a href="livro-lucas.html" aria-current="page">Livro Lucas</a></li>
-      <li class="tem-sub"><a href="jogos.html">Jogos <span class="seta" aria-hidden="true">▾</span></a>
-        <ul class="sub">
-          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
-          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
-        </ul></li>
-      <li class=""><a href="seguranca-digital.html">Segurança Digital <span class="tag">novo</span></a></li>
+      <li class="ativo"><a href="livro-lucas.html" aria-current="page">Livro Lucas</a></li>
+      <li class=""><a href="seguranca-digital.html">Segurança Digital</a></li>
     </ul>
     <details class="menu-mob"><summary>Menu</summary>
       <div class="mob-painel">
+        <ul><li><a href="index.html">Início</a></li></ul>
         <p class="mob-titulo">Método Educar é Proteger</p><ul>
-          <li><a href="index.html">Conheça o Método</a></li>
+          <li><a href="metodo.html">Conheça o Método</a></li>
           <li><a href="gratuito.html">Módulo 0 <span class="tag">gratuito</span></a></li>
-          <li><a href="modulo-0-a-5.html">Módulo 0 a 5 anos</a></li>
-          <li><a href="modulo-6-a-10.html">Módulo 6 a 10 anos</a></li>
-          <li><a href="modulo-11-a-13.html">Módulo 11 a 13 anos</a></li>
-          <li><a href="modulo-14-a-18.html">Módulo 14 a 18 anos</a></li>
         </ul>
         <p class="mob-titulo">Livro</p><ul><li><a href="livro-lucas.html" aria-current="page">Livro Lucas aprende sobre crescer</a></li></ul>
-        <p class="mob-titulo">Jogos</p><ul>
-          <li><a href="jogos.html">Jogo Lucas e Bruna</a></li>
-          <li><a href="trilha.html">Trilha do Crescer <span class="tag">gratuito</span></a></li>
-        </ul>
-        <p class="mob-titulo">Segurança Digital</p><ul><li><a href="seguranca-digital.html">Segurança Digital na Infância <span class="tag">novo</span></a></li></ul>
+        <p class="mob-titulo">Segurança Digital</p><ul><li><a href="seguranca-digital.html">Segurança Digital na Infância</a></li></ul>
       </div>
     </details>
   </div>
 </nav>
-
-<aside class="barra" aria-label="Atalho">
-  <span>Livro físico · R$ 67 + frete fixo R$ 10</span>
-  <a class="btn" href="https://sun.eduzz.com/KW8Z3EG201">Quero o livro</a>
-</aside>
 
 <main>
 
@@ -608,12 +588,13 @@ document.addEventListener('click',function(ev){
     <div class="wrap">
       <div class="topo">
         <h2>E depois do livro?</h2>
-        <p>O livro abre a conversa sobre a polução noturna. Para falar de toda a puberdade, com calma e em cada fase, estes são os módulos do método:</p>
+        <p>O livro abre a conversa sobre a polução noturna. Para falar de toda a puberdade, com calma e em cada fase, existe o Método Educar é Proteger:</p>
       </div>
       <div class="fases" style="grid-template-columns:repeat(2, minmax(0, 1fr));max-width:760px;margin-inline:auto">
-        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Não perder a conexão na puberdade e no celular.</p><span class="ver">Conhecer módulo</span></a>
+        <div class="fase"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p></div>
+        <div class="fase"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Não perder a conexão na puberdade e no celular.</p></div>
       </div>
+      <div class="acoes"><a class="btn" href="metodo.html">Conhecer o Método completo</a></div>
     </div>
   </section>
 
@@ -646,14 +627,13 @@ document.addEventListener('click',function(ev){
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span>
+    <span>© 2026 Raphaela Spellmeier</span>
     <ul>
-      <li><a href="index.html">Método</a></li>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="metodo.html">Método</a></li>
       <li><a href="gratuito.html">Módulo gratuito</a></li>
-      <li><a href="index.html#modulos">Módulos</a></li>
       <li><a href="livro-lucas.html">Livro Lucas</a></li>
-      <li><a href="jogos.html">Jogos</a></li>
-      <li><a href="trilha.html">Trilha grátis</a></li>
+      <li><a href="seguranca-digital.html">Segurança Digital</a></li>
     </ul>
   </div>
 </footer>

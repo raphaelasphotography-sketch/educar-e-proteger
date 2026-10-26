@@ -50,7 +50,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; tex
 .assina strong { color: var(--cacau); }
 .fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 32px; }
 .fase { display: flex; flex-direction: column; color: inherit; text-decoration: none; background: #fff; border-radius: 22px; padding: 22px 18px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); transition: transform .2s; }
-.fase:hover { transform: translateY(-4px); }
+.fase-sem-hover { transform: translateY(-4px); }
 .fase img { width: 60px; height: 60px; }
 .fase .idade { font-family: var(--serif); font-size: 1.6rem; line-height: 1; color: var(--tijolo); margin-top: 12px; }
 .fase p { margin-top: 8px; font-size: .93rem; color: var(--texto-suave); flex: 1; }
@@ -115,22 +115,21 @@ document.addEventListener('click',function(ev){
         <p>O Módulo 0 é a base. Cada fase tem as perguntas e os cuidados daquela idade, com aulas curtas e materiais para usar em casa.</p>
       </div>
       <div class="fases" id="fases">
-        <a class="fase" href="modulo-0-a-5.html"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>As primeiras perguntas e a proteção desde cedo.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-6-a-10.html"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-11-a-13.html"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Não perder a conexão na puberdade e no celular.</p><span class="ver">Conhecer módulo</span></a>
-        <a class="fase" href="modulo-14-a-18.html"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Namoro, pornografia e sexo sem afastar o adolescente.</p><span class="ver">Conhecer módulo</span></a>
+        <div class="fase"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>As primeiras perguntas e a proteção desde cedo.</p></div>
+        <div class="fase"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>Preparar para a puberdade antes que ela chegue.</p></div>
+        <div class="fase"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>Não perder a conexão na puberdade e no celular.</p></div>
+        <div class="fase"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>Namoro, pornografia e sexo sem afastar o adolescente.</p></div>
       </div>
-      <p class="preco-fase">Cada módulo: <strong>R$ 149,90</strong> em até 12x</p>
 
       <div class="metodo">
         <div>
-          <h3>Tem mais de um filho, ou quer estar pronta para todas as fases?</h3>
-          <p>O Método completo traz as quatro fases, de 0 a 18 anos, por menos que dois módulos.</p>
+          <h3>Pronta para a fase do seu filho?</h3>
+          <p>O Método completo traz o que dizer em cada idade, de 0 a 18 anos, com aulas curtas e materiais para usar em casa.</p>
         </div>
         <div class="metodo-preco">
           <p class="valor"><small>R$</small>297</p>
           <p class="parc">em até 12x</p>
-          <a class="btn" href="index.html">Conhecer o Método</a>
+          <a class="btn" href="metodo.html">Conhecer o Método</a>
         </div>
       </div>
     </div>
