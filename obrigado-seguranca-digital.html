@@ -8,115 +8,81 @@
 <meta name="description" content="Boas-vindas para quem comprou o Segurança Digital na Infância: Passo a Passo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
 <style>
-/* Página de obrigado do guia: o topo tem o visual do guia (o que ela acabou de comprar);
-   a oferta abaixo tem o visual das páginas de obrigado do Método. Fora do menu e sem indexação. */
+/* Página de obrigado do guia, toda no visual do guia. Fora do menu e sem indexação.
+   O formulário é próprio da página e envia as respostas para o Google Forms "Me conta um pouco sobre você"
+   (as respostas caem na planilha da Raphaela). Os campos usam os códigos entry.* desse formulário. */
 :root {
-  --creme: #F7EEE3; --argila: #EBD6C4; --tijolo: #9C4A2E; --tijolo-escuro: #7E3A23;
-  --cacau: #3B2521; --mel: #E2B071; --texto-suave: #6B4F47;
-  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
-  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --ink: #141B2D; --ink2: #1E2942; --ink3: #2B3858; --ciano: #38BDF8; --verde: #22C55E;
-  --amarelo: #FACC15; --roxo: #8B5CF6; --rosa: #F43F5E;
+  --ink: #141B2D; --ink2: #1E2942; --ink3: #2B3858; --papel: #F5F8FD; --branco: #FFFFFF; --linha: #D9E1EE;
+  --texto: #1E293B; --suave: #5B6B84; --claro: #C9D5EA;
+  --azul: #2563EB; --ciano: #38BDF8; --verde: #22C55E; --amarelo: #FACC15; --roxo: #8B5CF6; --rosa: #F43F5E;
+  --verde-claro: #DCFCE7;
   --f-titulo: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --f-corpo: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --grade: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  --grade-clara: linear-gradient(rgba(20,27,45,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(20,27,45,.045) 1px, transparent 1px);
+  --faixa: repeating-linear-gradient(90deg, var(--verde) 0 24px, var(--ciano) 24px 48px, var(--amarelo) 48px 72px, var(--roxo) 72px 96px, var(--rosa) 96px 120px);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--creme); color: var(--cacau); font: 1.0625rem/1.55 var(--sans); }
-img { display: block; max-width: 100%; height: auto; }
-.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
+body { background: var(--papel); background-image: var(--grade-clara); background-size: 24px 24px; color: var(--texto); font: 400 17px/1.6 var(--f-corpo); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 860px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--f-titulo); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; text-wrap: balance; }
+.rotulo { font: 700 13px/1.3 var(--f-titulo); letter-spacing: .14em; text-transform: uppercase; color: var(--azul); }
 
-/* Topo no visual do guia */
-.topo { background: var(--ink); color: #fff; text-align: center; padding: 48px 0 56px; font-family: var(--f-corpo);
-  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-  background-size: 32px 32px; border-bottom: 6px solid transparent;
-  border-image: repeating-linear-gradient(90deg, var(--verde) 0 24px, var(--ciano) 24px 48px, var(--amarelo) 48px 72px, var(--roxo) 72px 96px, var(--rosa) 96px 120px) 1; }
+/* Topo */
+.topo { background: var(--ink); background-image: var(--grade); background-size: 24px 24px; color: #fff; text-align: center; padding: 48px 0 52px; position: relative; }
+.topo::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--faixa); }
 .check { width: 64px; height: 64px; margin: 0 auto; border-radius: 14px; background: var(--verde); border: 3px solid #000; box-shadow: 4px 4px 0 #000; display: grid; place-content: center; }
-.topo h1 { font-family: var(--f-titulo); font-weight: 700; letter-spacing: -.02em; font-size: clamp(2rem, 6vw, 2.9rem); margin-top: 20px; }
+.topo h1 { font-size: clamp(1.9rem, 5.5vw, 2.7rem); margin-top: 20px; }
 .topo h1 em { font-style: normal; color: var(--ciano); }
-.topo > .wrap > p { max-width: 56ch; margin: 14px auto 0; color: #C9D3E6; }
-.passos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 32px auto 0; text-align: left; }
-.passos li { background: var(--ink2); border: 2px solid var(--ink3); border-radius: 14px; padding: 18px; font-size: .97rem; color: #E6ECF7; }
-.passos b { display: block; font-family: var(--f-titulo); font-weight: 700; font-size: 1.9rem; color: var(--ciano); line-height: 1; margin-bottom: 8px; }
-.passos strong { color: #fff; }
+.topo p { max-width: 56ch; margin: 14px auto 0; color: var(--claro); }
+.topo p strong { color: #fff; }
+.btn { display: inline-block; font: 700 1.1rem/1.2 var(--f-titulo); text-decoration: none; color: var(--ink); background: var(--verde); border: 3px solid #000; border-radius: 12px; padding: 14px 26px; box-shadow: 4px 4px 0 #000; cursor: pointer; }
+.btn:hover, .btn:focus-visible { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 #000; }
+.topo .btn { margin-top: 26px; }
 
-/* Oferta no visual do Método */
-.casa { padding: 56px 0 64px; }
-.casa .intro { text-align: center; max-width: 62ch; margin: 0 auto; }
-.rotulo { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--tijolo); }
-.casa h2 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); margin-top: 10px; }
-.casa h2 em { color: var(--tijolo); }
-.casa .intro p { margin-top: 12px; color: var(--texto-suave); }
-.metodo { display: flex; flex-wrap: wrap; gap: 24px 36px; align-items: center; justify-content: space-between; margin-top: 36px; background: var(--cacau); color: var(--creme); border-radius: 24px; padding: 32px 36px; }
-.metodo > div:first-child { flex: 1 1 360px; }
-.metodo .rotulo { color: var(--mel); }
-.metodo h3 { font-size: 1.6rem; color: var(--creme); margin-top: 6px; }
-.inclui { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
-.inclui li { display: flex; gap: 10px; color: var(--argila); font-size: .97rem; }
-.inclui li::before { content: "✓"; color: var(--mel); font-weight: 700; flex: none; }
-.inclui b { color: var(--creme); font-weight: 600; }
-.metodo-preco { text-align: center; flex: 0 1 260px; }
-.metodo-preco s { color: var(--argila); font-size: .95rem; }
-.metodo-preco .valor { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--creme); margin-top: 6px; }
-.metodo-preco .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
-.metodo-preco .parc { margin-top: 6px; color: var(--argila); font-size: .9rem; }
-.btn { display: block; text-align: center; margin-top: 16px; background: var(--mel); color: var(--cacau); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 14px 18px; }
-.btn:hover, .btn:focus-visible { background: var(--creme); }
-.recusa { display: inline-block; margin-top: 12px; color: var(--argila); font-size: .9rem; }
-.so-aqui { text-align: center; margin-top: 16px; color: var(--texto-suave); font-size: .92rem; }
-.assina { text-align: center; padding-bottom: 56px; color: var(--texto-suave); }
-.assina strong { color: var(--cacau); }
-@media (max-width: 760px) { .passos { grid-template-columns: 1fr; } .metodo { padding: 26px 22px; } }
-/* Formulário e grupo */
-.form-caixa { margin-top:28px; background:#fff; border-radius:24px; box-shadow:0 10px 28px rgba(59, 37, 33, .08); overflow:hidden; }
-.form-caixa iframe { display:block; width:100%; height:2080px; border:0; }
-.grupo { display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between; margin-top:28px; background:var(--cacau); color:var(--creme); border-radius:24px; padding:28px 32px; }
-.grupo > div { flex:1 1 340px; }
-.grupo .rotulo { color:var(--mel); }
-.grupo h3 { font-size:1.6rem; margin-top:6px; }
-.grupo p { margin-top:8px; color:var(--argila); }
-.zap { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; text-decoration:none; font-weight:800; font-size:1.1rem; border-radius:999px; padding:16px 28px; }
-.zap:hover, .zap:focus-visible { background:#1EBE5A; }
-.zap svg { width:26px; height:26px; flex:none; }
-@media (max-width: 760px) { .form-caixa iframe { height:2550px; } }
-/* Contexto antes da oferta */
-.bloco { padding: 8px 0 56px; }
-.bloco .intro { text-align: center; max-width: 62ch; margin: 0 auto; }
-.bloco h2 { font-size: clamp(1.6rem, 4.2vw, 2.1rem); margin-top: 8px; }
-.bloco .intro p { margin-top: 10px; color: var(--texto-suave); }
-.compara { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
-.lado { border-radius: 22px; padding: 26px 26px 28px; }
-.lado.guia { background: var(--argila); }
-.lado.conversa { background: var(--cacau); color: var(--creme); }
-.lado h3 { font-size: 1.35rem; }
-.lado.conversa h3 { color: var(--mel); }
-.lado ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: .97rem; }
-.lado li { display: flex; gap: 10px; }
-.lado.guia li::before { content: "✓"; color: var(--tijolo); font-weight: 700; }
-.lado.conversa li::before { content: "♥"; color: var(--mel); }
-.lado.conversa li { color: var(--argila); }
-.quem { display: grid; grid-template-columns: 260px 1fr; gap: 36px; align-items: center; background: #fff; border-radius: 24px; padding: 28px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); }
-.quem img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 999px 999px 18px 18px; }
-.quem h2 { font-size: clamp(1.5rem, 4vw, 1.95rem); }
-.quem p { margin-top: 12px; color: var(--texto-suave); }
-.quem .assinatura { font-family: var(--serif); color: var(--tijolo); font-size: 1.1rem; }
-.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
-.fase { background: #fff; border-radius: 22px; padding: 22px 18px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); }
-.fase img { width: 56px; height: 56px; }
-.fase .idade { display: block; font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--tijolo); margin-top: 12px; }
-.fase p { margin-top: 8px; font-size: .93rem; color: var(--texto-suave); }
-.faq { max-width: 720px; margin: 28px auto 0; display: flex; flex-direction: column; gap: 10px; }
-.faq details { background: #fff; border-radius: 16px; padding: 16px 20px; box-shadow: 0 6px 18px rgba(59, 37, 33, .06); }
-.faq summary { cursor: pointer; font-family: var(--serif); font-size: 1.15rem; }
-.faq details p { margin-top: 10px; color: var(--texto-suave); }
-.final-cta { max-width: 360px; margin: 28px auto 0; text-align: center; }
-.final-cta .btn { background: var(--tijolo); color: var(--creme); }
-.final-cta .btn:hover { background: var(--tijolo-escuro); }
-@media (max-width: 760px) { .compara, .quem { grid-template-columns: 1fr; } .quem img { max-width: 220px; margin: 0 auto; } .fases { grid-template-columns: repeat(2, 1fr); } }
+/* Formulário */
+.secao { padding: 48px 0 24px; }
+.intro { text-align: center; max-width: 60ch; margin: 0 auto; }
+.intro h2 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); margin-top: 8px; color: var(--ink); }
+.intro h2 em { font-style: normal; color: var(--azul); }
+.intro p { margin-top: 10px; color: var(--suave); }
+.cartao { margin-top: 28px; background: var(--branco); border: 3px solid var(--ink); border-radius: 18px; box-shadow: 6px 6px 0 var(--ink); padding: 28px; }
+.campo + .campo { margin-top: 24px; padding-top: 22px; border-top: 2px solid var(--linha); }
+.campo > label, .campo .pergunta { display: block; font: 700 1.08rem/1.3 var(--f-titulo); color: var(--ink); }
+.campo .ajuda { display: block; font-size: .9rem; color: var(--suave); margin-top: 4px; }
+.obrig { color: var(--rosa); }
+input[type=text], input[type=tel], textarea { display: block; width: 100%; margin-top: 10px; font: 400 1rem/1.4 var(--f-corpo); color: var(--texto); background: var(--papel); border: 2px solid var(--linha); border-radius: 10px; padding: 12px 14px; }
+input:focus, textarea:focus { outline: none; border-color: var(--azul); background: #fff; }
+textarea { min-height: 96px; resize: vertical; }
+.opcoes { display: grid; gap: 8px; margin-top: 12px; }
+.opcoes label { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 2px solid var(--linha); border-radius: 10px; cursor: pointer; font-size: .98rem; }
+.opcoes label:has(input:checked) { border-color: var(--verde); background: var(--verde-claro); }
+.opcoes input[type=checkbox], .opcoes input[type=radio] { width: 20px; height: 20px; accent-color: var(--verde); flex: none; }
+.opcoes .outro-txt { margin-top: 0; padding: 8px 10px; flex: 1; }
+.enviar { margin-top: 28px; width: 100%; font-size: 1.2rem; padding: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #25D366; color: #fff; }
+.enviar svg { width: 28px; height: 28px; flex: none; }
+.enviar[disabled] { opacity: .6; cursor: wait; }
+.erro { display: none; margin-top: 14px; color: var(--rosa); font-weight: 600; text-align: center; }
 
+/* Grupo */
+.grupo { margin-top: 28px; background: var(--ink); background-image: var(--grade); background-size: 24px 24px; color: #fff; border: 3px solid #000; border-radius: 18px; box-shadow: 6px 6px 0 var(--verde); padding: 28px 30px; display: flex; flex-wrap: wrap; gap: 20px 30px; align-items: center; justify-content: space-between; }
+.grupo > div { flex: 1 1 340px; }
+.grupo .rotulo { color: var(--ciano); }
+.grupo h3 { font-size: 1.5rem; margin-top: 6px; }
+.grupo p { margin-top: 8px; color: var(--claro); }
+.zap { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; text-decoration: none; font: 700 1.1rem var(--f-titulo); border: 3px solid #000; border-radius: 12px; padding: 14px 24px; box-shadow: 4px 4px 0 #000; }
+.zap svg { width: 26px; height: 26px; flex: none; }
+.pular { text-align: center; margin-top: 16px; color: var(--suave); font-size: .92rem; }
+.pular a { color: var(--suave); }
+[hidden] { display: none !important; }
+
+.lembrete { text-align: center; max-width: 60ch; margin: 28px auto 0; color: var(--suave); font-size: .97rem; }
+.assina { text-align: center; padding: 18px 20px 56px; color: var(--suave); }
+.assina strong { color: var(--ink); }
+@media (max-width: 640px) { .cartao { padding: 22px 18px; } .grupo { padding: 24px 20px; } .zap { width: 100%; justify-content: center; } }
 </style>
 </head>
 <body>
@@ -124,50 +90,123 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; tex
 <header class="topo" id="confirmado">
   <div class="wrap">
     <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></div>
-    <h1>Compra confirmada! O seu <em>guia</em> já está a caminho.</h1>
-    <p>Obrigada pela confiança. O acesso ao Segurança Digital na Infância: Passo a Passo vai para o seu e-mail.</p>
-    <ol class="passos">
-      <li><b>1</b><strong>Abra o seu e-mail.</strong> O acesso chega no endereço que você cadastrou na Eduzz. Não achou? Olhe o spam ou a aba Promoções.</li>
-      <li><b>2</b><strong>Comece pelos primeiros 30 minutos.</strong> É o capítulo 2 do guia: 7 missões que já deixam a casa mais segura hoje.</li>
-      <li><b>3</b><strong>Entre no grupo Dicas para Mães.</strong> Me conta um pouco sobre você logo abaixo e já entra no grupo.</li>
-    </ol>
+    <h1>Compra confirmada! O seu <em>guia</em> já está a caminho do seu e-mail.</h1>
+    <p>Enquanto ele chega, falta só uma coisa: <strong>me responder 5 perguntas rápidas</strong>, logo abaixo, para eu conhecer um pouco mais sobre você.</p>
+    <a class="btn" href="#sobre-voce">Responder agora ↓</a>
   </div>
 </header>
 
 <main>
-  <section class="casa" id="sobre-voce">
+  <section class="secao" id="sobre-voce">
     <div class="wrap">
       <div class="intro">
-        <span class="rotulo">Último passo</span>
+        <span class="rotulo">2 minutos</span>
         <h2>Me conta um pouco <em>sobre você</em></h2>
-        <p>São 7 perguntas rápidas, umas 2 minutos. Com as suas respostas, eu preparo os conteúdos do grupo para a realidade da sua família.</p>
+        <p>No grupo de mães, eu vou conversar sobre os temas que vocês me contarem aqui. Quanto mais eu souber sobre a sua família, mais as dicas vão servir para a sua casa.</p>
       </div>
-      <div class="form-caixa">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG9fEHOUjoqxi2-w_Wt87rxgG0JIi3pRed2-NatMBHYkzg-g/viewform?embedded=true" title="Formulário: me conta sobre você" loading="lazy">Carregando…</iframe>
-      </div>
-      <div class="grupo">
+
+      <form class="cartao" id="form" novalidate>
+        <div class="campo"><label for="filhos">Quantos filhos você tem e quais as idades? <span class="obrig">*</span></label>
+          <span class="ajuda">Exemplo: 2 filhos, menina de 9 e menino de 5</span>
+          <input type="text" id="filhos" name="entry.1773940960" required></div>
+
+        <div class="campo" role="group"><p class="pergunta">O que mais te preocupa hoje na vida digital do seu filho?</p>
+          <span class="ajuda">Pode marcar mais de uma</span>
+          <div class="opcoes">
+            <label><input type="checkbox" name="entry.840935970" value="Conteúdo impróprio">Conteúdo impróprio</label>
+            <label><input type="checkbox" name="entry.840935970" value="Estranhos nos jogos e nas redes">Estranhos nos jogos e nas redes</label>
+            <label><input type="checkbox" name="entry.840935970" value="Tempo de tela">Tempo de tela</label>
+            <label><input type="checkbox" name="entry.840935970" value="Redes sociais (Instagram, TikTok)">Redes sociais (Instagram, TikTok)</label>
+            <label><input type="checkbox" name="entry.840935970" value="Golpes e compras sem autorização">Golpes e compras sem autorização</label>
+            <label><input type="checkbox" name="entry.840935970" value="Ele não me conta o que faz on-line">Ele não me conta o que faz on-line</label>
+            <label><input type="checkbox" name="entry.840935970" value="__other_option__">Outro: <input type="text" class="outro-txt" name="entry.840935970.other_option_response" aria-label="Outra preocupação"></label>
+          </div></div>
+
+        <div class="campo" role="group"><p class="pergunta">E fora das telas, o que você gostaria de saber conversar com ele?</p>
+          <span class="ajuda">Pode marcar mais de uma</span>
+          <div class="opcoes">
+            <label><input type="checkbox" name="entry.29369423" value="O que responder quando ele pergunta sobre o corpo">O que responder quando ele pergunta sobre o corpo</label>
+            <label><input type="checkbox" name="entry.29369423" value="Puberdade">Puberdade</label>
+            <label><input type="checkbox" name="entry.29369423" value="Como protegê-lo de abuso sem dar medo">Como protegê-lo de abuso sem dar medo</label>
+            <label><input type="checkbox" name="entry.29369423" value="Namoro e relacionamentos">Namoro e relacionamentos</label>
+            <label><input type="checkbox" name="entry.29369423" value="Ainda não pensei nisso">Ainda não pensei nisso</label>
+            <label><input type="checkbox" name="entry.29369423" value="__other_option__">Outro: <input type="text" class="outro-txt" name="entry.29369423.other_option_response" aria-label="Outro tema"></label>
+          </div></div>
+
+        <div class="campo"><label for="motivo">O que te fez comprar o guia hoje?</label>
+          <textarea id="motivo" name="entry.1581348193"></textarea></div>
+
+        <div class="campo" role="group"><p class="pergunta">Como você me conheceu?</p>
+          <div class="opcoes">
+            <label><input type="radio" name="entry.213073775" value="Instagram">Instagram</label>
+            <label><input type="radio" name="entry.213073775" value="Anúncio">Anúncio</label>
+            <label><input type="radio" name="entry.213073775" value="Indicação de outra mãe">Indicação de outra mãe</label>
+            <label><input type="radio" name="entry.213073775" value="Livro do Lucas">Livro do Lucas</label>
+            <label><input type="radio" name="entry.213073775" value="Palestra ou escola">Palestra ou escola</label>
+            <label><input type="radio" name="entry.213073775" value="__other_option__">Outro: <input type="text" class="outro-txt" name="entry.213073775.other_option_response" aria-label="Como me conheceu"></label>
+          </div></div>
+
+        <button class="btn enviar" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg><span>Enviar e entrar no grupo do WhatsApp</span></button>
+        <p class="erro" id="erro" role="alert"></p>
+      </form>
+
+      <div class="grupo" id="grupo" hidden>
         <div>
-          <span class="rotulo">Depois do formulário</span>
-          <h3>Entre no grupo Dicas para Mães</h3>
-          <p>Dicas para as conversas com o seu filho, dentro e fora das telas, e o que está aparecendo nos jogos e nas redes. Gratuito, e sou eu mesma que estou lá.</p>
+          <span class="rotulo">Recebi as suas respostas 💚</span>
+          <h3 id="grupo-titulo">Agora vem para o grupo de mães</h3>
+          <p>É lá que a gente conversa sobre o que você me contou, dentro e fora das telas. Gratuito, e sou eu mesma que estou lá.</p>
         </div>
         <a class="zap" href="https://chat.whatsapp.com/C6fIqKhTsuHHaUGixlG1u3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>Entrar no grupo</a>
       </div>
+      <p class="pular" id="pular">Prefere entrar sem responder? <a href="https://chat.whatsapp.com/C6fIqKhTsuHHaUGixlG1u3" target="_blank" rel="noopener">Entrar no grupo</a></p>
+
+      <p class="lembrete">Enquanto isso: abra o seu e-mail (olhe também o spam e a aba Promoções) e comece pelos <strong>primeiros 30 minutos</strong>, no capítulo 2 do guia.</p>
     </div>
   </section>
-  <p class="assina wrap">Qualquer dúvida no caminho, é só me escrever. <strong>Sou eu mesma que respondo.</strong><br>Um abraço, Raphaela</p>
+  <p class="assina">Qualquer dúvida no caminho, é só me escrever. <strong>Sou eu mesma que respondo.</strong><br>Um abraço, Raphaela</p>
 </main>
 
+<script>
+(function () {
+  var URL_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLScG9fEHOUjoqxi2-w_Wt87rxgG0JIi3pRed2-NatMBHYkzg-g/formResponse';
+  var form = document.getElementById('form'), erro = document.getElementById('erro');
+  // Digitar em "Outro" já marca a opção
+  form.querySelectorAll('.outro-txt').forEach(function (t) {
+    t.addEventListener('input', function () { var o = t.parentNode.querySelector('input[value="__other_option__"]'); if (o) o.checked = t.value.trim() !== ''; });
+  });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var falta = ['filhos'].filter(function (id) { return !document.getElementById(id).value.trim(); });
+    if (falta.length) { erro.textContent = 'Me conta quantos filhos você tem e as idades para continuar.'; erro.style.display = 'block'; document.getElementById(falta[0]).focus(); return; }
+    erro.style.display = 'none';
+    var dados = new URLSearchParams();
+    var q = new URLSearchParams(location.search);
+    function param(nomes) { for (var i = 0; i < nomes.length; i++) { var v = q.get(nomes[i]); if (v) return v; } return ''; }
+    var nomeComprador = param(['nome', 'name', 'cus_name', 'customer_name', 'cliente_nome']);
+    var foneComprador = param(['telefone', 'phone', 'whatsapp', 'cel', 'cus_cel', 'customer_phone']);
+    var emailComprador = param(['email', 'cus_email', 'customer_email']);
+    dados.append('entry.1590682038', nomeComprador || (emailComprador ? 'E-mail: ' + emailComprador : 'Compradora do guia (dados no checkout)'));
+    dados.append('entry.1836471049', foneComprador || '—');
+    new FormData(form).forEach(function (v, k) { if (String(v).trim() !== '') dados.append(k, v); });
+    var botao = form.querySelector('.enviar'); botao.disabled = true; botao.querySelector('span').textContent = 'Enviando…';
+    fetch(URL_FORM, { method: 'POST', mode: 'no-cors', body: dados }).then(mostrarGrupo, function () {
+      botao.disabled = false; botao.querySelector('span').textContent = 'Enviar e entrar no grupo do WhatsApp';
+      erro.textContent = 'Não consegui enviar agora. Confira a sua internet e tente de novo, ou entre direto no grupo pelo link abaixo.'; erro.style.display = 'block';
+    });
+  });
+  function mostrarGrupo() {
+    var nome = (new URLSearchParams(location.search).get('nome') || new URLSearchParams(location.search).get('name') || '').trim().split(' ')[0];
+    if (nome) document.getElementById('grupo-titulo').textContent = 'Obrigada, ' + nome + '! Agora vem para o grupo de mães';
+    form.hidden = true; document.getElementById('pular').hidden = true;
+    var g = document.getElementById('grupo'); g.hidden = false; g.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'Formulário pós-compra do guia' });
+  }
+})();
+</script>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1002049802374349');
 fbq('track','PageView');
-document.addEventListener('click',function(ev){
-  var a=ev.target.closest&&ev.target.closest('a[href*="eduzz.com/"]'); if(!a) return;
-  var id=(a.href.match(/eduzz\.com\/([A-Za-z0-9]+)/)||[])[1];
-  var p={};
-  if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
-});
 </script>
 </body>
 </html>
