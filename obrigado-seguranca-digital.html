@@ -8,248 +8,225 @@
 <meta name="description" content="Boas-vindas para quem comprou o Segurança Digital na Infância: Passo a Passo, com uma condição especial do Método Educar é Proteger.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
 <style>
-/* Visual do Método Educar é Proteger (o mesmo do site): creme com manchas pêssego, títulos em EB Garamond,
-   texto em Montserrat, botões terracota em caixa alta e cartões com borda fina terracota. */
+/* Página de obrigado do guia: o topo tem o visual do guia (o que ela acabou de comprar);
+   a oferta abaixo tem o visual das páginas de obrigado do Método. Fora do menu e sem indexação. */
 :root {
-  --creme:#FFFEFA; --pessego:#F8ECE4; --pessego2:#F3DDD0; --terracota:#AC3D09; --terracota2:#C16D45; --laranja:#FA773C;
-  --verde:#547873; --verde-claro:#E7EFEC; --marrom:#624C40; --texto:#2B2422; --suave:#6F625C; --linha:#E6CFC2; --branco:#FFFFFF;
-  --f-titulo:"EB Garamond", Garamond, "Times New Roman", serif;
-  --f-corpo:"Montserrat", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --largura:1080px;
-  color-scheme: light;
+  --creme: #F7EEE3; --argila: #EBD6C4; --tijolo: #9C4A2E; --tijolo-escuro: #7E3A23;
+  --cacau: #3B2521; --mel: #E2B071; --texto-suave: #6B4F47;
+  --serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ink: #141B2D; --ink2: #1E2942; --ink3: #2B3858; --ciano: #38BDF8; --verde: #22C55E;
+  --amarelo: #FACC15; --roxo: #8B5CF6; --rosa: #F43F5E;
+  --f-titulo: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-corpo: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { margin:0; background:var(--creme); color:var(--texto); font:400 16px/1.65 var(--f-corpo); -webkit-font-smoothing:antialiased; }
-img { max-width:100%; display:block; height:auto; }
-h1, h2, h3 { font-family:var(--f-titulo); font-weight:500; line-height:1.15; letter-spacing:-.005em; margin:0; color:var(--texto); text-wrap:balance; }
-p { margin:0; }
-:focus-visible { outline:3px solid var(--laranja); outline-offset:3px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
-svg.ic { flex:none; display:block; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--creme); color: var(--cacau); font: 1.0625rem/1.55 var(--sans); }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; text-wrap: balance; }
 
-.faixa { padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:80px; position:relative; }
-.faixa.pessego { background:var(--pessego); background-image:radial-gradient(ellipse at 85% 10%, var(--pessego2) 0, transparent 55%); }
-.faixa.creme { background:var(--creme); background-image:radial-gradient(ellipse at 8% 90%, var(--pessego) 0, transparent 45%); }
-.dentro { max-width:var(--largura); margin:0 auto; }
-.rotulo { font:600 13px/1.3 var(--f-corpo); letter-spacing:.08em; text-transform:uppercase; color:var(--terracota); }
-.h2 { font-size:clamp(30px, 4vw, 44px); margin-top:10px; }
-.lead { font-size:17px; color:var(--suave); max-width:60ch; margin-top:16px; }
-.centro { text-align:center; }
-.centro .lead { margin-inline:auto; }
+/* Topo no visual do guia */
+.topo { background: var(--ink); color: #fff; text-align: center; padding: 48px 0 56px; font-family: var(--f-corpo);
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 32px 32px; border-bottom: 6px solid transparent;
+  border-image: repeating-linear-gradient(90deg, var(--verde) 0 24px, var(--ciano) 24px 48px, var(--amarelo) 48px 72px, var(--roxo) 72px 96px, var(--rosa) 96px 120px) 1; }
+.check { width: 64px; height: 64px; margin: 0 auto; border-radius: 14px; background: var(--verde); border: 3px solid #000; box-shadow: 4px 4px 0 #000; display: grid; place-content: center; }
+.topo h1 { font-family: var(--f-titulo); font-weight: 700; letter-spacing: -.02em; font-size: clamp(2rem, 6vw, 2.9rem); margin-top: 20px; }
+.topo h1 em { font-style: normal; color: var(--ciano); }
+.topo > .wrap > p { max-width: 56ch; margin: 14px auto 0; color: #C9D3E6; }
+.passos { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 32px auto 0; text-align: left; }
+.passos li { background: var(--ink2); border: 2px solid var(--ink3); border-radius: 14px; padding: 18px; font-size: .97rem; color: #E6ECF7; }
+.passos b { display: block; font-family: var(--f-titulo); font-weight: 700; font-size: 1.9rem; color: var(--ciano); line-height: 1; margin-bottom: 8px; }
+.passos strong { color: #fff; }
 
-.btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; text-align:center; text-decoration:none; font:700 14px/1.35 var(--f-corpo); letter-spacing:.12em; text-transform:uppercase;
-  color:#fff; background:var(--terracota); padding:17px 26px; border-radius:2px; transition:background .15s; cursor:pointer; }
-.btn:hover { background:#8f3207; }
-.recusa { display:block; margin-top:14px; text-align:center; font-size:14px; color:var(--suave); text-decoration:underline; text-underline-offset:3px; }
+/* Oferta no visual do Método */
+.casa { padding: 56px 0 64px; }
+.casa .intro { text-align: center; max-width: 62ch; margin: 0 auto; }
+.rotulo { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--tijolo); }
+.casa h2 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); margin-top: 10px; }
+.casa h2 em { color: var(--tijolo); }
+.casa .intro p { margin-top: 12px; color: var(--texto-suave); }
+.metodo { display: flex; flex-wrap: wrap; gap: 24px 36px; align-items: center; justify-content: space-between; margin-top: 36px; background: var(--cacau); color: var(--creme); border-radius: 24px; padding: 32px 36px; }
+.metodo > div:first-child { flex: 1 1 360px; }
+.metodo .rotulo { color: var(--mel); }
+.metodo h3 { font-size: 1.6rem; color: var(--creme); margin-top: 6px; }
+.inclui { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.inclui li { display: flex; gap: 10px; color: var(--argila); font-size: .97rem; }
+.inclui li::before { content: "✓"; color: var(--mel); font-weight: 700; flex: none; }
+.inclui b { color: var(--creme); font-weight: 600; }
+.metodo-preco { text-align: center; flex: 0 1 260px; }
+.metodo-preco s { color: var(--argila); font-size: .95rem; }
+.metodo-preco .valor { font-family: var(--serif); font-size: 3rem; line-height: 1; color: var(--creme); margin-top: 6px; }
+.metodo-preco .valor small { font-family: var(--sans); font-size: 1rem; margin-right: 4px; }
+.metodo-preco .parc { margin-top: 6px; color: var(--argila); font-size: .9rem; }
+.btn { display: block; text-align: center; margin-top: 16px; background: var(--mel); color: var(--cacau); text-decoration: none; font-weight: 700; border-radius: 999px; padding: 14px 18px; }
+.btn:hover, .btn:focus-visible { background: var(--creme); }
+.recusa { display: inline-block; margin-top: 12px; color: var(--argila); font-size: .9rem; }
+.so-aqui { text-align: center; margin-top: 16px; color: var(--texto-suave); font-size: .92rem; }
+.assina { text-align: center; padding-bottom: 56px; color: var(--texto-suave); }
+.assina strong { color: var(--cacau); }
+@media (max-width: 760px) { .passos { grid-template-columns: 1fr; } .metodo { padding: 26px 22px; } }
+/* Contexto antes da oferta */
+.bloco { padding: 8px 0 56px; }
+.bloco .intro { text-align: center; max-width: 62ch; margin: 0 auto; }
+.bloco h2 { font-size: clamp(1.6rem, 4.2vw, 2.1rem); margin-top: 8px; }
+.bloco .intro p { margin-top: 10px; color: var(--texto-suave); }
+.compara { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+.lado { border-radius: 22px; padding: 26px 26px 28px; }
+.lado.guia { background: var(--argila); }
+.lado.conversa { background: var(--cacau); color: var(--creme); }
+.lado h3 { font-size: 1.35rem; }
+.lado.conversa h3 { color: var(--mel); }
+.lado ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; font-size: .97rem; }
+.lado li { display: flex; gap: 10px; }
+.lado.guia li::before { content: "✓"; color: var(--tijolo); font-weight: 700; }
+.lado.conversa li::before { content: "♥"; color: var(--mel); }
+.lado.conversa li { color: var(--argila); }
+.quem { display: grid; grid-template-columns: 260px 1fr; gap: 36px; align-items: center; background: #fff; border-radius: 24px; padding: 28px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); }
+.quem img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 999px 999px 18px 18px; }
+.quem h2 { font-size: clamp(1.5rem, 4vw, 1.95rem); }
+.quem p { margin-top: 12px; color: var(--texto-suave); }
+.quem .assinatura { font-family: var(--serif); color: var(--tijolo); font-size: 1.1rem; }
+.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 28px; }
+.fase { background: #fff; border-radius: 22px; padding: 22px 18px; box-shadow: 0 10px 28px rgba(59, 37, 33, .08); }
+.fase img { width: 56px; height: 56px; }
+.fase .idade { display: block; font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--tijolo); margin-top: 12px; }
+.fase p { margin-top: 8px; font-size: .93rem; color: var(--texto-suave); }
+.faq { max-width: 720px; margin: 28px auto 0; display: flex; flex-direction: column; gap: 10px; }
+.faq details { background: #fff; border-radius: 16px; padding: 16px 20px; box-shadow: 0 6px 18px rgba(59, 37, 33, .06); }
+.faq summary { cursor: pointer; font-family: var(--serif); font-size: 1.15rem; }
+.faq details p { margin-top: 10px; color: var(--texto-suave); }
+.final-cta { max-width: 360px; margin: 28px auto 0; text-align: center; }
+.final-cta .btn { background: var(--tijolo); color: var(--creme); }
+.final-cta .btn:hover { background: var(--tijolo-escuro); }
+@media (max-width: 760px) { .compara, .quem { grid-template-columns: 1fr; } .quem img { max-width: 220px; margin: 0 auto; } .fases { grid-template-columns: repeat(2, 1fr); } }
 
-/* Topo do site */
-.topo { background:var(--creme); padding-block:10px 8px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
-.topo img { height:36px; width:auto; margin:0 auto; }
-.confirmado { background:var(--verde-claro); border-bottom:1px solid #cfdcd8; padding-block:22px 24px; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); text-align:center; }
-.confirmado .linha-ok { display:flex; align-items:center; justify-content:center; gap:14px; }
-.confirmado .selo-ok { width:52px; height:52px; flex:none; border-radius:50%; background:var(--verde); display:grid; place-items:center; box-shadow:0 0 0 6px rgba(84,120,115,.18); }
-.confirmado h1 { font-size:clamp(30px, 4.2vw, 42px); color:var(--verde); }
-.confirmado p { max-width:640px; margin:10px auto 0; font-size:16px; color:var(--texto); }
-.confirmado p b { font-weight:600; }
-.confirmado small { display:block; margin-top:4px; font-size:13.5px; color:var(--suave); }
-
-/* Hero com foto e oferta */
-.hero { padding-block:28px 72px; }
-.hero .dentro { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:48px; align-items:start; }
-.hero .foto img { width:100%; aspect-ratio:4 / 4.6; object-fit:cover; object-position:50% 20%; border-radius:4px; }
-.selo { margin-top:4px; display:inline-flex; align-items:center; gap:8px; font:600 13px/1.2 var(--f-corpo); color:var(--terracota); background:#fff; border:1px solid var(--terracota2); padding:8px 14px; border-radius:2px; }
-.hero h2.titulo { font-size:clamp(30px, 3.6vw, 42px); margin-top:14px; }
-.hero h2.titulo em { font-style:italic; color:var(--terracota); }
-.hero .lead { margin-top:18px; }
-
-.oferta { margin-top:22px; background:var(--pessego); border:1px solid var(--linha); border-radius:18px; padding:26px 28px; }
-.oferta .rotulo { color:var(--marrom); }
-.oferta h2 { font-size:28px; margin-top:6px; }
-.ancora { display:grid; gap:6px; margin-top:16px; padding-block:14px; border-block:1px solid var(--linha); font-size:14.5px; color:var(--suave); }
-.ancora div { display:flex; justify-content:space-between; gap:12px; }
-.agora { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:14px; flex-wrap:wrap; }
-.agora b { font:500 52px/1 var(--f-titulo); color:var(--texto); }
-.agora small { display:block; font-size:13.5px; color:var(--suave); margin-top:4px; }
-.economia { font:600 12px/1.2 var(--f-corpo); letter-spacing:.08em; text-transform:uppercase; color:var(--verde); background:var(--verde-claro); border:1px solid #cfdcd8; padding:8px 10px; border-radius:2px; white-space:nowrap; }
-.oferta .btn { width:100%; margin-top:18px; }
-.so-aqui { margin-top:14px; font-size:13.5px; color:var(--suave); }
-
-/* Ponte: o que o guia fez e o que o Método constrói */
-.ponte .dentro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:56px; align-items:center; }
-.ponte .lead + .lead { margin-top:12px; }
-.lista-check { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-.lista-check li { display:grid; grid-template-columns:auto minmax(0,1fr); gap:12px; align-items:start; background:#fff; border:1px solid var(--linha); border-radius:4px; padding:14px 16px; }
-.lista-check b { display:block; font-weight:600; color:var(--texto); }
-.lista-check small { display:block; color:var(--suave); font-size:14px; }
-.lista-check li.base { border-color:var(--terracota2); background:var(--pessego); }
-.lista-check li.base b { color:var(--terracota); }
-
-/* Faixas de idade (como no site) */
-.modulos { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:18px; margin-top:44px; }
-.modulo { background:#fff; border:1px solid var(--terracota2); border-radius:4px; padding:22px 18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; text-align:center; }
-.modulo .idade { font:500 26px/1.1 var(--f-titulo); color:var(--terracota); }
-.modulo .idade small { font-size:18px; }
-.modulo .qtd { font:600 12px/1.2 var(--f-corpo); letter-spacing:.08em; text-transform:uppercase; color:var(--marrom); }
-.modulo ul { list-style:none; margin:6px 0 0; padding:0; display:grid; gap:7px; text-align:left; }
-.modulo li { position:relative; padding-left:16px; font-size:13.5px; line-height:1.45; color:var(--suave); }
-.modulo li::before { content:""; position:absolute; left:0; top:7px; width:6px; height:6px; border-radius:50%; background:var(--terracota2); }
-.extras { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px; margin-top:18px; }
-.extra { display:grid; grid-template-columns:auto minmax(0,1fr); gap:14px; align-items:center; background:var(--pessego); border:1px solid var(--linha); border-radius:4px; padding:18px 20px; }
-.extra b { font:500 21px/1.2 var(--f-titulo); color:var(--texto); display:block; }
-.extra small { display:block; color:var(--suave); font-size:14px; margin-top:4px; }
-
-/* Por que o completo: cartões numerados como no site */
-.porque { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px; margin-top:40px; }
-.porque div { background:#fff; border:1px solid var(--terracota2); border-radius:4px; padding:26px 22px; text-align:center; }
-.porque .n { font:400 40px/1 var(--f-titulo); color:var(--terracota); }
-.porque h3 { font:600 15px/1.35 var(--f-corpo); color:var(--terracota); margin-top:12px; }
-.porque p { color:var(--suave); margin-top:8px; font-size:14.5px; }
-
-.citacao { margin:48px auto 0; max-width:640px; display:grid; grid-template-columns:auto minmax(0,1fr); gap:16px; align-items:start; background:#fff; border:1px solid var(--linha); box-shadow:0 10px 30px rgba(98,76,64,.08); padding:22px 24px; }
-.citacao .aspas { font:600 60px/.8 var(--f-titulo); color:var(--marrom); }
-.citacao p { font:italic 500 20px/1.4 var(--f-titulo); color:var(--terracota); }
-.citacao small { display:block; margin-top:8px; font-size:13px; color:var(--suave); }
-
-/* Decisão */
-.decisao .dentro { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.95fr); gap:48px; align-items:center; }
-.decisao .oferta { margin-top:0; background:#fff; }
-.nota { margin-top:18px; font-size:14px; color:var(--suave); }
-
-.rodape { background:var(--marrom); color:#F1E2D8; font-size:13.5px; padding-block:26px calc(26px + env(safe-area-inset-bottom, 0px)); padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
-.rodape .dentro { display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; }
-
-@media (max-width: 960px) {
-  .hero .dentro, .ponte .dentro, .decisao .dentro { grid-template-columns:minmax(0,1fr); }
-  .hero .foto { max-width:360px; }
-  .modulos { grid-template-columns:repeat(2, minmax(0,1fr)); }
-  .porque { grid-template-columns:minmax(0,1fr); }
-}
-@media (max-width: 640px) {
-  .faixa { padding-block:56px; }
-  .hero .foto { display:none; }
-  .hero { padding-block:22px 56px; }
-  .confirmado { padding-block:18px 20px; }
-  .confirmado h1 { font-size:28px; }
-  .confirmado .selo-ok { width:42px; height:42px; }
-  .confirmado p { font-size:15px; }
-  .oferta { padding:22px 20px; }
-  .btn { padding:16px 18px; letter-spacing:.08em; }
-  .modulos, .extras { grid-template-columns:minmax(0,1fr); }
-}
 </style>
 </head>
 <body>
 
-<header class="topo"><img src="img/logo-rs.png" alt="Raphaela Spellmeier" width="159" height="180"></header>
-<section class="confirmado" id="confirmado" aria-labelledby="titulo-ok">
-  <div class="linha-ok"><div class="selo-ok"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></div>
-  <h1 id="titulo-ok">Compra confirmada!</h1></div>
-  <p>Obrigada pela confiança. O acesso ao <b>Segurança Digital na Infância: Passo a Passo</b> vai para o seu e-mail.</p>
-  <small>Se não encontrar, confira também a caixa de spam e a aba Promoções.</small>
-</section>
+<header class="topo" id="confirmado">
+  <div class="wrap">
+    <div class="check" aria-hidden="true"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.2 4.2L19 7"/></svg></div>
+    <h1>Compra confirmada! O seu <em>guia</em> já está a caminho.</h1>
+    <p>Obrigada pela confiança. O acesso ao Segurança Digital na Infância: Passo a Passo vai para o seu e-mail.</p>
+    <ol class="passos">
+      <li><b>1</b><strong>Abra o seu e-mail.</strong> O acesso chega no endereço que você cadastrou na Eduzz. Não achou? Olhe o spam ou a aba Promoções.</li>
+      <li><b>2</b><strong>Comece pelos primeiros 30 minutos.</strong> É o capítulo 2 do guia: 7 missões que já deixam a casa mais segura hoje.</li>
+      <li><b>3</b><strong>Imprima o jogo.</strong> O Desafio Cibernético é o jeito mais leve de começar a conversa com o seu filho.</li>
+    </ol>
+  </div>
+</header>
 
 <main>
-
-<!-- 1 · Oferta -->
-<section class="faixa pessego hero" aria-labelledby="titulo-hero">
-  <div class="dentro">
-    <div class="foto"><img src="img/seguranca-digital/raphaela-metodo.jpg" alt="Raphaela Spellmeier sorrindo, de blusa laranja" width="760" height="1140"></div>
-    <div>
-      <span class="selo"><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg> Oferta exclusiva para você</span>
-      <h2 class="titulo" id="titulo-hero">Você cuidou das telas. Agora, <em>a conversa que protege o seu filho em qualquer lugar.</em></h2>
-      <p class="lead">O guia cuida do celular, do videogame e das redes. Mas o que realmente protege uma criança é saber falar do próprio corpo, dos limites e do que não está certo, e confiar em você para contar. É isso que o Método Educar é Proteger ensina, idade por idade.</p>
-      <div class="oferta" id="oferta">
-        <span class="rotulo">Só nesta página</span>
-        <h2>Método Educar é Proteger completo</h2>
-        <div class="ancora">
-          <div><span>4 módulos por idade, avulsos</span><s>R$ 599,60</s></div>
-          <div><span>Método completo, preço normal</span><s>R$ 297</s></div>
-        </div>
-        <div class="agora"><div><b>R$ 197</b><small>Pagamento único. Só para quem acabou de comprar o guia.</small></div><span class="economia">R$ 100 a menos</span></div>
-        <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método completo por R$ 197</a>
-        <a class="recusa" href="#confirmado">Não, obrigada. Quero ficar só com o guia.</a>
-        <p class="so-aqui">Esta condição aparece só agora, depois da compra do guia. Fora desta página, o Método custa R$ 297.</p>
+  <section class="casa">
+    <div class="wrap">
+      <div class="intro">
+        <span class="rotulo">Oferta só para você, nesta página</span>
+        <h2>Você cuidou das telas. Agora, <em>a conversa que faz o seu filho contar para você.</em></h2>
+        <p>O guia protege o celular, o videogame e as redes. Mas quando um "amigo do jogo" pede segredo, quem protege é uma criança que sabe que pode contar para você. É isso que o Método Educar é Proteger constrói, em cada idade, sem travar e sem falar demais.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 2 · A ponte -->
-<section class="faixa creme ponte" aria-labelledby="titulo-ponte">
-  <div class="dentro">
-    <div>
-      <span class="rotulo">Por que agora</span>
-      <h2 class="h2" id="titulo-ponte">No guia, a conversa é a proteção mais forte. O Método é onde ela é construída.</h2>
-      <p class="lead">Filtro bloqueia site. Controle parental limita tempo. Mas quando um "amigo do jogo" pede segredo, quando aparece uma imagem estranha ou quando o corpo começa a mudar, quem protege é uma criança que sabe nomear o que sente e sabe que pode falar com você.</p>
-      <p class="lead">O Método te prepara para essas conversas, com aulas para cada idade, do bebê ao adolescente.</p>
+  <section class="bloco">
+    <div class="wrap">
+      <div class="intro">
+        <span class="rotulo">Por que agora</span>
+        <h2>O guia protege as telas. Falta a conversa.</h2>
+      </div>
+      <div class="compara">
+        <div class="lado guia">
+          <h3>O que o guia já resolveu</h3>
+          <ul>
+            <li>A internet da casa filtrada</li>
+            <li>Celular, jogos e redes configurados</li>
+            <li>Contas e senhas seguras</li>
+          </ul>
+        </div>
+        <div class="lado conversa">
+          <h3>O que só a conversa resolve</h3>
+          <ul>
+            <li>Ele contar para você quando um "amigo do jogo" pedir segredo</li>
+            <li>Você saber o que responder quando ele perguntar sobre o corpo, sem travar</li>
+            <li>Ele chegar à puberdade sabendo o que vai acontecer</li>
+            <li>Ele continuar vindo até você na adolescência</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <ul class="lista-check">
-      <li><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.2 4.2L19 7" /></svg><span><b>A internet da casa protegida</b><small>Você já tem no guia</small></span></li>
-      <li><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.2 4.2L19 7" /></svg><span><b>Celular, jogos e redes configurados</b><small>Você já tem no guia</small></span></li>
-      <li><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12.5l4.2 4.2L19 7" /></svg><span><b>Contas e senhas seguras</b><small>Você já tem no guia</small></span></li>
-      <li class="base"><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" /></svg><span><b>A conversa sobre corpo, limites e proteção</b><small>A base que vale dentro e fora da internet. É o que o Método ensina.</small></span></li>
-    </ul>
-  </div>
-</section>
+  </section>
 
-<!-- 3 · O que tem no Método -->
-<section class="faixa pessego centro" aria-labelledby="titulo-modulos">
-  <div class="dentro">
-    <span class="rotulo">O que você recebe</span>
-    <h2 class="h2" id="titulo-modulos">Cada fase pede uma conversa diferente</h2>
-    <p class="lead">Você assiste pelo celular, no seu ritmo. Começa pela idade do seu filho hoje e já fica preparada para as próximas fases, e para os irmãos.</p>
-    <div class="modulos">
-      <article class="modulo"><span class="idade">0 a 5 <small>anos</small></span><span class="qtd">11 aulas</span><ul><li>Como ensinar de forma natural e lúdica</li><li>Privacidade e consentimento</li><li>Prevenção do abuso sexual</li><li>Respondendo às perguntas das crianças</li></ul></article>
-      <article class="modulo"><span class="idade">6 a 10 <small>anos</small></span><span class="qtd">12 aulas</span><ul><li>Preparação para a puberdade</li><li>Prevenção do abuso sexual</li><li>Respondendo perguntas difíceis</li><li>Saúde mental e segurança digital</li></ul></article>
-      <article class="modulo"><span class="idade">11 a 13 <small>anos</small></span><span class="qtd">12 aulas</span><ul><li>O que esperar na puberdade</li><li>Perigos do mundo virtual</li><li>Relacionamentos saudáveis</li><li>Respondendo às dúvidas dos adolescentes</li></ul></article>
-      <article class="modulo"><span class="idade">14 a 18 <small>anos</small></span><span class="qtd">12 aulas</span><ul><li>Redes sociais</li><li>Pornografia</li><li>Responsabilidade afetiva</li><li>Independência e preparação para a vida adulta</li></ul></article>
+  <section class="bloco">
+    <div class="wrap">
+      <div class="quem">
+        <img src="img/fotos/foto-filho-abraco.jpg" alt="Raphaela Spellmeier abraçada com o filho, os dois sorrindo" width="800" height="1200" loading="lazy">
+        <div>
+          <span class="rotulo">Quem te acompanha</span>
+          <h2>Eu sei o que custa uma criança não ter com quem conversar</h2>
+          <p>Eu sou a Raphaela, mãe e mestre em Psicologia Educacional. Entre os meus 11 e 14 anos, eu passei por uma situação de abuso, com uma pessoa muito próxima, e não tinha a quem contar.</p>
+          <p>Quando o meu filho começou a fazer perguntas, percebi que, mesmo estudando tanto, eu também não sabia responder para a idade dele. Organizei tudo o que aprendi, atendendo famílias e levando essa conversa para escolas, num caminho que qualquer mãe consegue seguir. É o Método Educar é Proteger.</p>
+          <p class="assinatura">A minha história terminou em mim. A sua também pode terminar em você.</p>
+        </div>
+      </div>
     </div>
-    <div class="extras">
-      <div class="extra"><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z" /><path d="M12 6v13.5" /></svg><span><b>Módulo 0 · Fundamentos do Método</b><small>8 aulas: anatomia e nomes corretos, o que é sexualidade, consentimento, privacidade, reprodução e mais.</small></span></div>
-      <div class="extra"><svg class="ic" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#AC3D09" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="9" width="16" height="11" rx="1" /><path d="M3 9h18M12 9v11M12 9c-1.5-3-5-4-5-1.5S12 9 12 9zm0 0c1.5-3 5-4 5-1.5S12 9 12 9z" /></svg><span><b>Módulo Bônus</b><small>Conteúdos e indicações por idade, além dos materiais complementares e atividades de cada módulo.</small></span></div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- 4 · Por que o completo -->
-<section class="faixa creme centro" aria-labelledby="titulo-porque">
-  <div class="dentro">
-    <span class="rotulo">Por que o Método completo</span>
-    <h2 class="h2" id="titulo-porque">Seu filho vai passar por todas essas fases</h2>
-    <div class="porque">
-      <div><span class="n">01</span><h3>Você chega antes</h3><p>A puberdade, a primeira rede social, o primeiro namoro: com todas as faixas, você se prepara para a próxima fase antes que ela chegue.</p></div>
-      <div><span class="n">02</span><h3>Vale para todos os filhos</h3><p>Irmãos de idades diferentes? Um acesso só cobre a criança pequena e o adolescente.</p></div>
-      <div><span class="n">03</span><h3>Menos que dois módulos avulsos</h3><p>Cada módulo custa R$ 149,90. Aqui você leva os quatro, os Fundamentos e o Bônus por R$ 197.</p></div>
+  <section class="bloco">
+    <div class="wrap">
+      <div class="intro">
+        <span class="rotulo">O que você vai aprender</span>
+        <h2>Uma conversa para cada fase</h2>
+        <p>Você começa pela idade do seu filho hoje. As outras fases já ficam liberadas para quando ele crescer, e servem para os irmãos também.</p>
+      </div>
+      <div class="fases">
+        <div class="fase"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>"Ele já pergunta de onde vêm os bebês. O que eu respondo sem assustar?"</p></div>
+        <div class="fase"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>"A puberdade está chegando e eu não quero que ele seja pego de surpresa."</p></div>
+        <div class="fase"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>"Ele está se fechando e passando horas no celular. Como não perder essa conexão?"</p></div>
+        <div class="fase"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>"Como falar de namoro e redes sociais sem afastar o meu adolescente?"</p></div>
+      </div>
     </div>
-    <div class="citacao"><span class="aspas">“</span><div><p>Falar sobre sexualidade não tira a inocência. Informação adequada ajuda a construir cuidado, diálogo e proteção.</p><small>Raphaela Spellmeier · fisioterapeuta pélvica, pós-graduada em Sexualidade Humana, mestre em Psicologia Educacional e mãe</small></div></div>
-  </div>
-</section>
+  </section>
 
-<!-- 5 · Decisão -->
-<section class="faixa pessego decisao" aria-labelledby="titulo-decisao">
-  <div class="dentro">
-    <div>
-      <span class="rotulo">Sua escolha</span>
-      <h2 class="h2" id="titulo-decisao">O guia protege as telas. O Método prepara o seu filho para a vida.</h2>
-      <p class="lead">Você já deu o primeiro passo hoje. Se quiser seguir com uma condição que só existe nesta página, é agora.</p>
-      <p class="nota">Compras pela internet têm 7 dias de direito de arrependimento, garantidos pelo Código de Defesa do Consumidor.</p>
-    </div>
-    <div class="oferta">
-      <span class="rotulo">Só nesta página</span>
-      <h2>Método Educar é Proteger completo</h2>
-      <div class="agora"><div><b>R$ 197</b><small>No lugar de R$ 297. Pagamento único.</small></div><span class="economia">R$ 100 a menos</span></div>
-      <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método completo por R$ 197</a>
-      <a class="recusa" href="#confirmado">Não, obrigada. Quero ficar só com o guia.</a>
-    </div>
-  </div>
-</section>
+  <section class="casa" id="oferta" style="padding-top:8px">
+    <div class="wrap">
+      <div class="metodo" style="margin-top:0">
+        <div>
+          <span class="rotulo">Só nesta página</span>
+          <h3>Método Educar é Proteger completo</h3>
+          <ul class="inclui">
+            <li><span><b>Módulo 0 · Primeiro você:</b> a sua história, o que te trava e as bases da conversa</span></li>
+            <li><span><b>Todas as fases, da infância à adolescência:</b> você começa pela idade do seu filho e as outras ficam liberadas</span></li>
+            <li><span><b>Módulo Bônus</b> e mais de 60 materiais para imprimir</span></li>
+            <li><span><b>Dúvidas respondidas por mim</b>, por e-mail ou nos comentários das aulas</span></li>
+          </ul>
+        </div>
+        <div class="metodo-preco">
+          <s>De R$ 297</s>
+          <p class="valor"><small>R$</small>197</p>
+          <p class="parc">Pagamento único · 7 dias de garantia</p>
+          <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método por R$ 197</a>
+          <a class="recusa" href="#confirmado">Não, obrigada. Quero ficar só com o guia.</a>
+        </div>
+      </div>
+      <p class="so-aqui">Esta condição aparece só agora, depois da compra do guia. Fora desta página, o Método custa R$ 297.</p>
 
+      <div class="faq">
+        <details><summary>Eu já tenho o guia. Por que o Método?</summary><p>O guia configura os aparelhos. O Método prepara você para as conversas sobre o corpo, os limites e a proteção, que valem dentro e fora da internet. É isso que faz o seu filho contar para você quando algo estranho acontece.</p></details>
+        <details><summary>Quanto tempo eu preciso por semana?</summary><p>Pouco. A maioria das aulas tem menos de 10 minutos, e você assiste pelo celular, no seu ritmo. Comece pelo Módulo 0 e pela fase do seu filho.</p></details>
+        <details><summary>E se não for para mim?</summary><p>Você tem 7 dias para assistir e sentir. Se não for para você, é só pedir o reembolso pela Eduzz e recebe o valor de volta.</p></details>
+      </div>
+      <div class="final-cta">
+        <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método por R$ 197</a>
+      </div>
+    </div>
+  </section>
+  <p class="assina wrap">Qualquer dúvida no caminho, é só me escrever. <strong>Sou eu mesma que respondo.</strong><br>Um abraço, Raphaela</p>
 </main>
-
-<footer class="rodape"><div class="dentro"><span>© 2026 Raphaela Spellmeier · Método Educar é Proteger</span><span>Fisioterapeuta pélvica · Pós-graduada em Sexualidade Humana · Mestre em Psicologia Educacional</span></div></footer>
 
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -260,12 +237,6 @@ document.addEventListener('click',function(ev){
   var id=(a.href.match(/eduzz\.com\/([A-Za-z0-9]+)/)||[])[1];
   var p={'8017VRXN07':['Método completo',297],'yjs3osbb':['Upgrade Método completo (Segurança Digital)',197]};
   if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
-});
-</script>
-<script>
-// Links da Eduzz ainda pendentes: os botões não levam a lugar nenhum por enquanto
-document.querySelectorAll('[data-cta]').forEach(function (a) {
-  a.addEventListener('click', function (ev) { ev.preventDefault(); a.blur(); });
 });
 </script>
 </body>
