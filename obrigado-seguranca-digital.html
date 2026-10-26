@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Compra confirmada · Segurança Digital na Infância</title>
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Boas-vindas para quem comprou o Segurança Digital na Infância: Passo a Passo, com uma condição especial do Método Educar é Proteger.">
+<meta name="description" content="Boas-vindas para quem comprou o Segurança Digital na Infância: Passo a Passo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
@@ -70,6 +70,18 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; tex
 .assina { text-align: center; padding-bottom: 56px; color: var(--texto-suave); }
 .assina strong { color: var(--cacau); }
 @media (max-width: 760px) { .passos { grid-template-columns: 1fr; } .metodo { padding: 26px 22px; } }
+/* Formulário e grupo */
+.form-caixa { margin-top:28px; background:#fff; border-radius:24px; box-shadow:0 10px 28px rgba(59, 37, 33, .08); overflow:hidden; }
+.form-caixa iframe { display:block; width:100%; height:2080px; border:0; }
+.grupo { display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between; margin-top:28px; background:var(--cacau); color:var(--creme); border-radius:24px; padding:28px 32px; }
+.grupo > div { flex:1 1 340px; }
+.grupo .rotulo { color:var(--mel); }
+.grupo h3 { font-size:1.6rem; margin-top:6px; }
+.grupo p { margin-top:8px; color:var(--argila); }
+.zap { display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#fff; text-decoration:none; font-weight:800; font-size:1.1rem; border-radius:999px; padding:16px 28px; }
+.zap:hover, .zap:focus-visible { background:#1EBE5A; }
+.zap svg { width:26px; height:26px; flex:none; }
+@media (max-width: 760px) { .form-caixa iframe { height:2550px; } }
 /* Contexto antes da oferta */
 .bloco { padding: 8px 0 56px; }
 .bloco .intro { text-align: center; max-width: 62ch; margin: 0 auto; }
@@ -117,111 +129,29 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.12; tex
     <ol class="passos">
       <li><b>1</b><strong>Abra o seu e-mail.</strong> O acesso chega no endereço que você cadastrou na Eduzz. Não achou? Olhe o spam ou a aba Promoções.</li>
       <li><b>2</b><strong>Comece pelos primeiros 30 minutos.</strong> É o capítulo 2 do guia: 7 missões que já deixam a casa mais segura hoje.</li>
-      <li><b>3</b><strong>Imprima o jogo.</strong> O Desafio Cibernético é o jeito mais leve de começar a conversa com o seu filho.</li>
+      <li><b>3</b><strong>Entre no grupo Dicas para Mães.</strong> Me conta um pouco sobre você logo abaixo e já entra no grupo.</li>
     </ol>
   </div>
 </header>
 
 <main>
-  <section class="casa">
+  <section class="casa" id="sobre-voce">
     <div class="wrap">
       <div class="intro">
-        <span class="rotulo">Oferta só para você, nesta página</span>
-        <h2>Você cuidou das telas. Agora, <em>a conversa que faz o seu filho contar para você.</em></h2>
-        <p>O guia protege o celular, o videogame e as redes. Mas quando um "amigo do jogo" pede segredo, quem protege é uma criança que sabe que pode contar para você. É isso que o Método Educar é Proteger constrói, em cada idade, sem travar e sem falar demais.</p>
+        <span class="rotulo">Último passo</span>
+        <h2>Me conta um pouco <em>sobre você</em></h2>
+        <p>São 7 perguntas rápidas, umas 2 minutos. Com as suas respostas, eu preparo os conteúdos do grupo para a realidade da sua família.</p>
       </div>
-    </div>
-  </section>
-
-  <section class="bloco">
-    <div class="wrap">
-      <div class="intro">
-        <span class="rotulo">Por que agora</span>
-        <h2>O guia protege as telas. Falta a conversa.</h2>
+      <div class="form-caixa">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG9fEHOUjoqxi2-w_Wt87rxgG0JIi3pRed2-NatMBHYkzg-g/viewform?embedded=true" title="Formulário: me conta sobre você" loading="lazy">Carregando…</iframe>
       </div>
-      <div class="compara">
-        <div class="lado guia">
-          <h3>O que o guia já resolveu</h3>
-          <ul>
-            <li>A internet da casa filtrada</li>
-            <li>Celular, jogos e redes configurados</li>
-            <li>Contas e senhas seguras</li>
-          </ul>
-        </div>
-        <div class="lado conversa">
-          <h3>O que só a conversa resolve</h3>
-          <ul>
-            <li>Ele contar para você quando um "amigo do jogo" pedir segredo</li>
-            <li>Você saber o que responder quando ele perguntar sobre o corpo, sem travar</li>
-            <li>Ele chegar à puberdade sabendo o que vai acontecer</li>
-            <li>Ele continuar vindo até você na adolescência</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bloco">
-    <div class="wrap">
-      <div class="quem">
-        <img src="img/fotos/foto-filho-abraco.jpg" alt="Raphaela Spellmeier abraçada com o filho, os dois sorrindo" width="800" height="1200" loading="lazy">
+      <div class="grupo">
         <div>
-          <span class="rotulo">Quem te acompanha</span>
-          <h2>Eu sei o que custa uma criança não ter com quem conversar</h2>
-          <p>Eu sou a Raphaela, mãe e mestre em Psicologia Educacional. Entre os meus 11 e 14 anos, eu passei por uma situação de abuso, com uma pessoa muito próxima, e não tinha a quem contar.</p>
-          <p>Quando o meu filho começou a fazer perguntas, percebi que, mesmo estudando tanto, eu também não sabia responder para a idade dele. Organizei tudo o que aprendi, atendendo famílias e levando essa conversa para escolas, num caminho que qualquer mãe consegue seguir. É o Método Educar é Proteger.</p>
-          <p class="assinatura">A minha história terminou em mim. A sua também pode terminar em você.</p>
+          <span class="rotulo">Depois do formulário</span>
+          <h3>Entre no grupo Dicas para Mães</h3>
+          <p>Dicas para as conversas com o seu filho, dentro e fora das telas, e o que está aparecendo nos jogos e nas redes. Gratuito, e sou eu mesma que estou lá.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bloco">
-    <div class="wrap">
-      <div class="intro">
-        <span class="rotulo">O que você vai aprender</span>
-        <h2>Uma conversa para cada fase</h2>
-        <p>Você começa pela idade do seu filho hoje. As outras fases já ficam liberadas para quando ele crescer, e servem para os irmãos também.</p>
-      </div>
-      <div class="fases">
-        <div class="fase"><img src="img/icones/cavalinho.png" alt="" width="160" height="160"><span class="idade">0 a 5 anos</span><p>"Ele já pergunta de onde vêm os bebês. O que eu respondo sem assustar?"</p></div>
-        <div class="fase"><img src="img/icones/mochila.png" alt="" width="160" height="160"><span class="idade">6 a 10 anos</span><p>"A puberdade está chegando e eu não quero que ele seja pego de surpresa."</p></div>
-        <div class="fase"><img src="img/icones/broto.png" alt="" width="160" height="160"><span class="idade">11 a 13 anos</span><p>"Ele está se fechando e passando horas no celular. Como não perder essa conexão?"</p></div>
-        <div class="fase"><img src="img/icones/bussola.png" alt="" width="160" height="160"><span class="idade">14 a 18 anos</span><p>"Como falar de namoro e redes sociais sem afastar o meu adolescente?"</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="casa" id="oferta" style="padding-top:8px">
-    <div class="wrap">
-      <div class="metodo" style="margin-top:0">
-        <div>
-          <span class="rotulo">Só nesta página</span>
-          <h3>Método Educar é Proteger completo</h3>
-          <ul class="inclui">
-            <li><span><b>Módulo 0 · Primeiro você:</b> a sua história, o que te trava e as bases da conversa</span></li>
-            <li><span><b>Todas as fases, da infância à adolescência:</b> você começa pela idade do seu filho e as outras ficam liberadas</span></li>
-            <li><span><b>Módulo Bônus</b> e mais de 60 materiais para imprimir</span></li>
-            <li><span><b>Dúvidas respondidas por mim</b>, por e-mail ou nos comentários das aulas</span></li>
-          </ul>
-        </div>
-        <div class="metodo-preco">
-          <s>De R$ 297</s>
-          <p class="valor"><small>R$</small>197</p>
-          <p class="parc">Pagamento único · 7 dias de garantia</p>
-          <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método por R$ 197</a>
-          <a class="recusa" href="#confirmado">Não, obrigada. Quero ficar só com o guia.</a>
-        </div>
-      </div>
-      <p class="so-aqui">Esta condição aparece só agora, depois da compra do guia. Fora desta página, o Método custa R$ 297.</p>
-
-      <div class="faq">
-        <details><summary>Eu já tenho o guia. Por que o Método?</summary><p>O guia configura os aparelhos. O Método prepara você para as conversas sobre o corpo, os limites e a proteção, que valem dentro e fora da internet. É isso que faz o seu filho contar para você quando algo estranho acontece.</p></details>
-        <details><summary>Quanto tempo eu preciso por semana?</summary><p>Pouco. A maioria das aulas tem menos de 10 minutos, e você assiste pelo celular, no seu ritmo. Comece pelo Módulo 0 e pela fase do seu filho.</p></details>
-        <details><summary>E se não for para mim?</summary><p>Você tem 7 dias para assistir e sentir. Se não for para você, é só pedir o reembolso pela Eduzz e recebe o valor de volta.</p></details>
-      </div>
-      <div class="final-cta">
-        <a class="btn" href="https://chk.eduzz.com/yjs3osbb">Sim, quero o Método por R$ 197</a>
+        <a class="zap" href="https://chat.whatsapp.com/C6fIqKhTsuHHaUGixlG1u3" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3Z"/></svg>Entrar no grupo</a>
       </div>
     </div>
   </section>
@@ -235,7 +165,7 @@ fbq('track','PageView');
 document.addEventListener('click',function(ev){
   var a=ev.target.closest&&ev.target.closest('a[href*="eduzz.com/"]'); if(!a) return;
   var id=(a.href.match(/eduzz\.com\/([A-Za-z0-9]+)/)||[])[1];
-  var p={'8017VRXN07':['Método completo',297],'yjs3osbb':['Upgrade Método completo (Segurança Digital)',197]};
+  var p={};
   if(p[id]) fbq('track','InitiateCheckout',{content_name:p[id][0],value:p[id][1],currency:'BRL'});
 });
 </script>
